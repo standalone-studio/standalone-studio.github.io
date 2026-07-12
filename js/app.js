@@ -1,6 +1,7 @@
 /* ============================================================
    PAPER ECOSYSTEM - MAIN JAVASCRIPT
-   Handles: Navigation, Dock, Liquid Glass, Animations, FAQ
+   Handles: Navigation, Dock, Liquid Glass, Animations, FAQ,
+   Device Switcher, Favicon, Search Toggle
    ============================================================ */
 
 (function () {
@@ -8,9 +9,8 @@
 
   /* ============================================================
      1. NAVBAR SCROLL EFFECT
-     Adds .scrolled class to navbar when page is scrolled
      ============================================================ */
-  const navbar = document.getElementById('navbar');
+  var navbar = document.getElementById('navbar');
 
   function handleNavbarScroll() {
     if (!navbar) return;
@@ -26,21 +26,19 @@
 
   /* ============================================================
      2. MOBILE MENU TOGGLE
-     Hamburger button opens/closes the mobile navigation menu
      ============================================================ */
-  const hamburgerBtn = document.getElementById('hamburgerBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
+  var hamburgerBtn = document.getElementById('hamburgerBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
 
   if (hamburgerBtn && mobileMenu) {
     hamburgerBtn.addEventListener('click', function () {
-      const isActive = mobileMenu.classList.contains('active');
+      var isActive = mobileMenu.classList.contains('active');
       mobileMenu.classList.toggle('active');
       hamburgerBtn.querySelector('.material-symbols-rounded').textContent =
         isActive ? 'menu' : 'close';
     });
 
-    // Close menu when a link is clicked
-    const mobileLinks = mobileMenu.querySelectorAll('.mobile-menu-link');
+    var mobileLinks = mobileMenu.querySelectorAll('.mobile-menu-link');
     mobileLinks.forEach(function (link) {
       link.addEventListener('click', function () {
         mobileMenu.classList.remove('active');
@@ -51,14 +49,11 @@
 
   /* ============================================================
      3. DOCK BEHAVIOR
-     - Center item is larger and brighter
-     - Smooth scroll snapping
-     - Dot indicators update based on active item
      ============================================================ */
-  const dock = document.getElementById('dock');
-  const dockInner = document.getElementById('dockInner');
-  const dockItems = document.querySelectorAll('.dock-item');
-  const dockDots = document.querySelectorAll('.dock-dot');
+  var dock = document.getElementById('dock');
+  var dockInner = document.getElementById('dockInner');
+  var dockItems = document.querySelectorAll('.dock-item');
+  var dockDots = document.querySelectorAll('.dock-dot');
 
   function updateDockCenter() {
     if (!dock || !dockItems.length) return;
@@ -108,7 +103,6 @@
       }
     });
 
-    // Update dots
     dockDots.forEach(function (dot, index) {
       if (index === closestIndex) {
         dot.classList.add('active');
@@ -123,16 +117,13 @@
       requestAnimationFrame(updateDockCenter);
     }, { passive: true });
 
-    // Initial center calculation
     updateDockCenter();
 
-    // Recalculate on resize
     window.addEventListener('resize', function () {
       requestAnimationFrame(updateDockCenter);
     }, { passive: true });
   }
 
-  // Dock item click - scroll to item center
   dockItems.forEach(function (item) {
     item.addEventListener('click', function (e) {
       var itemRect = item.getBoundingClientRect();
@@ -148,7 +139,6 @@
 
   /* ============================================================
      4. LIQUID GLASS MOUSE TRACKING
-     Highlights follow the mouse cursor on liquid-glass elements
      ============================================================ */
   var glassElements = document.querySelectorAll('.liquid-glass');
 
@@ -166,7 +156,6 @@
 
   /* ============================================================
      5. INTERSECTION OBSERVER - FADE IN ANIMATIONS
-     Elements with .fade-in class animate in when visible
      ============================================================ */
   var fadeElements = document.querySelectorAll('.fade-in, .scale-in');
 
@@ -190,7 +179,6 @@
 
   /* ============================================================
      6. FAQ ACCORDION
-     Toggle FAQ answers on the Support page
      ============================================================ */
   var faqItems = document.querySelectorAll('.faq-item');
 
@@ -201,21 +189,18 @@
     question.addEventListener('click', function () {
       var isActive = item.classList.contains('active');
 
-      // Close all other FAQ items
       faqItems.forEach(function (otherItem) {
         if (otherItem !== item) {
           otherItem.classList.remove('active');
         }
       });
 
-      // Toggle current item
       item.classList.toggle('active', !isActive);
     });
   });
 
   /* ============================================================
      7. APP DETAIL NAVIGATION (Apps Page)
-     Shows detail view when URL hash matches an app ID
      ============================================================ */
   var appDetail = document.getElementById('appDetail');
   var appGrid = document.querySelector('.app-grid');
@@ -228,7 +213,6 @@
         name: 'Paperleaf',
         slogan: 'Your digital notebook, reimagined.',
         status: 'available',
-        screenshot: 'assets/screenshots/ss_paperleaf1.jpg',
         features: [
           { title: 'Natural Writing', desc: 'Write with a feel that mimics real pen on paper.' },
           { title: 'Smart Organization', desc: 'Automatically organize notes with intelligent tags.' },
@@ -304,13 +288,11 @@
       var data = appData[appId];
       if (!data || !appDetail) return;
 
-      // Update detail view
       var detailName = document.getElementById('detailName');
       var detailSlogan = document.getElementById('detailSlogan');
       var detailActions = document.getElementById('detailActions');
       var detailFeatures = document.getElementById('detailFeatures');
 
-      // Update icon
       var detailIcon = document.getElementById('detailIcon');
       if (detailIcon) {
         if (data.iconImg) {
@@ -322,7 +304,6 @@
       if (detailName) detailName.textContent = data.name;
       if (detailSlogan) detailSlogan.textContent = data.slogan;
 
-      // Build actions
       if (detailActions) {
         if (data.status === 'available') {
           detailActions.innerHTML =
@@ -333,7 +314,6 @@
         }
       }
 
-      // Build features
       if (detailFeatures) {
         detailFeatures.innerHTML = '';
         data.features.forEach(function (feat) {
@@ -348,28 +328,11 @@
         });
       }
 
-      // Update screenshot
-      var detailScreenshot = document.querySelector('.app-detail-screenshot');
-      if (detailScreenshot) {
-        if (data.screenshot) {
-          detailScreenshot.innerHTML = '<img src="' + data.screenshot + '" alt="' + data.name + ' Screenshot">';
-        } else {
-          detailScreenshot.innerHTML =
-            '<div class="screenshot-placeholder">' +
-            '<span class="material-symbols-rounded">smartphone</span>' +
-            '<span>Screenshot</span>' +
-            '</div>';
-        }
-      }
-
-      // Show detail, hide grid
       appDetail.style.display = 'block';
       if (appGrid) appGrid.style.display = 'none';
 
-      // Update page title
-      document.title = data.name + ' - Stand Alone Studio';
+      document.title = data.name + ' - Paper Ecosystem';
 
-      // Re-trigger fade-in
       var fadeItems = appDetail.querySelectorAll('.fade-in');
       fadeItems.forEach(function (el) {
         el.classList.remove('visible');
@@ -390,7 +353,6 @@
         });
       }
 
-      // Scroll to top
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -400,7 +362,6 @@
       document.title = 'Apps - Paper Ecosystem';
     }
 
-    // Check hash on load and hashchange
     function checkHash() {
       var hash = window.location.hash.replace('#', '');
       if (hash && appData[hash]) {
@@ -415,7 +376,42 @@
   }
 
   /* ============================================================
-     8. SMOOTH SCROLL FOR DOCK INTERNAL LINKS
+     8. DEVICE SWITCHER (Apps Detail)
+     ============================================================ */
+  var deviceBtns = document.querySelectorAll('.device-btn');
+  var deviceDropdown = document.getElementById('screenshotsTablet');
+
+  deviceBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var device = this.getAttribute('data-device');
+
+      deviceBtns.forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+
+      if (device === 'tablet' && deviceDropdown) {
+        deviceDropdown.classList.toggle('open');
+      } else if (deviceDropdown) {
+        deviceDropdown.classList.remove('open');
+      }
+    });
+  });
+
+  /* ============================================================
+     9. SEARCH TOGGLE (Non-home pages)
+     ============================================================ */
+  var searchToggle = document.getElementById('searchToggle');
+
+  if (searchToggle) {
+    searchToggle.addEventListener('click', function () {
+      var query = prompt('Search Paper:');
+      if (query && query.trim()) {
+        window.location.href = 'index.html?q=' + encodeURIComponent(query.trim());
+      }
+    });
+  }
+
+  /* ============================================================
+     10. SMOOTH SCROLL FOR INTERNAL LINKS
      ============================================================ */
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
@@ -425,7 +421,7 @@
       var target = document.querySelector(targetId);
       if (target) {
         e.preventDefault();
-        var offset = 180; // navbar + dock height
+        var offset = 180;
         var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
 
         window.scrollTo({
@@ -437,29 +433,40 @@
   });
 
   /* ============================================================
-     9. SEARCH INPUT FOCUS ANIMATION
-     Subtle visual feedback when search is focused
+     11. FAVICON - DARK/LIGHT MODE
+     stalone_white for dark, stalone_black for light
      ============================================================ */
-  var searchInput = document.getElementById('searchInput');
+  function updateFavicon() {
+    var isDark = window.matchMedia('(prefers-color-scheme: dark)').matches ||
+                 document.documentElement.getAttribute('data-theme') === 'dark';
+    var favicon = document.querySelector('link[rel="icon"]');
+    if (!favicon) {
+      favicon = document.createElement('link');
+      favicon.rel = 'icon';
+      document.head.appendChild(favicon);
+    }
+    favicon.href = isDark ? 'assets/icons/stalone_white.png' : 'assets/icons/stalone_black.png';
+  }
 
-  if (searchInput) {
-    searchInput.addEventListener('focus', function () {
-      this.parentElement.style.boxShadow = '0 0 0 2px rgba(255, 255, 255, 0.1)';
-    });
+  updateFavicon();
+  window.matchMedia('(prefers-color-scheme: change)').addEventListener('change', updateFavicon);
 
-    searchInput.addEventListener('blur', function () {
-      this.parentElement.style.boxShadow = 'none';
-    });
+  /* ============================================================
+     12. PAGE-CONTENT PADDING (no dock pages)
+     ============================================================ */
+  var dockWrapper = document.getElementById('dockWrapper');
+  var pageContent = document.querySelector('.page-content');
+  if (pageContent) {
+    if (dockWrapper) {
+      pageContent.classList.add('has-dock');
+    }
   }
 
   /* ============================================================
-     10. INITIAL SETUP
-     Ensure all animations fire on already-visible elements
+     13. INITIAL SETUP
      ============================================================ */
-  // Trigger scroll handler once
   handleNavbarScroll();
 
-  // Trigger dock center calculation after a brief delay for layout
   setTimeout(function () {
     updateDockCenter();
   }, 100);

@@ -23,23 +23,21 @@
         <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
           <span class="material-symbols-rounded">menu</span>
         </button>
-        <a href="index.html" class="navbar-brand">
-          <div class="brand-icon">
-            <img src="assets/icons/stalone_black.png" alt="Paper">
-          </div>
-          <span>Paper</span>
-        </a>
       </div>
-      <div class="navbar-center">
-        <div class="search-bar">
-          <span class="material-symbols-rounded">search</span>
-          <input type="text" placeholder="Search Paper..." id="searchInput">
-        </div>
+      <div class="navbar-nav" id="navbarNav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="apps.html" class="nav-link active">Apps</a>
+        <a href="store.html" class="nav-link">Store</a>
+        <a href="support.html" class="nav-link">Support</a>
+        <a href="about.html" class="nav-link">About</a>
       </div>
       <div class="navbar-right">
-        <button class="navbar-btn" aria-label="Account">
-          <img src="assets/icons/stalone_white.png" alt="Account">
+        <button class="navbar-btn" aria-label="Search" id="searchToggle">
+          <span class="material-symbols-rounded">search</span>
         </button>
+        <a href="index.html" class="navbar-btn" aria-label="Home">
+          <img src="assets/icons/stalone_white.png" alt="Home">
+        </a>
       </div>
     </div>
   </nav>
@@ -156,8 +154,8 @@
               Open
             </div>
           </div>
-          <p class="app-compact-desc">
-            A beautifully crafted note-taking app that feels like writing on real paper. Capture thoughts and organize ideas.
+          <p class="app-compact-tagline">
+            Your digital notebook, reimagined.
           </p>
           <div class="app-card-actions">
             <a href="apps.html#paperleaf" class="btn btn-secondary">
@@ -185,8 +183,8 @@
               Coming Soon
             </div>
           </div>
-          <p class="app-compact-desc">
-            An immersive reading experience with a minimal, distraction-free interface. Your personal library, always within reach.
+          <p class="app-compact-tagline">
+            Read without boundaries.
           </p>
           <div class="app-card-actions">
             <a href="apps.html#paperbook" class="btn btn-secondary">
@@ -211,8 +209,8 @@
               Coming Soon
             </div>
           </div>
-          <p class="app-compact-desc">
-            A professional design tool that brings your ideas to life. Craft stunning visuals with precision and elegance.
+          <p class="app-compact-tagline">
+            Design with intention.
           </p>
           <div class="app-card-actions">
             <a href="apps.html#paperstudio" class="btn btn-secondary">
@@ -237,8 +235,8 @@
               Coming Soon
             </div>
           </div>
-          <p class="app-compact-desc">
-            A digital painting app with natural brushes and intuitive controls. Express yourself through color and texture.
+          <p class="app-compact-tagline">
+            Paint your imagination.
           </p>
           <div class="app-card-actions">
             <a href="apps.html#paperpaint" class="btn btn-secondary">
@@ -263,8 +261,8 @@
               Coming Soon
             </div>
           </div>
-          <p class="app-compact-desc">
-            A seamless cloud workspace that keeps your files and projects accessible across all your devices.
+          <p class="app-compact-tagline">
+            Your workspace, everywhere.
           </p>
           <div class="app-card-actions">
             <a href="apps.html#paperspace" class="btn btn-secondary">
@@ -289,8 +287,8 @@
               Coming Soon
             </div>
           </div>
-          <p class="app-compact-desc">
-            Create, record, and share music with a clean and inspiring interface. From melody to mastery.
+          <p class="app-compact-tagline">
+            Sound, simplified.
           </p>
           <div class="app-card-actions">
             <a href="apps.html#papermusic" class="btn btn-secondary">
@@ -313,21 +311,54 @@
         <div class="app-detail-icon" id="detailIcon">
           <img src="assets/icons/logo_paperleaf.jpg" alt="Paperleaf">
         </div>
-        <h1 class="app-detail-name" id="detailName">Paperleaf</h1>
-        <p class="app-detail-slogan" id="detailSlogan">Your digital notebook, reimagined.</p>
-        <div class="app-detail-actions" id="detailActions">
-          <a href="#" class="btn btn-primary">
-            Download
-          </a>
+        <div class="app-detail-meta">
+          <h1 class="app-detail-name" id="detailName">Paperleaf</h1>
+          <p class="app-detail-slogan" id="detailSlogan">Your digital notebook, reimagined.</p>
+          <div class="app-detail-actions" id="detailActions">
+            <a href="#" class="btn btn-primary">
+              Download
+            </a>
+          </div>
         </div>
       </div>
 
-      <div class="app-detail-screenshot fade-in">
-        <img src="assets/screenshots/ss_paperleaf1.jpg" alt="Paperleaf Screenshot">
+      <div class="app-detail-screenshots fade-in">
+        <div class="device-switcher">
+          <button class="device-btn active" data-device="phone">
+            <span class="material-symbols-rounded">smartphone</span>
+            Phone
+          </button>
+          <button class="device-btn" data-device="tablet">
+            <span class="material-symbols-rounded">tablet</span>
+            Tablet
+            <span class="material-symbols-rounded arrow">expand_more</span>
+          </button>
+        </div>
+        <div class="screenshots-row" id="screenshotsPhone">
+          <div class="screenshot-item">
+            <img src="assets/screenshots/ss_paperleaf1.jpg" alt="Screenshot 1">
+          </div>
+          <div class="screenshot-item">
+            <img src="assets/screenshots/ss_paperleaf2.jpg" alt="Screenshot 2">
+          </div>
+          <div class="screenshot-item">
+            <img src="assets/screenshots/ss_paperleaf3.jpg" alt="Screenshot 3">
+          </div>
+        </div>
+        <div class="device-dropdown" id="screenshotsTablet">
+          <div class="screenshots-row">
+            <div class="screenshot-item" style="width: 380px; height: 280px;">
+              <img src="assets/screenshots/ss_paperleaf2.jpg" alt="Tablet Screenshot 1">
+            </div>
+            <div class="screenshot-item" style="width: 380px; height: 280px;">
+              <img src="assets/screenshots/ss_paperleaf3.jpg" alt="Tablet Screenshot 2">
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="app-detail-features fade-in">
-        <h2 class="heading-md mb-24 text-center">Features</h2>
+        <h2 class="heading-md mb-24">Features</h2>
         <div class="feature-list" id="detailFeatures">
           <div class="feature-item">
             <span class="material-symbols-rounded">check_circle</span>
