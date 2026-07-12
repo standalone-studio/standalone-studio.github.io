@@ -242,11 +242,6 @@ input {
   align-items: center;
   justify-content: center;
   border-radius: 12px;
-  transition: background 0.2s ease;
-}
-
-.hamburger:hover {
-  background: rgba(255, 255, 255, 0.06);
 }
 
 .hamburger .material-symbols-rounded {
@@ -271,10 +266,17 @@ input {
   align-items: center;
   justify-content: center;
   color: #090909;
+  overflow: hidden;
 }
 
 .brand-icon .material-symbols-rounded {
   font-size: 20px;
+}
+
+.brand-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 /* Center - Search */
@@ -347,6 +349,13 @@ input {
   font-size: 24px;
 }
 
+.navbar-btn img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
 /* Mobile Menu */
 .mobile-menu {
   position: fixed;
@@ -380,7 +389,6 @@ input {
 .mobile-menu-link {
   display: flex;
   align-items: center;
-  gap: 12px;
   padding: 14px 16px;
   border-radius: 14px;
   font-size: 1.0625rem;
@@ -391,11 +399,6 @@ input {
 .mobile-menu-link:hover,
 .mobile-menu-link.active {
   background: rgba(255, 255, 255, 0.06);
-}
-
-.mobile-menu-link .material-symbols-rounded {
-  font-size: 22px;
-  color: #B8B8B8;
 }
 
 /* ============================================================
@@ -771,10 +774,6 @@ input {
   background: rgba(255, 255, 255, 0.06);
 }
 
-.btn .material-symbols-rounded {
-  font-size: 18px;
-}
-
 .btn-disabled {
   opacity: 0.4;
   pointer-events: none;
@@ -1135,6 +1134,12 @@ input {
 
 .footer-brand .brand-icon .material-symbols-rounded {
   font-size: 17px;
+}
+
+.footer-brand .brand-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .footer-links {
