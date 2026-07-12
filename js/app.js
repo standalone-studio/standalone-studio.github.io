@@ -224,9 +224,11 @@
     var appData = {
       paperleaf: {
         icon: 'auto_awesome',
+        iconImg: 'assets/icons/logo_paperleaf.jpg',
         name: 'Paperleaf',
         slogan: 'Your digital notebook, reimagined.',
         status: 'available',
+        screenshot: 'assets/screenshots/ss_paperleaf1.jpg',
         features: [
           { title: 'Natural Writing', desc: 'Write with a feel that mimics real pen on paper.' },
           { title: 'Smart Organization', desc: 'Automatically organize notes with intelligent tags.' },
@@ -303,13 +305,20 @@
       if (!data || !appDetail) return;
 
       // Update detail view
-      var detailIconSymbol = document.getElementById('detailIconSymbol');
       var detailName = document.getElementById('detailName');
       var detailSlogan = document.getElementById('detailSlogan');
       var detailActions = document.getElementById('detailActions');
       var detailFeatures = document.getElementById('detailFeatures');
 
-      if (detailIconSymbol) detailIconSymbol.textContent = data.icon;
+      // Update icon
+      var detailIcon = document.getElementById('detailIcon');
+      if (detailIcon) {
+        if (data.iconImg) {
+          detailIcon.innerHTML = '<img src="' + data.iconImg + '" alt="' + data.name + '">';
+        } else {
+          detailIcon.innerHTML = '<span class="material-symbols-rounded">' + data.icon + '</span>';
+        }
+      }
       if (detailName) detailName.textContent = data.name;
       if (detailSlogan) detailSlogan.textContent = data.slogan;
 
@@ -317,7 +326,7 @@
       if (detailActions) {
         if (data.status === 'available') {
           detailActions.innerHTML =
-            '<a href="#" class="btn btn-primary">Download <span class="material-symbols-rounded">download</span></a>';
+            '<a href="#" class="btn btn-primary">Download</a>';
         } else {
           detailActions.innerHTML =
             '<span class="btn btn-secondary btn-disabled">Coming Soon</span>';
@@ -337,6 +346,20 @@
             '</div>' +
             '</div>';
         });
+      }
+
+      // Update screenshot
+      var detailScreenshot = document.querySelector('.app-detail-screenshot');
+      if (detailScreenshot) {
+        if (data.screenshot) {
+          detailScreenshot.innerHTML = '<img src="' + data.screenshot + '" alt="' + data.name + ' Screenshot">';
+        } else {
+          detailScreenshot.innerHTML =
+            '<div class="screenshot-placeholder">' +
+            '<span class="material-symbols-rounded">smartphone</span>' +
+            '<span>Screenshot</span>' +
+            '</div>';
+        }
       }
 
       // Show detail, hide grid
