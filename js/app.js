@@ -344,7 +344,7 @@
       if (appGrid) appGrid.style.display = 'none';
 
       // Update page title
-      document.title = data.name + ' - Paper Ecosystem';
+      document.title = data.name + ' - Stand Alone Studio';
 
       // Re-trigger fade-in
       var fadeItems = appDetail.querySelectorAll('.fade-in');
