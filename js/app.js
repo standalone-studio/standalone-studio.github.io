@@ -397,17 +397,50 @@
   });
 
   /* ============================================================
-     9. SEARCH TOGGLE (Non-home pages)
+     9. SEARCH PANEL (Non-home pages)
+     Slides down a search panel when search icon is tapped
      ============================================================ */
   var searchToggle = document.getElementById('searchToggle');
+  var searchPanel = document.getElementById('searchPanel');
 
-  if (searchToggle) {
+  if (searchToggle && searchPanel) {
+    var searchPanelInput = searchPanel.querySelector('input');
+
     searchToggle.addEventListener('click', function () {
-      var query = prompt('Search Paper:');
-      if (query && query.trim()) {
-        window.location.href = 'index.html?q=' + encodeURIComponent(query.trim());
+      var isOpen = searchPanel.classList.contains('open');
+      searchPanel.classList.toggle('open');
+
+      if (!isOpen && searchPanelInput) {
+        setTimeout(function () {
+          searchPanelInput.focus();
+        }, 100);
       }
     });
+
+    // Close when clicking outside
+    document.addEventListener('click', function (e) {
+      if (searchPanel.classList.contains('open') &&
+          !searchPanel.contains(e.target) &&
+          !searchToggle.contains(e.target)) {
+        searchPanel.classList.remove('open');
+      }
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && searchPanel.classList.contains('open')) {
+        searchPanel.classList.remove('open');
+      }
+    });
+
+    // Submit search
+    if (searchPanelInput) {
+      searchPanelInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' && this.value.trim()) {
+          window.location.href = 'index.html?q=' + encodeURIComponent(this.value.trim());
+        }
+      });
+    }
   }
 
   /* ============================================================
