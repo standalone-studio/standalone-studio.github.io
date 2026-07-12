@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Paper Ecosystem - A premium suite of creative applications by Standalone Studio">
+  <meta name="theme-color" content="#090909">
+  <title>Paper Ecosystem</title>
+
+  <!-- Google Fonts - Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Material Symbols Rounded -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR - LIQUID GLASS
+       ============================================================ -->
+  <nav class="navbar liquid-glass" id="navbar">
+    <div class="liquid-glass-highlight"></div>
+    <div class="navbar-inner">
+      <!-- Left: Hamburger + Brand -->
+      <div class="navbar-left">
+        <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+          <span class="material-symbols-rounded">menu</span>
+        </button>
+        <a href="index.html" class="navbar-brand">
+          <div class="brand-icon">
+            <span class="material-symbols-rounded">description</span>
+          </div>
+          <span>Paper</span>
+        </a>
+      </div>
+
+      <!-- Center: Search -->
+      <div class="navbar-center">
+        <div class="search-bar">
+          <span class="material-symbols-rounded">search</span>
+          <input type="text" placeholder="Search Paper..." id="searchInput">
+        </div>
+      </div>
+
+      <!-- Right: Account -->
+      <div class="navbar-right">
+        <button class="navbar-btn" aria-label="Account">
+          <span class="material-symbols-rounded">account_circle</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu-nav">
+      <a href="index.html" class="mobile-menu-link active">
+        <span class="material-symbols-rounded">home</span>
+        Home
+      </a>
+      <a href="apps.html" class="mobile-menu-link">
+        <span class="material-symbols-rounded">apps</span>
+        Apps
+      </a>
+      <a href="store.html" class="mobile-menu-link">
+        <span class="material-symbols-rounded">storefront</span>
+        Store
+      </a>
+      <a href="support.html" class="mobile-menu-link">
+        <span class="material-symbols-rounded">help_circle</span>
+        Support
+      </a>
+      <a href="about.html" class="mobile-menu-link">
+        <span class="material-symbols-rounded">info</span>
+        About
+      </a>
+    </nav>
+  </div>
+
+  <!-- ============================================================
+       DOCK APPS - LIQUID GLASS
+       ============================================================ -->
+  <div class="dock-wrapper liquid-glass" id="dockWrapper">
+    <div class="liquid-glass-highlight"></div>
+    <div class="dock" id="dock">
+      <div class="dock-inner" id="dockInner">
+        <a href="#paperleaf" class="dock-item active" data-index="0">
+          <div class="dock-item-icon liquid-glass">
+            <div class="liquid-glass-highlight"></div>
+            <span class="material-symbols-rounded">auto_awesome</span>
+          </div>
+          <span class="dock-item-name">Paperleaf</span>
+        </a>
+        <a href="#paperbook" class="dock-item" data-index="1">
+          <div class="dock-item-icon liquid-glass">
+            <div class="liquid-glass-highlight"></div>
+            <span class="material-symbols-rounded">menu_book</span>
+          </div>
+          <span class="dock-item-name">Paper Book</span>
+        </a>
+        <a href="#paperstudio" class="dock-item" data-index="2">
+          <div class="dock-item-icon liquid-glass">
+            <div class="liquid-glass-highlight"></div>
+            <span class="material-symbols-rounded">palette</span>
+          </div>
+          <span class="dock-item-name">Paper Studio</span>
+        </a>
+        <a href="#paperpaint" class="dock-item" data-index="3">
+          <div class="dock-item-icon liquid-glass">
+            <div class="liquid-glass-highlight"></div>
+            <span class="material-symbols-rounded">brush</span>
+          </div>
+          <span class="dock-item-name">Paper Paint</span>
+        </a>
+        <a href="#paperspace" class="dock-item" data-index="4">
+          <div class="dock-item-icon liquid-glass">
+            <div class="liquid-glass-highlight"></div>
+            <span class="material-symbols-rounded">cloud</span>
+          </div>
+          <span class="dock-item-name">Paper Space</span>
+        </a>
+        <a href="#papermusic" class="dock-item" data-index="5">
+          <div class="dock-item-icon liquid-glass">
+            <div class="liquid-glass-highlight"></div>
+            <span class="material-symbols-rounded">music_note</span>
+          </div>
+          <span class="dock-item-name">Paper Music</span>
+        </a>
+      </div>
+    </div>
+    <div class="dock-dots" id="dockDots">
+      <div class="dock-dot active"></div>
+      <div class="dock-dot"></div>
+      <div class="dock-dot"></div>
+      <div class="dock-dot"></div>
+      <div class="dock-dot"></div>
+      <div class="dock-dot"></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
+  <main class="page-content">
+
+    <!-- Hero Section -->
+    <section class="section container">
+      <div class="section-header fade-in">
+        <span class="label">Welcome to</span>
+        <h1 class="heading-xl">Paper Ecosystem</h1>
+        <p class="body-lg" style="margin-top: 16px;">
+          A premium suite of creative applications designed for makers, thinkers, and dreamers.
+        </p>
+      </div>
+    </section>
+
+    <hr class="divider container">
+
+    <!-- Paperleaf -->
+    <section class="section container" id="paperleaf">
+      <div class="app-card fade-in">
+        <div class="app-card-inner">
+          <div class="app-card-info">
+            <div class="app-card-icon">
+              <span class="material-symbols-rounded">auto_awesome</span>
+            </div>
+            <h2 class="app-card-name">Paperleaf</h2>
+            <p class="app-card-slogan">Your digital notebook, reimagined.</p>
+            <p class="app-card-desc">
+              A beautifully crafted note-taking app that feels like writing on real paper. Capture thoughts, organize ideas, and let your creativity flow.
+            </p>
+            <div class="app-card-actions">
+              <a href="apps.html#paperleaf" class="btn btn-secondary">
+                Selengkapnya
+                <span class="material-symbols-rounded">arrow_forward</span>
+              </a>
+              <a href="#" class="btn btn-primary">
+                Download
+                <span class="material-symbols-rounded">download</span>
+              </a>
+            </div>
+          </div>
+          <div class="app-card-screenshot">
+            <div class="screenshot-placeholder">
+              <span class="material-symbols-rounded">smartphone</span>
+              <span>Screenshot</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Paper Book -->
+    <section class="section container" id="paperbook">
+      <div class="app-card fade-in">
+        <div class="app-card-inner">
+          <div class="app-card-info">
+            <div class="app-card-icon">
+              <span class="material-symbols-rounded">menu_book</span>
+            </div>
+            <h2 class="app-card-name">Paper Book</h2>
+            <p class="app-card-slogan">Read without boundaries.</p>
+            <p class="app-card-desc">
+              An immersive reading experience with a minimal, distraction-free interface. Your personal library, always within reach.
+            </p>
+            <div class="app-card-actions">
+              <a href="apps.html#paperbook" class="btn btn-secondary">
+                Selengkapnya
+                <span class="material-symbols-rounded">arrow_forward</span>
+              </a>
+              <span class="btn btn-secondary btn-disabled">
+                Coming Soon
+              </span>
+            </div>
+          </div>
+          <div class="app-card-screenshot">
+            <div class="screenshot-placeholder">
+              <span class="material-symbols-rounded">smartphone</span>
+              <span>Screenshot</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Paper Studio -->
+    <section class="section container" id="paperstudio">
+      <div class="app-card fade-in">
+        <div class="app-card-inner">
+          <div class="app-card-info">
+            <div class="app-card-icon">
+              <span class="material-symbols-rounded">palette</span>
+            </div>
+            <h2 class="app-card-name">Paper Studio</h2>
+            <p class="app-card-slogan">Design with intention.</p>
+            <p class="app-card-desc">
+              A professional design tool that brings your ideas to life. Craft stunning visuals with precision and elegance.
+            </p>
+            <div class="app-card-actions">
+              <a href="apps.html#paperstudio" class="btn btn-secondary">
+                Selengkapnya
+                <span class="material-symbols-rounded">arrow_forward</span>
+              </a>
+              <span class="btn btn-secondary btn-disabled">
+                Coming Soon
+              </span>
+            </div>
+          </div>
+          <div class="app-card-screenshot">
+            <div class="screenshot-placeholder">
+              <span class="material-symbols-rounded">smartphone</span>
+              <span>Screenshot</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Paper Paint -->
+    <section class="section container" id="paperpaint">
+      <div class="app-card fade-in">
+        <div class="app-card-inner">
+          <div class="app-card-info">
+            <div class="app-card-icon">
+              <span class="material-symbols-rounded">brush</span>
+            </div>
+            <h2 class="app-card-name">Paper Paint</h2>
+            <p class="app-card-slogan">Paint your imagination.</p>
+            <p class="app-card-desc">
+              A digital painting app with natural brushes and intuitive controls. Express yourself through color and texture.
+            </p>
+            <div class="app-card-actions">
+              <a href="apps.html#paperpaint" class="btn btn-secondary">
+                Selengkapnya
+                <span class="material-symbols-rounded">arrow_forward</span>
+              </a>
+              <span class="btn btn-secondary btn-disabled">
+                Coming Soon
+              </span>
+            </div>
+          </div>
+          <div class="app-card-screenshot">
+            <div class="screenshot-placeholder">
+              <span class="material-symbols-rounded">smartphone</span>
+              <span>Screenshot</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Paper Space -->
+    <section class="section container" id="paperspace">
+      <div class="app-card fade-in">
+        <div class="app-card-inner">
+          <div class="app-card-info">
+            <div class="app-card-icon">
+              <span class="material-symbols-rounded">cloud</span>
+            </div>
+            <h2 class="app-card-name">Paper Space</h2>
+            <p class="app-card-slogan">Your workspace, everywhere.</p>
+            <p class="app-card-desc">
+              A seamless cloud workspace that keeps your files and projects accessible across all your devices.
+            </p>
+            <div class="app-card-actions">
+              <a href="apps.html#paperspace" class="btn btn-secondary">
+                Selengkapnya
+                <span class="material-symbols-rounded">arrow_forward</span>
+              </a>
+              <span class="btn btn-secondary btn-disabled">
+                Coming Soon
+              </span>
+            </div>
+          </div>
+          <div class="app-card-screenshot">
+            <div class="screenshot-placeholder">
+              <span class="material-symbols-rounded">smartphone</span>
+              <span>Screenshot</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Paper Music -->
+    <section class="section container" id="papermusic">
+      <div class="app-card fade-in">
+        <div class="app-card-inner">
+          <div class="app-card-info">
+            <div class="app-card-icon">
+              <span class="material-symbols-rounded">music_note</span>
+            </div>
+            <h2 class="app-card-name">Paper Music</h2>
+            <p class="app-card-slogan">Sound, simplified.</p>
+            <p class="app-card-desc">
+              Create, record, and share music with a clean and inspiring interface. From melody to mastery.
+            </p>
+            <div class="app-card-actions">
+              <a href="apps.html#papermusic" class="btn btn-secondary">
+                Selengkapnya
+                <span class="material-symbols-rounded">arrow_forward</span>
+              </a>
+              <span class="btn btn-secondary btn-disabled">
+                Coming Soon
+              </span>
+            </div>
+          </div>
+          <div class="app-card-screenshot">
+            <div class="screenshot-placeholder">
+              <span class="material-symbols-rounded">smartphone</span>
+              <span>Screenshot</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="brand-icon">
+            <span class="material-symbols-rounded">description</span>
+          </div>
+          <span>Paper Ecosystem</span>
+        </div>
+        <div class="footer-links">
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Terms of Service</a>
+          <a href="#" class="footer-link">Cookie Policy</a>
+          <a href="#" class="footer-link">License</a>
+          <a href="support.html" class="footer-link">Support</a>
+          <a href="#" class="footer-link">GitHub</a>
+          <a href="#" class="footer-link">Google Play</a>
+          <a href="#" class="footer-link">Contact</a>
+        </div>
+        <p class="footer-copyright">&copy; 2026 Standalone Studio</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main Script -->
+  <script src="js/app.js"></script>
+</body>
+</html>
