@@ -158,7 +158,7 @@ input {
 }
 
 .page-content {
-  padding-top: 100px;
+  padding-top: 0;
   padding-bottom: 120px;
   min-height: 100vh;
 }
@@ -191,10 +191,7 @@ input {
 }
 
 .divider {
-  height: 1px;
-  background: #2A2A2A;
-  border: none;
-  margin: 0;
+  display: none; /* Hide any remaining dividers */
 }
 
 /* ============================================================
@@ -214,13 +211,13 @@ input {
   background: rgba(9, 9, 9, 0.6);
   backdrop-filter: blur(40px) saturate(1.5);
   -webkit-backdrop-filter: blur(40px) saturate(1.5);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: none; /* Removed border for a cleaner look */
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .navbar.scrolled {
   background: rgba(9, 9, 9, 0.85);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+  box-shadow: none; /* Removed box-shadow to keep it unified */
 }
 
 .navbar-inner {
@@ -489,19 +486,17 @@ input {
 .hero-header {
   position: relative;
   width: 100%;
-  height: 90vh;
-  min-height: 600px;
+  height: 100vh;
+  min-height: 800px;
   background-image: url('../assets/images/header.webp');
   background-size: cover;
-  background-position: center;
+  background-position: center bottom;
   background-repeat: no-repeat;
   display: flex;
-  align-items: flex-end; /* Align content to the bottom */
-  justify-content: center; /* Center content horizontally */
+  align-items: flex-end;
+  justify-content: center;
   overflow: visible;
-  /* Improve image clarity */
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
+  image-rendering: auto;
 }
 
 .hero-header-overlay {
@@ -513,8 +508,8 @@ input {
   background: linear-gradient(
     to bottom,
     rgba(9, 9, 9, 0) 0%,
-    rgba(9, 9, 9, 0.2) 40%,
-    rgba(9, 9, 9, 0.6) 70%,
+    rgba(9, 9, 9, 0) 60%,
+    rgba(9, 9, 9, 0.9) 90%,
     rgba(9, 9, 9, 1) 100%
   );
   z-index: 1;
@@ -525,34 +520,37 @@ input {
   z-index: 2;
   text-align: center;
   max-width: 1000px;
-  padding: 0 24px 80px; /* Padding bottom to lift it slightly from the edge */
+  padding: 0 24px 30px; /* Even closer to the bottom to clear the phones */
 }
 
 .hero-header-content .label {
   color: #FFFFFF;
-  opacity: 0.9;
-  margin-bottom: 24px;
+  opacity: 0.8;
+  margin-bottom: 12px;
   display: block;
-  font-size: 0.875rem;
-  letter-spacing: 0.25em; /* Spaced out like reference */
-  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.3em;
+  font-weight: 500;
   text-transform: uppercase;
 }
 
 .hero-header-content .heading-xl {
-  margin-bottom: 24px;
-  font-size: clamp(3.5rem, 10vw, 6rem); /* Larger typography */
+  margin-bottom: 16px;
+  font-size: clamp(3.5rem, 8vw, 5.5rem);
   line-height: 1;
   letter-spacing: -0.04em;
-  white-space: nowrap; /* Keep it on one line as requested */
+  font-weight: 800;
+  white-space: nowrap;
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.8); /* Stronger shadow for legibility */
 }
 
 .hero-header-content .body-lg {
-  max-width: 750px;
+  max-width: 700px;
   margin: 0 auto;
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 1.25rem;
-  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.125rem;
+  line-height: 1.5;
+  font-weight: 400;
 }
 
 @media (max-width: 1024px) {
@@ -576,12 +574,11 @@ input {
 
 .app-card {
   background: #171717;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: none; /* Removed border */
   border-radius: 24px;
   overflow: hidden;
   transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              box-shadow 0.35s ease,
-              border-color 0.35s ease;
+              box-shadow 0.35s ease;
 }
 
 .app-card:hover {
@@ -709,7 +706,7 @@ input {
 /* Compact Card for Apps Page */
 .app-compact-card {
   background: #171717;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: none; /* Removed border */
   border-radius: 24px;
   padding: 32px;
   display: flex;
@@ -717,8 +714,7 @@ input {
   gap: 16px;
   cursor: pointer;
   transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              box-shadow 0.35s ease,
-              border-color 0.35s ease;
+              box-shadow 0.35s ease;
 }
 
 .app-compact-card:hover {
@@ -1195,7 +1191,7 @@ input {
    ============================================================ */
 
 .footer {
-  border-top: 1px solid #2A2A2A;
+  border-top: none; /* Removed border to blend with the page */
   padding: 48px 0 32px;
 }
 
