@@ -37,24 +37,46 @@
     <div class="liquid-glass-highlight"></div>
     <div class="navbar-inner">
       <div class="navbar-left">
-        <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-          <span class="material-symbols-rounded">menu</span>
-        </button>
+        <a href="index.html" class="navbar-brand" aria-label="Home">
+          <div class="brand-icon">
+            <img src="assets/icons/stalone_white.png" alt="Standalone Studio Logo" loading="lazy" decoding="async">
+          </div>
+        </a>
       </div>
-      <div class="navbar-nav" id="navbarNav">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="apps.html" class="nav-link">Apps</a>
-        <a href="store.html" class="nav-link active">Store</a>
+
+      <div class="navbar-nav">
+        <div class="nav-item">
+          <a href="apps.html" class="nav-link">Apps</a>
+          <div class="dropdown-menu">
+            <a href="paperleaf/index.html" class="dropdown-link">Paperleaf</a>
+            <a href="apps.html#paperbook" class="dropdown-link">Paper Book</a>
+            <a href="apps.html#paperstudio" class="dropdown-link">Paper Studio</a>
+            <a href="apps.html#paperpaint" class="dropdown-link">Paper Paint</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="store.html" class="nav-link active">Market</a>
+          <div class="dropdown-menu">
+            <a href="store.html#tema" class="dropdown-link">Tema</a>
+            <a href="store.html#sampul" class="dropdown-link">Sampul</a>
+            <a href="store.html#template" class="dropdown-link">Template</a>
+            <a href="store.html#buku" class="dropdown-link">Buku</a>
+          </div>
+        </div>
         <a href="support.html" class="nav-link">Support</a>
-        <a href="about.html" class="nav-link">About</a>
+        <div class="nav-item">
+          <a href="about.html" class="nav-link">About</a>
+          <div class="dropdown-menu">
+            <a href="about.html#paperleaf-about" class="dropdown-link">Paperleaf</a>
+            <a href="about.html#developer" class="dropdown-link">Developer</a>
+          </div>
+        </div>
       </div>
+
       <div class="navbar-right">
         <button class="navbar-btn" aria-label="Search" id="searchToggle">
           <span class="material-symbols-rounded">search</span>
         </button>
-        <a href="index.html" class="navbar-btn" aria-label="Home">
-          <img src="assets/icons/stalone_white.png" alt="Standalone Studio Logo" loading="lazy" decoding="async">
-        </a>
       </div>
     </div>
   </nav>
@@ -66,25 +88,6 @@
     </div>
   </div>
 
-  <div class="mobile-menu" id="mobileMenu">
-    <nav class="mobile-menu-nav">
-      <a href="index.html" class="mobile-menu-link">
-        Home
-      </a>
-      <a href="apps.html" class="mobile-menu-link">
-        Apps
-      </a>
-      <a href="store.html" class="mobile-menu-link active">
-        Store
-      </a>
-      <a href="support.html" class="mobile-menu-link">
-        Support
-      </a>
-      <a href="about.html" class="mobile-menu-link">
-        About
-      </a>
-    </nav>
-  </div>
 
 
 
@@ -92,7 +95,7 @@
     <section class="section fade-in">
       <div class="section-header">
         <span class="label">Marketplace</span>
-        <h1 class="heading-lg">Store</h1>
+        <h1 class="heading-lg">Market</h1>
         <p class="body-lg">Browse our collection of assets, resources, and creative tools to enhance your Paper experience.</p>
       </div>
     </section>
@@ -113,21 +116,21 @@
           <div class="store-card-name">Brushes</div>
           <div class="store-card-count">18 Items</div>
         </div>
-        <div class="store-card fade-in fade-in-delay-3">
+        <div class="store-card fade-in fade-in-delay-3" id="template">
           <div class="store-card-icon">
             <span class="material-symbols-rounded">dashboard</span>
           </div>
           <div class="store-card-name">Templates</div>
           <div class="store-card-count">12 Items</div>
         </div>
-        <div class="store-card fade-in fade-in-delay-4">
+        <div class="store-card fade-in fade-in-delay-4" id="tema">
           <div class="store-card-icon">
             <span class="material-symbols-rounded">palette</span>
           </div>
           <div class="store-card-name">Themes</div>
           <div class="store-card-count">15 Items</div>
         </div>
-        <div class="store-card fade-in fade-in-delay-5">
+        <div class="store-card fade-in fade-in-delay-5" id="sampul">
           <div class="store-card-icon">
             <span class="material-symbols-rounded">book</span>
           </div>
@@ -141,11 +144,11 @@
           <div class="store-card-name">Stickers</div>
           <div class="store-card-count">32 Items</div>
         </div>
-        <div class="store-card fade-in">
+        <div class="store-card fade-in" id="buku">
           <div class="store-card-icon">
-            <span class="material-symbols-rounded">icon</span>
+            <span class="material-symbols-rounded">menu_book</span>
           </div>
-          <div class="store-card-name">Icons</div>
+          <div class="store-card-name">Digital Books</div>
           <div class="store-card-count">45 Items</div>
         </div>
       </div>
