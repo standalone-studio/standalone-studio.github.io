@@ -5,51 +5,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Penghapusan Akun - Paperleaf</title>
-    <link rel="stylesheet" href="css/style.css">
+
     <!-- Google Fonts - Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Material Symbols Rounded -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body>
-    <div class="container">
-        <header>
-            <h1>Penghapusan Akun & Data</h1>
-            <p class="tagline">Instruksi Penghapusan</p>
+<body class="has-dock">
+
+    <!-- NAVBAR -->
+    <nav class="navbar scrolled" id="navbar">
+      <div class="navbar-inner">
+        <div class="navbar-left">
+          <a href="../index.html" class="navbar-brand">
+            <div class="brand-icon">
+              <img src="../assets/icons/stalone_white.png" alt="Standalone Studio Logo">
+            </div>
+            <span>Standalone Studio</span>
+          </a>
+        </div>
+        <div class="navbar-right">
+          <a href="../index.html" class="navbar-btn" aria-label="Home">
+            <span class="material-symbols-rounded">home</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="page-content container">
+        <a href="../index.html" class="back-link">
+          <span class="material-symbols-rounded">arrow_back</span>
+          Kembali ke Beranda
+        </a>
+
+        <header class="section-header fade-in visible">
+            <span class="label">Support</span>
+            <h1 class="heading-lg">Penghapusan Akun & Data</h1>
+            <p class="body-md">Instruksi Penghapusan</p>
         </header>
 
-        <nav>
-            <a href="../index.html">Beranda</a>
-            <a href="privacy.html">Kebijakan Privasi</a>
-            <a href="term_of_service.html">Syarat & Ketentuan</a>
-            <a href="delete-account.html">Hapus Akun</a>
-        </nav>
+        <section class="section fade-in visible">
+            <div class="app-card" style="padding: 40px; text-align: left;">
+                <h2 class="heading-md mb-16">Cara Menghapus Akun</h2>
+                <p class="body-md mb-24">Kami memberikan kendali penuh atas data Anda. Ada dua cara untuk menghapus akun dan data Anda:</p>
 
-        <section>
-            <h2>Cara Menghapus Akun</h2>
-            <p>Kami memberikan kendali penuh atas data Anda. Ada dua cara untuk menghapus akun dan data Anda:</p>
+                <h3 class="heading-sm mb-12">1. Melalui Aplikasi (Instan)</h3>
+                <ol class="body-md mb-32" style="list-style: decimal; padding-left: 20px;">
+                    <li class="mb-8">Buka aplikasi <strong>Paperleaf</strong>.</li>
+                    <li class="mb-8">Buka menu <strong>Pengaturan</strong> (Ikon profil).</li>
+                    <li class="mb-8">Pilih <strong>Hapus Akun</strong> di bagian bawah.</li>
+                    <li class="mb-8">Konfirmasi pilihan Anda. Semua data di cloud dan lokal akan segera dihapus.</li>
+                </ol>
 
-            <h3>1. Melalui Aplikasi (Instan)</h3>
-            <ol>
-                <li>Buka aplikasi <strong>Paperleaf</strong>.</li>
-                <li>Buka menu <strong>Pengaturan</strong> (Ikon profil).</li>
-                <li>Pilih <strong>Hapus Akun</strong> di bagian bawah.</li>
-                <li>Konfirmasi pilihan Anda. Semua data di cloud dan lokal akan segera dihapus.</li>
-            </ol>
+                <h3 class="heading-sm mb-12">2. Melalui Permintaan Email</h3>
+                <p class="body-md">Jika Anda sudah menghapus aplikasi dan ingin kami menghapus data Anda dari server, silakan kirim email kepada kami:</p>
 
-            <h3>2. Melalui Permintaan Email</h3>
-            <p>Jika Anda sudah menghapus aplikasi dan ingin kami menghapus data Anda dari server, silakan kirim email kepada kami:</p>
-            <div class="contact-box">
-                <strong>Kirim ke:</strong> stalone.studio@gmail.com<br>
-                <strong>Subjek:</strong> Permintaan Penghapusan Akun Paperleaf<br>
-                <strong>Isi:</strong> Sertakan alamat email yang Anda gunakan untuk mendaftar.
+                <div class="mt-24 p-24 mb-24" style="background: rgba(255,255,255,0.05); border-radius: 16px; border-left: 4px solid #FFFFFF;">
+                    <strong style="color: #FFFFFF;">Kirim ke:</strong> stalone.studio@gmail.com<br>
+                    <strong style="color: #FFFFFF;">Subjek:</strong> Permintaan Penghapusan Akun Paperleaf<br>
+                    <strong style="color: #FFFFFF;">Isi:</strong> Sertakan alamat email yang Anda gunakan untuk mendaftar.
+                </div>
+
+                <p class="body-sm" style="font-style: italic;">Kami akan memproses permintaan Anda dalam waktu maksimal 3 hari kerja.</p>
             </div>
-            <p>Kami akan memproses permintaan Anda dalam waktu maksimal 3 hari kerja.</p>
         </section>
+    </main>
 
-        <footer>
-            <p>&copy; 2026 Standalone Studio.</p>
-        </footer>
-    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <p class="footer-copyright">&copy; 2026 Standalone Studio</p>
+        </div>
+      </div>
+    </footer>
+
 </body>
 </html>

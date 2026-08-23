@@ -5,54 +5,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kebijakan Privasi - Paperleaf</title>
-    <link rel="stylesheet" href="css/style.css">
+
     <!-- Google Fonts - Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Material Symbols Rounded -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body>
-    <div class="container">
-        <header>
-            <h1>Kebijakan Privasi</h1>
-            <p class="tagline">Terakhir diperbarui: 14 Agustus 2026</p>
+<body class="has-dock">
+
+    <!-- NAVBAR -->
+    <nav class="navbar scrolled" id="navbar">
+      <div class="navbar-inner">
+        <div class="navbar-left">
+          <a href="../index.html" class="navbar-brand">
+            <div class="brand-icon">
+              <img src="../assets/icons/stalone_white.png" alt="Standalone Studio Logo">
+            </div>
+            <span>Standalone Studio</span>
+          </a>
+        </div>
+        <div class="navbar-right">
+          <a href="../index.html" class="navbar-btn" aria-label="Home">
+            <span class="material-symbols-rounded">home</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="page-content container">
+        <a href="../index.html" class="back-link">
+          <span class="material-symbols-rounded">arrow_back</span>
+          Kembali ke Beranda
+        </a>
+
+        <header class="section-header fade-in visible">
+            <span class="label">Legal</span>
+            <h1 class="heading-lg">Kebijakan Privasi</h1>
+            <p class="body-md">Terakhir diperbarui: 14 Agustus 2026</p>
         </header>
 
-        <nav>
-            <a href="../index.html">Beranda</a>
-            <a href="privacy.html">Kebijakan Privasi</a>
-            <a href="term_of_service.html">Syarat & Ketentuan</a>
-            <a href="delete-account.html">Hapus Akun</a>
-        </nav>
+        <section class="section fade-in visible">
+            <div class="app-card" style="padding: 40px; text-align: left;">
+                <p class="body-md">Selamat datang di Paperleaf! Kami menghargai privasi Anda dan berkomitmen untuk melindungi data pribadi Anda.</p>
 
-        <section>
-            <p>Selamat datang di Paperleaf! Kami menghargai privasi Anda dan berkomitmen untuk melindungi data pribadi Anda.</p>
+                <h3 class="heading-sm mt-32 mb-16">1. Informasi yang Kami Kumpulkan</h3>
+                <ul class="body-md" style="list-style: disc; padding-left: 20px;">
+                    <li class="mb-8"><strong>Informasi Akun:</strong> Alamat email dan nama profil melalui Google/Firebase.</li>
+                    <li class="mb-8"><strong>Konten Pengguna:</strong> Teks, gambar sketsa, dan desain jurnal Anda.</li>
+                    <li class="mb-8"><strong>Data Teknis:</strong> Laporan kesalahan (Crashlytics) untuk perbaikan aplikasi.</li>
+                </ul>
 
-            <h3>1. Informasi yang Kami Kumpulkan</h3>
-            <ul>
-                <li><strong>Informasi Akun:</strong> Alamat email dan nama profil melalui Google/Firebase.</li>
-                <li><strong>Konten Pengguna:</strong> Teks, gambar sketsa, dan desain jurnal Anda.</li>
-                <li><strong>Data Teknis:</strong> Laporan kesalahan (Crashlytics) untuk perbaikan aplikasi.</li>
-            </ul>
+                <h3 class="heading-sm mt-32 mb-16">2. Penggunaan Informasi</h3>
+                <p class="body-md">Kami menggunakan informasi untuk menyediakan fungsi jurnal, sinkronisasi data, dan peningkatan fitur aplikasi.</p>
 
-            <h3>2. Penggunaan Informasi</h3>
-            <p>Kami menggunakan informasi untuk menyediakan fungsi jurnal, sinkronisasi data, dan peningkatan fitur aplikasi.</p>
+                <h3 class="heading-sm mt-32 mb-16">3. Layanan Pihak Ketiga</h3>
+                <p class="body-md">Kami menggunakan layanan Google Play Services dan Firebase untuk autentikasi dan penyimpanan cloud yang aman.</p>
 
-            <h3>3. Layanan Pihak Ketiga</h3>
-            <p>Kami menggunakan layanan Google Play Services dan Firebase untuk autentikasi dan penyimpanan cloud yang aman.</p>
+                <h3 class="heading-sm mt-32 mb-16">4. Hak Anda</h3>
+                <p class="body-md">Anda berhak mengakses, memperbaiki, atau menghapus data Anda kapan saja melalui pengaturan di dalam aplikasi.</p>
 
-            <h3>4. Hak Anda</h3>
-            <p>Anda berhak mengakses, memperbaiki, atau menghapus data Anda kapan saja melalui pengaturan di dalam aplikasi.</p>
-
-            <div class="contact-box">
-                <strong>Kontak Dukungan:</strong><br>
-                Email: stalone.studio@gmail.com
+                <div class="mt-48 p-24" style="background: rgba(255,255,255,0.05); border-radius: 16px; border-left: 4px solid #FFFFFF;">
+                    <strong style="color: #FFFFFF;">Kontak Dukungan:</strong><br>
+                    <span class="body-md">Email: stalone.studio@gmail.com</span>
+                </div>
             </div>
         </section>
+    </main>
 
-        <footer>
-            <p>&copy; 2026 Standalone Studio.</p>
-        </footer>
-    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <p class="footer-copyright">&copy; 2026 Standalone Studio</p>
+        </div>
+      </div>
+    </footer>
+
 </body>
 </html>
