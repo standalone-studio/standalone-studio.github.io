@@ -29,94 +29,8 @@
      ============================================================ */
 
   /* ============================================================
-     3. DOCK BEHAVIOR
+     3. DOCK BEHAVIOR REMOVED
      ============================================================ */
-  var dock = document.getElementById('dock');
-  var dockInner = document.getElementById('dockInner');
-  var dockItems = document.querySelectorAll('.dock-item');
-  var dockDots = document.querySelectorAll('.dock-dot');
-
-  function updateDockCenter() {
-    if (!dock || !dockItems.length) return;
-
-    var dockRect = dock.getBoundingClientRect();
-    var dockCenter = dockRect.left + dockRect.width / 2;
-    var closestIndex = 0;
-    var closestDistance = Infinity;
-
-    dockItems.forEach(function (item, index) {
-      var itemRect = item.getBoundingClientRect();
-      var itemCenter = itemRect.left + itemRect.width / 2;
-      var distance = Math.abs(dockCenter - itemCenter);
-
-      if (distance < closestDistance) {
-        closestDistance = distance;
-        closestIndex = index;
-      }
-    });
-
-    dockItems.forEach(function (item, index) {
-      var diff = Math.abs(index - closestIndex);
-      var icon = item.querySelector('.dock-item-icon');
-      var name = item.querySelector('.dock-item-name');
-
-      if (index === closestIndex) {
-        item.classList.add('active');
-        item.style.transform = 'translateY(-6px) scale(1.12)';
-        icon.style.background = 'rgba(255, 255, 255, 0.12)';
-        icon.style.borderColor = 'rgba(255, 255, 255, 0.18)';
-        name.style.color = '#FFFFFF';
-        name.style.opacity = '1';
-      } else if (diff === 1) {
-        item.classList.remove('active');
-        item.style.transform = 'translateY(-3px) scale(1.05)';
-        icon.style.background = 'rgba(255, 255, 255, 0.08)';
-        icon.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-        name.style.color = '#B8B8B8';
-        name.style.opacity = '0.8';
-      } else {
-        item.classList.remove('active');
-        item.style.transform = 'translateY(0) scale(1)';
-        icon.style.background = 'rgba(255, 255, 255, 0.06)';
-        icon.style.borderColor = 'rgba(255, 255, 255, 0.08)';
-        name.style.color = '#B8B8B8';
-        name.style.opacity = '0.6';
-      }
-    });
-
-    dockDots.forEach(function (dot, index) {
-      if (index === closestIndex) {
-        dot.classList.add('active');
-      } else {
-        dot.classList.remove('active');
-      }
-    });
-  }
-
-  if (dock) {
-    dock.addEventListener('scroll', function () {
-      requestAnimationFrame(updateDockCenter);
-    }, { passive: true });
-
-    updateDockCenter();
-
-    window.addEventListener('resize', function () {
-      requestAnimationFrame(updateDockCenter);
-    }, { passive: true });
-  }
-
-  dockItems.forEach(function (item) {
-    item.addEventListener('click', function (e) {
-      var itemRect = item.getBoundingClientRect();
-      var dockRect = dock.getBoundingClientRect();
-      var scrollTarget = dock.scrollLeft + (itemRect.left - dockRect.left) - (dockRect.width / 2) + (itemRect.width / 2);
-
-      dock.scrollTo({
-        left: scrollTarget,
-        behavior: 'smooth'
-      });
-    });
-  });
 
   /* ============================================================
      4. LIQUID GLASS MOUSE TRACKING
@@ -470,23 +384,12 @@
   window.matchMedia('(prefers-color-scheme: change)').addEventListener('change', updateFavicon);
 
   /* ============================================================
-     12. PAGE-CONTENT PADDING (no dock pages)
+     12. PAGE-CONTENT PADDING REMOVED
      ============================================================ */
-  var dockWrapper = document.getElementById('dockWrapper');
-  var pageContent = document.querySelector('.page-content');
-  if (pageContent) {
-    if (dockWrapper) {
-      pageContent.classList.add('has-dock');
-    }
-  }
 
   /* ============================================================
      13. INITIAL SETUP
      ============================================================ */
   handleNavbarScroll();
-
-  setTimeout(function () {
-    updateDockCenter();
-  }, 100);
 
 })();
