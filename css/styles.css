@@ -21,12 +21,18 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll gaps */
+}
+
 body {
   font-family: 'Inter', system-ui, sans-serif;
   background-color: #090909;
   color: #FFFFFF;
   line-height: 1.6;
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -203,7 +209,7 @@ input {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 9999; /* Much higher z-index to ensure dropdowns are never covered */
   height: 72px;
   display: flex;
   align-items: center;
@@ -211,7 +217,7 @@ input {
   background: rgba(9, 9, 9, 0.6);
   backdrop-filter: blur(40px) saturate(1.5);
   -webkit-backdrop-filter: blur(40px) saturate(1.5);
-  border-bottom: none; /* Removed border for a cleaner look */
+  border-bottom: none;
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -227,6 +233,7 @@ input {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  overflow: visible; /* Prevent clipping dropdowns */
 }
 
 /* Left - Logo */
@@ -303,20 +310,20 @@ input {
   top: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(-10px);
-  background: rgba(18, 18, 18, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  padding: 8px;
-  min-width: 160px;
+  background: rgba(12, 12, 12, 0.98); /* Slightly more solid */
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 12px;
+  min-width: 180px;
   opacity: 0;
   visibility: hidden;
-  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
               opacity 0.3s ease,
               visibility 0.3s ease;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  z-index: 1001;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+  z-index: 10000; /* Ensure it stays above everything */
 }
 
 .nav-item:hover .dropdown-menu {
@@ -334,12 +341,12 @@ input {
   color: #B8B8B8;
   transition: all 0.2s ease;
   white-space: nowrap;
+  text-align: center; /* Center the text as requested */
 }
 
 .dropdown-link:hover {
   color: #FFFFFF;
   background: rgba(255, 255, 255, 0.08);
-  transform: translateX(4px);
 }
 
 /* Right - Search & Actions */
@@ -485,7 +492,11 @@ input {
 
 .hero-header {
   position: relative;
-  width: 100%;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   height: 100vh;
   min-height: 800px;
   background-image: url('../assets/images/header.webp');
