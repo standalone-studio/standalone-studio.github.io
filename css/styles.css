@@ -605,89 +605,104 @@ input {
 
 .app-card-inner {
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* Change to row to align icon/text left, image right */
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
   min-height: auto;
+  padding: 40px 0;
 }
 
 .app-card-info {
-  padding: 36px 0; /* Removed horizontal padding to align with container */
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 10px;
+  align-items: flex-start; /* Align text to the left */
+  text-align: left;
+  gap: 16px;
+  max-width: 500px;
 }
 
 .app-card-header {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
 }
 
 .app-card-icon {
-  width: 72px;
-  height: 72px;
+  width: 80px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 18px;
+  background: transparent;
+  border-radius: 20px;
   overflow: hidden;
   flex-shrink: 0;
-}
-
-.app-card-icon .material-symbols-rounded {
-  font-size: 32px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* Add subtle shadow to icons */
 }
 
 .app-card-icon img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 18px;
+  border-radius: 20px;
 }
 
 .app-card-name {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 700;
   letter-spacing: -0.02em;
 }
 
 .app-card-slogan {
-  font-size: 0.9375rem;
+  font-size: 1.125rem;
   color: #B8B8B8;
   font-style: italic;
 }
 
-.app-card-desc {
-  font-size: 0.875rem;
-  color: rgba(184, 184, 184, 0.8);
-  line-height: 1.6;
-}
-
 .app-card-actions {
   display: flex;
-  gap: 10px;
-  margin-top: 8px;
+  gap: 12px;
+  margin-top: 16px;
 }
 
 .app-card-screenshot {
-  background: transparent; /* Clean look */
+  flex: 1;
+  background: transparent;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end; /* Align image to the right */
   position: relative;
-  overflow: hidden;
-  margin: 0 0 36px; /* Removed side margins */
+  overflow: visible;
+  margin: 0;
   border-radius: 16px;
-  min-height: 200px;
+  max-width: 600px; /* Limit image width */
 }
 
 .app-card-screenshot img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* Add depth to screenshots */
+}
+
+@media (max-width: 900px) {
+  .app-card-inner {
+    flex-direction: column; /* Stack on smaller screens */
+    text-align: center;
+  }
+
+  .app-card-info {
+    align-items: center;
+    text-align: center;
+  }
+
+  .app-card-screenshot {
+    justify-content: center;
+    margin-top: 32px;
+  }
 }
 
 .screenshot-placeholder {
