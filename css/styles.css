@@ -174,7 +174,7 @@ input {
 }
 
 .section {
-  padding: 80px 0;
+  padding: 60px 0; /* Kurangi padding utama section agar tidak terlalu berjauhan */
 }
 
 .section-header {
@@ -217,6 +217,7 @@ input {
   background: rgba(9, 9, 9, 0.6);
   border-bottom: none;
   transition: background 0.3s ease, box-shadow 0.3s ease;
+  overflow: visible !important; /* CRITICAL FIX: Mencegah dropdown terpotong oleh overflow: hidden dari .liquid-glass */
 }
 
 .navbar::before {
@@ -605,22 +606,42 @@ input {
 
 .app-card-inner {
   display: flex;
-  flex-direction: row; /* Change to row to align icon/text left, image right */
+  flex-direction: row-reverse; /* Default: Image Left, Text Right */
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
+  gap: 60px; /* Jarak antara teks dan gambar */
   min-height: auto;
-  padding: 40px 0;
+  padding: 0; /* Menghapus padding vertikal yang berlebihan */
+}
+
+/* Modifikasi untuk orientasi khusus (Image Right, Text Left) */
+.app-card-inner.reverse-layout {
+  flex-direction: row;
 }
 
 .app-card-info {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align text to the left */
+  align-items: flex-start; /* Rata kiri default */
   text-align: left;
   gap: 16px;
   max-width: 500px;
+}
+
+/* Modifikasi rata kanan untuk tata letak khusus */
+.app-card-inner.reverse-layout .app-card-info {
+  align-items: flex-end; /* Rata Kanan */
+  text-align: right;
+}
+
+/* Perbaiki header (ikon + judul) agar rata kanan juga */
+.app-card-inner.reverse-layout .app-card-header {
+  flex-direction: row-reverse;
+}
+
+.app-card-inner.reverse-layout .app-card-actions {
+  justify-content: flex-end;
 }
 
 .app-card-header {
@@ -635,11 +656,11 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
+  background: transparent; /* Clean */
   border-radius: 20px;
   overflow: hidden;
   flex-shrink: 0;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* Add subtle shadow to icons */
+  box-shadow: none; /* Clean */
 }
 
 .app-card-icon img {
@@ -672,12 +693,17 @@ input {
   background: transparent;
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* Align image to the right */
+  justify-content: flex-start; /* Default gambar di kiri, nempel ke kiri */
   position: relative;
   overflow: visible;
   margin: 0;
   border-radius: 16px;
-  max-width: 600px; /* Limit image width */
+  max-width: 600px;
+}
+
+/* Modifikasi agar gambar rata kanan jika tata letaknya dibalik */
+.app-card-inner.reverse-layout .app-card-screenshot {
+  justify-content: flex-end;
 }
 
 .app-card-screenshot img {
@@ -685,7 +711,7 @@ input {
   height: auto;
   object-fit: contain;
   border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* Add depth to screenshots */
+  box-shadow: none; /* Clean */
 }
 
 @media (max-width: 900px) {
@@ -769,7 +795,7 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.06);
+  background: transparent; /* Clean */
   border-radius: 16px;
   flex-shrink: 0;
   overflow: hidden;
@@ -925,13 +951,13 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.05);
+  background: transparent; /* Clean */
   border-radius: 20px;
   transition: background 0.3s ease;
 }
 
 .store-card:hover .store-card-icon {
-  background: rgba(255, 255, 255, 0.08);
+  background: transparent; /* Clean */
 }
 
 .store-card-icon .material-symbols-rounded {
@@ -986,7 +1012,7 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.06);
+  background: transparent; /* Clean */
   border-radius: 12px;
   flex-shrink: 0;
 }
@@ -1309,7 +1335,7 @@ input {
 /* Liquid Glass Highlight */
 .liquid-glass {
   position: relative;
-  overflow: hidden;
+  overflow: visible; /* Diubah agar tidak memotong elemen di dalamnya */
 }
 
 .liquid-glass-highlight {
@@ -1326,6 +1352,8 @@ input {
     rgba(255, 255, 255, 0.06),
     transparent 40%
   );
+  overflow: hidden; /* Prevent light from spilling out */
+  border-radius: inherit; /* Match parent's border radius */
 }
 
 .liquid-glass:hover .liquid-glass-highlight {
@@ -1349,7 +1377,7 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.06);
+  background: transparent; /* Clean */
   border-radius: 24px;
   overflow: hidden;
   flex-shrink: 0;
@@ -1417,8 +1445,8 @@ input {
   height: 200px;
   border-radius: 16px;
   overflow: hidden;
-  background: #121212;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: transparent; /* Clean */
+  border: none; /* Clean */
 }
 
 .screenshot-item img {
@@ -1444,16 +1472,16 @@ input {
   font-size: 0.8125rem;
   font-weight: 500;
   color: #B8B8B8;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: transparent; /* Clean */
+  border: none; /* Clean */
   transition: all 0.2s ease;
 }
 
 .device-btn:hover,
 .device-btn.active {
   color: #FFFFFF;
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.12);
+  background: transparent; /* Clean */
+  border-color: transparent;
 }
 
 .device-btn .material-symbols-rounded {
