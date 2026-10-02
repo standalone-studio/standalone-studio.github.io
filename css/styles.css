@@ -209,16 +209,24 @@ input {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 9999; /* Much higher z-index to ensure dropdowns are never covered */
+  z-index: 9999;
   height: 72px;
   display: flex;
   align-items: center;
   padding: 0 24px;
   background: rgba(9, 9, 9, 0.6);
-  backdrop-filter: blur(40px) saturate(1.5);
-  -webkit-backdrop-filter: blur(40px) saturate(1.5);
   border-bottom: none;
   transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(40px) saturate(1.5);
+  -webkit-backdrop-filter: blur(40px) saturate(1.5);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .navbar.scrolled {
@@ -580,32 +588,29 @@ input {
 }
 
 /* ============================================================
-   6. CARDS - PREMIUM LANDSCAPE
+   6. CARDS - CLEAN LOOK (BORDERLESS & TRANSPARENT)
    ============================================================ */
 
 .app-card {
-  background: #171717;
-  border: none; /* Removed border */
-  border-radius: 24px;
-  overflow: hidden;
-  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              box-shadow 0.35s ease;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  overflow: visible;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .app-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .app-card-inner {
   display: flex;
   flex-direction: column;
-  min-height: 320px;
+  min-height: auto;
 }
 
 .app-card-info {
-  padding: 36px;
+  padding: 36px 0; /* Removed horizontal padding to align with container */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -667,13 +672,13 @@ input {
 }
 
 .app-card-screenshot {
-  background: #121212;
+  background: transparent; /* Clean look */
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
-  margin: 0 36px 36px;
+  margin: 0 0 36px; /* Removed side margins */
   border-radius: 16px;
   min-height: 200px;
 }
@@ -716,22 +721,19 @@ input {
 
 /* Compact Card for Apps Page */
 .app-compact-card {
-  background: #171717;
-  border: none; /* Removed border */
-  border-radius: 24px;
-  padding: 32px;
+  background: transparent; /* Clean look */
+  border: none;
+  border-radius: 0;
+  padding: 24px 0; /* Reduced padding, removed horizontal padding */
   display: flex;
   flex-direction: column;
   gap: 16px;
   cursor: pointer;
-  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              box-shadow 0.35s ease;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .app-compact-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .app-compact-header {
@@ -885,25 +887,21 @@ input {
 }
 
 .store-card {
-  background: #171717;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 24px;
-  padding: 32px;
+  background: transparent; /* Clean look */
+  border: none;
+  border-radius: 0;
+  padding: 24px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 16px;
   cursor: pointer;
-  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              box-shadow 0.35s ease,
-              border-color 0.35s ease;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .store-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .store-card-icon {
@@ -952,23 +950,19 @@ input {
 }
 
 .support-card {
-  background: #171717;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 24px;
-  padding: 28px;
+  background: transparent; /* Clean look */
+  border: none;
+  border-radius: 0;
+  padding: 24px 0;
   display: flex;
   align-items: flex-start;
   gap: 16px;
   cursor: pointer;
-  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              box-shadow 0.35s ease,
-              border-color 0.35s ease;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .support-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .support-card-icon {
@@ -1009,15 +1003,15 @@ input {
 }
 
 .faq-item {
-  background: #171717;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 16px;
+  background: transparent; /* Clean look */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 0;
   overflow: hidden;
   transition: border-color 0.3s ease;
 }
 
 .faq-item:hover {
-  border-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .faq-question {
@@ -1025,7 +1019,7 @@ input {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 24px;
+  padding: 20px 0; /* Align with text */
   font-size: 0.9375rem;
   font-weight: 500;
   text-align: left;
@@ -1173,10 +1167,10 @@ input {
 }
 
 .value-card {
-  background: #171717;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 20px;
-  padding: 28px;
+  background: transparent; /* Clean look */
+  border: none;
+  border-radius: 0;
+  padding: 24px 0;
 }
 
 .value-card .material-symbols-rounded {
