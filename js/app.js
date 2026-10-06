@@ -156,7 +156,7 @@
             '<span class="material-symbols-rounded">download</span> ' +
             (SS.i18n ? SS.i18n.get('btn_download') : 'Unduh di Play Store') +
             '</a>' +
-            '<a href="' + (SS.url ? SS.url(app.page) : 'paperleaf/index.html') + '" class="btn btn-secondary">' +
+            '<a href="' + (SS.url ? SS.url(app.page) : 'Paperleaf/index.html') + '" class="btn btn-secondary">' +
             (SS.i18n ? SS.i18n.get('btn_detail') : 'Pelajari Fitur') +
             '</a>';
         } else {

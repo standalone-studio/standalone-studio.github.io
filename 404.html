@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mengarahkan... - Standalone Studio</title>
+  <script>
+    // Penanganan otomatis perbedaan huruf besar/kecil (case sensitivity) di GitHub Pages
+    (function() {
+      var pathname = window.location.pathname;
+      var search = window.location.search || '';
+      var hash = window.location.hash || '';
+
+      // Jika URL meminta /paperleaf/ (huruf kecil), alihkan seketika ke /Paperleaf/
+      if (pathname.indexOf('/paperleaf/') !== -1) {
+        var target = pathname.replace('/paperleaf/', '/Paperleaf/');
+        window.location.replace(target + search + hash);
+        return;
+      }
+
+      // Jika URL persis /paperleaf atau /paperleaf/
+      if (pathname.endsWith('/paperleaf') || pathname.endsWith('/paperleaf/')) {
+        window.location.replace('/Paperleaf/' + search + hash);
+        return;
+      }
+    })();
+  </script>
+
+  <!-- Google Fonts - Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/icons/stalone_white.png" type="image/png">
+</head>
+<body style="min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: #090909; color: #FFFFFF; padding: 24px;">
+
+  <div class="app-card" style="max-width: 500px; padding: 40px; border: 1px solid rgba(255,255,255,0.08); border-radius: 24px; background: rgba(255,255,255,0.02);">
+    <span class="material-symbols-rounded" style="font-size: 64px; color: #B8B8B8; margin-bottom: 20px;">explore_off</span>
+    <h1 class="heading-lg" style="margin-bottom: 12px;">Halaman Tidak Ditemukan</h1>
+    <p class="body-md" style="margin-bottom: 32px; color: #B8B8B8;">
+      Tautan yang Anda tuju mungkin telah dipindahkan atau terdapat kesalahan penulisan alamat.
+    </p>
+    <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+      <a href="index.html" class="btn btn-primary" style="padding: 12px 28px;">
+        <span class="material-symbols-rounded">home</span> Kembali ke Beranda
+      </a>
+      <a href="Paperleaf/privacy.html" class="btn btn-secondary" style="padding: 12px 28px;">
+        <span class="material-symbols-rounded">security</span> Kebijakan Privasi
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
