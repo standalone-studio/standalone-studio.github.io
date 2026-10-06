@@ -1,16 +1,42 @@
-/* ============================================================
-   PAPER ECOSYSTEM - MAIN JAVASCRIPT
-   Handles: Navigation, Dock, Liquid Glass, Animations, FAQ,
-   Device Switcher, Favicon, Search Toggle
-   ============================================================ */
-
+/**
+ * Standalone Studio — Main JavaScript
+ * Handles:
+ * - Dynamic Ecosystem Rendering (Home & Apps page)
+ * - Mobile Menu Drawer
+ * - Language Switcher (ID/EN)
+ * - Slide-down Search Panel
+ * - Navbar Scroll & Liquid Glass
+ * - FAQ Accordion
+ * - Dynamic Favicon
+ */
 (function () {
   'use strict';
 
+  var SS = window.SS || {};
+
   /* ============================================================
-     1. NAVBAR SCROLL EFFECT
+     1. INITIALIZATION & I18N
+     ============================================================ */
+  function initI18n() {
+    if (SS.i18n) {
+      SS.i18n.apply();
+
+      var langBtn = document.getElementById('langToggleBtn');
+      if (langBtn) {
+        langBtn.addEventListener('click', function () {
+          SS.i18n.toggleLang();
+          renderEcosystemSections();
+        });
+      }
+    }
+  }
+
+  /* ============================================================
+     2. NAVBAR SCROLL & MOBILE MENU
      ============================================================ */
   var navbar = document.getElementById('navbar');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var mobileMenuToggle = document.getElementById('mobileMenuToggle');
 
   function handleNavbarScroll() {
     if (!navbar) return;
@@ -24,19 +50,35 @@
   window.addEventListener('scroll', handleNavbarScroll, { passive: true });
   handleNavbarScroll();
 
-  /* ============================================================
-     2. MOBILE MENU REMOVED (Per User Request)
-     ============================================================ */
+  if (mobileMenuToggle && mobileMenu) {
+    mobileMenuToggle.addEventListener('click', function () {
+      var isOpen = mobileMenu.classList.contains('active');
+      mobileMenu.classList.toggle('active', !isOpen);
+      mobileMenuToggle.setAttribute('aria-expanded', !isOpen);
+
+      var icon = mobileMenuToggle.querySelector('.material-symbols-rounded');
+      if (icon) {
+        icon.textContent = isOpen ? 'menu' : 'close';
+      }
+    });
+
+    // Close when clicking a link inside mobile menu
+    mobileMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobileMenu.classList.remove('active');
+        if (mobileMenuToggle) {
+          mobileMenuToggle.setAttribute('aria-expanded', 'false');
+          var icon = mobileMenuToggle.querySelector('.material-symbols-rounded');
+          if (icon) icon.textContent = 'menu';
+        }
+      });
+    });
+  }
 
   /* ============================================================
-     3. DOCK BEHAVIOR REMOVED
-     ============================================================ */
-
-  /* ============================================================
-     4. LIQUID GLASS MOUSE TRACKING
+     3. LIQUID GLASS MOUSE TRACKING
      ============================================================ */
   var glassElements = document.querySelectorAll('.liquid-glass');
-
   function handleGlassMouseMove(e) {
     var rect = this.getBoundingClientRect();
     var x = e.clientX - rect.left;
@@ -50,273 +92,229 @@
   });
 
   /* ============================================================
-     5. INTERSECTION OBSERVER - FADE IN ANIMATIONS
+     4. INTERSECTION OBSERVER - ANIMATIONS
      ============================================================ */
-  var fadeElements = document.querySelectorAll('.fade-in, .scale-in');
-
-  if ('IntersectionObserver' in window && fadeElements.length) {
-    var fadeObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          fadeObserver.unobserve(entry.target);
-        }
+  function initFadeObserver() {
+    var fadeElements = document.querySelectorAll('.fade-in:not(.visible), .scale-in:not(.visible)');
+    if ('IntersectionObserver' in window && fadeElements.length) {
+      var fadeObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            fadeObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.08,
+        rootMargin: '0px 0px -30px 0px'
       });
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -40px 0px'
-    });
 
-    fadeElements.forEach(function (el) {
-      fadeObserver.observe(el);
-    });
+      fadeElements.forEach(function (el) {
+        fadeObserver.observe(el);
+      });
+    } else {
+      fadeElements.forEach(function (el) {
+        el.classList.add('visible');
+      });
+    }
   }
 
   /* ============================================================
-     6. FAQ ACCORDION
+     5. RENDER APPS (ECOSYSTEM)
      ============================================================ */
-  var faqItems = document.querySelectorAll('.faq-item');
+  function getLocalizedText(obj) {
+    if (!obj) return '';
+    var lang = (SS.i18n && SS.i18n.currentLang) || 'id';
+    return obj[lang] || obj['en'] || obj['id'] || '';
+  }
 
-  faqItems.forEach(function (item) {
-    var question = item.querySelector('.faq-question');
-    if (!question) return;
+  function getStatusLabel(status) {
+    var key = 'status_' + (status || '').replace('-', '_');
+    return (SS.i18n && SS.i18n.get(key)) || status;
+  }
 
-    question.addEventListener('click', function () {
-      var isActive = item.classList.contains('active');
+  function renderEcosystemSections() {
+    var currentLang = (SS.i18n && SS.i18n.currentLang) || 'id';
 
-      faqItems.forEach(function (otherItem) {
-        if (otherItem !== item) {
-          otherItem.classList.remove('active');
-          var otherBtn = otherItem.querySelector('.faq-question');
-          if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
-        }
-      });
+    // 1. Render Active Apps on Homepage (#activeAppsContainer)
+    var activeContainer = document.getElementById('activeAppsContainer');
+    if (activeContainer && SS.getActiveApps) {
+      var activeApps = SS.getActiveApps();
+      var html = '';
 
-      var newState = !isActive;
-      item.classList.toggle('active', newState);
-      question.setAttribute('aria-expanded', newState);
-    });
-  });
+      activeApps.forEach(function (app, index) {
+        var isReverse = (index % 2 === 1) ? 'reverse-layout' : '';
+        var tagline = getLocalizedText(app.tagline);
+        var description = getLocalizedText(app.description);
+        var statusLabel = getStatusLabel(app.status);
+        var statusClass = app.status;
 
-  /* ============================================================
-     7. APP DETAIL NAVIGATION (Apps Page)
-     ============================================================ */
-  var appDetail = document.getElementById('appDetail');
-  var appGrid = document.querySelector('.app-grid');
-
-  if (appDetail && appGrid) {
-    var appData = {
-      paperleaf: {
-        icon: 'auto_awesome',
-        iconImg: 'assets/icons/logo_paperleaf.jpg',
-        name: 'Paperleaf',
-        slogan: 'Your digital notebook, reimagined.',
-        status: 'available',
-        features: [
-          { title: 'Natural Writing', desc: 'Write with a feel that mimics real pen on paper.' },
-          { title: 'Smart Organization', desc: 'Automatically organize notes with intelligent tags.' },
-          { title: 'Cloud Sync', desc: 'Access your notes across all your devices.' },
-          { title: 'Beautiful Themes', desc: 'Choose from elegant themes that suit your style.' },
-          { title: 'Handwriting Recognition', desc: 'Convert handwritten notes to text instantly.' },
-          { title: 'Offline Mode', desc: 'Full functionality without an internet connection.' }
-        ]
-      },
-      paperbook: {
-        icon: 'menu_book',
-        name: 'Paper Book',
-        slogan: 'Read without boundaries.',
-        status: 'coming-soon',
-        features: [
-          { title: 'Immersive Reader', desc: 'A distraction-free reading environment.' },
-          { title: 'Custom Typography', desc: 'Adjust fonts, size, and spacing to your preference.' },
-          { title: 'Reading Progress', desc: 'Track your reading goals and progress.' },
-          { title: 'Bookmarks & Notes', desc: 'Highlight passages and add your thoughts.' }
-        ]
-      },
-      paperstudio: {
-        icon: 'palette',
-        name: 'Paper Studio',
-        slogan: 'Design with intention.',
-        status: 'coming-soon',
-        features: [
-          { title: 'Professional Tools', desc: 'Precision design tools for every project.' },
-          { title: 'Vector Support', desc: 'Create scalable graphics with ease.' },
-          { title: 'Layer System', desc: 'Organize complex designs with powerful layers.' },
-          { title: 'Export Options', desc: 'Export in multiple formats for any platform.' }
-        ]
-      },
-      paperpaint: {
-        icon: 'brush',
-        name: 'Paper Paint',
-        slogan: 'Paint your imagination.',
-        status: 'coming-soon',
-        features: [
-          { title: 'Natural Brushes', desc: 'Paint with brushes that feel real.' },
-          { title: 'Color Mixing', desc: 'Blend colors naturally on your canvas.' },
-          { title: 'Layer Support', desc: 'Work with multiple layers for complex art.' },
-          { title: 'Pressure Sensitivity', desc: 'Full support for stylus pressure levels.' }
-        ]
-      },
-      paperspace: {
-        icon: 'cloud',
-        name: 'Paper Space',
-        slogan: 'Your workspace, everywhere.',
-        status: 'coming-soon',
-        features: [
-          { title: 'Cloud Storage', desc: 'Securely store all your Paper files.' },
-          { title: 'Cross-Device Sync', desc: 'Seamless sync across all your devices.' },
-          { title: 'File Management', desc: 'Organize, search, and manage your files.' },
-          { title: 'Sharing', desc: 'Share documents and collaborate in real time.' }
-        ]
-      },
-      papermusic: {
-        icon: 'music_note',
-        name: 'Paper Music',
-        slogan: 'Sound, simplified.',
-        status: 'coming-soon',
-        features: [
-          { title: 'Multi-Track Recording', desc: 'Record and layer multiple audio tracks.' },
-          { title: 'Virtual Instruments', desc: 'Play with a collection of built-in instruments.' },
-          { title: 'MIDI Support', desc: 'Connect and use external MIDI controllers.' },
-          { title: 'Mixing Console', desc: 'Professional mixing tools at your fingertips.' }
-        ]
-      }
-    };
-
-    function showAppDetail(appId) {
-      var data = appData[appId];
-      if (!data || !appDetail) return;
-
-      var detailName = document.getElementById('detailName');
-      var detailSlogan = document.getElementById('detailSlogan');
-      var detailActions = document.getElementById('detailActions');
-      var detailFeatures = document.getElementById('detailFeatures');
-
-      var detailIcon = document.getElementById('detailIcon');
-      if (detailIcon) {
-        if (data.iconImg) {
-          detailIcon.innerHTML = '<img src="' + data.iconImg + '" alt="' + data.name + '">';
+        var downloadBtnHtml = '';
+        if (app.id === 'paperleaf') {
+          var dlUrl = (SS.config && SS.config.paperleafDownloadUrl) || '#';
+          downloadBtnHtml = '<a href="' + dlUrl + '" target="_blank" rel="noopener noreferrer" class="btn btn-primary">' +
+            '<span class="material-symbols-rounded">download</span> ' +
+            (SS.i18n ? SS.i18n.get('btn_download') : 'Unduh di Play Store') +
+            '</a>' +
+            '<a href="' + (SS.url ? SS.url(app.page) : 'paperleaf/index.html') + '" class="btn btn-secondary">' +
+            (SS.i18n ? SS.i18n.get('btn_detail') : 'Pelajari Fitur') +
+            '</a>';
         } else {
-          detailIcon.innerHTML = '<span class="material-symbols-rounded">' + data.icon + '</span>';
+          downloadBtnHtml = '<span class="status-badge ' + statusClass + '">' +
+            '<span class="status-dot"></span> ' + statusLabel +
+            '</span>';
         }
-      }
-      if (detailName) detailName.textContent = data.name;
-      if (detailSlogan) detailSlogan.textContent = data.slogan;
 
-      if (detailActions) {
-        if (data.status === 'available') {
-          detailActions.innerHTML =
-            '<a href="#" class="btn btn-primary">Download</a>';
+        var iconHtml = '';
+        if (app.icon) {
+          var iconPath = SS.url ? SS.url(app.icon) : app.icon;
+          iconHtml = '<img src="' + iconPath + '" alt="' + app.name + ' Icon" loading="lazy">';
         } else {
-          detailActions.innerHTML =
-            '<span class="btn btn-secondary btn-disabled">Coming Soon</span>';
+          iconHtml = '<span class="material-symbols-rounded">' + (app.symbol || 'apps') + '</span>';
         }
-      }
 
-      if (detailFeatures) {
-        detailFeatures.innerHTML = '';
-        data.features.forEach(function (feat) {
-          detailFeatures.innerHTML +=
-            '<div class="feature-item">' +
-            '<span class="material-symbols-rounded">check_circle</span>' +
-            '<div>' +
-            '<div class="feature-item-title">' + feat.title + '</div>' +
-            '<div class="feature-item-desc">' + feat.desc + '</div>' +
-            '</div>' +
+        // Preview screenshot or visual block
+        var visualHtml = '';
+        if (app.screenshots && app.screenshots.length > 0) {
+          var ssPath = SS.url ? SS.url(app.screenshots[0]) : app.screenshots[0];
+          visualHtml = '<img src="' + ssPath + '" alt="' + app.name + ' Screenshot" loading="lazy">';
+        } else {
+          visualHtml = '<div class="screenshot-placeholder">' +
+            '<span class="material-symbols-rounded">' + (app.symbol || 'devices') + '</span>' +
+            '<span>' + statusLabel + '</span>' +
             '</div>';
-        });
-      }
+        }
 
-      appDetail.style.display = 'block';
-      if (appGrid) appGrid.style.display = 'none';
-
-      document.title = data.name + ' - Paper Ecosystem';
-
-      var fadeItems = appDetail.querySelectorAll('.fade-in');
-      fadeItems.forEach(function (el) {
-        el.classList.remove('visible');
+        html += '<div class="section fade-in" id="' + app.id + '">' +
+          '<div class="app-card">' +
+          '<div class="app-card-inner ' + isReverse + '">' +
+          '<div class="app-card-info">' +
+          '<div class="app-card-header">' +
+          '<div class="app-card-icon">' + iconHtml + '</div>' +
+          '<div>' +
+          '<h3 class="app-card-name">' + app.name + '</h3>' +
+          '<p class="app-card-slogan">' + tagline + '</p>' +
+          '</div>' +
+          '</div>' +
+          '<p class="body-md">' + description + '</p>' +
+          '<div class="app-card-actions">' + downloadBtnHtml + '</div>' +
+          '</div>' +
+          '<div class="app-card-screenshot">' + visualHtml + '</div>' +
+          '</div>' +
+          '</div>' +
+          '</div>';
       });
 
-      if ('IntersectionObserver' in window) {
-        var detailObserver = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-              detailObserver.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.1 });
-
-        fadeItems.forEach(function (el) {
-          detailObserver.observe(el);
-        });
-      }
-
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      activeContainer.innerHTML = html;
     }
 
-    function hideAppDetail() {
-      if (appDetail) appDetail.style.display = 'none';
-      if (appGrid) appGrid.style.display = '';
-      document.title = 'Apps - Paper Ecosystem';
+    // 2. Render Roadmap Apps on Homepage (#roadmapAppsContainer)
+    var roadmapContainer = document.getElementById('roadmapAppsContainer');
+    if (roadmapContainer && SS.getRoadmapApps) {
+      var roadmapApps = SS.getRoadmapApps();
+      var roadHtml = '<div class="app-grid">';
+
+      roadmapApps.forEach(function (app) {
+        var tagline = getLocalizedText(app.tagline);
+        var description = getLocalizedText(app.description);
+        var statusLabel = getStatusLabel(app.status);
+
+        var iconHtml = '';
+        if (app.icon) {
+          var iconPath = SS.url ? SS.url(app.icon) : app.icon;
+          iconHtml = '<img src="' + iconPath + '" alt="' + app.name + ' Icon" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\';">' +
+            '<span class="material-symbols-rounded" style="display:none;">' + (app.symbol || 'apps') + '</span>';
+        } else {
+          iconHtml = '<span class="material-symbols-rounded">' + (app.symbol || 'apps') + '</span>';
+        }
+
+        roadHtml += '<div class="app-compact-card fade-in" id="' + app.id + '">' +
+          '<div class="app-compact-header">' +
+          '<div class="app-compact-left">' +
+          '<div class="app-compact-icon">' + iconHtml + '</div>' +
+          '<div>' +
+          '<h4 class="app-compact-name">' + app.name + '</h4>' +
+          '<div class="app-compact-tagline">' + tagline + '</div>' +
+          '</div>' +
+          '</div>' +
+          '<span class="status-badge planned">' +
+          '<span class="status-dot"></span> ' + statusLabel +
+          '</span>' +
+          '</div>' +
+          '<p class="body-sm">' + description + '</p>' +
+          '</div>';
+      });
+
+      roadHtml += '</div>';
+      roadmapContainer.innerHTML = roadHtml;
     }
 
-    function checkHash() {
-      var hash = window.location.hash.replace('#', '');
-      if (hash && appData[hash]) {
-        showAppDetail(hash);
-      } else {
-        hideAppDetail();
-      }
+    // 3. Render All Apps on Apps Page (#allAppsContainer)
+    var allAppsContainer = document.getElementById('allAppsContainer');
+    if (allAppsContainer && SS.apps) {
+      var allHtml = '<div class="app-grid">';
+
+      SS.apps.forEach(function (app) {
+        var tagline = getLocalizedText(app.tagline);
+        var description = getLocalizedText(app.description);
+        var statusLabel = getStatusLabel(app.status);
+        var statusClass = app.status;
+
+        var iconHtml = '';
+        if (app.icon) {
+          var iconPath = SS.url ? SS.url(app.icon) : app.icon;
+          iconHtml = '<img src="' + iconPath + '" alt="' + app.name + ' Icon" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\';">' +
+            '<span class="material-symbols-rounded" style="display:none;">' + (app.symbol || 'apps') + '</span>';
+        } else {
+          iconHtml = '<span class="material-symbols-rounded">' + (app.symbol || 'apps') + '</span>';
+        }
+
+        var linkOpen = app.page ? '<a href="' + (SS.url ? SS.url(app.page) : app.page) + '" style="text-decoration:none;color:inherit;">' : '<div style="cursor:default;">';
+        var linkClose = app.page ? '</a>' : '</div>';
+
+        allHtml += linkOpen +
+          '<div class="app-compact-card fade-in" id="' + app.id + '">' +
+          '<div class="app-compact-header">' +
+          '<div class="app-compact-left">' +
+          '<div class="app-compact-icon">' + iconHtml + '</div>' +
+          '<div>' +
+          '<h4 class="app-compact-name">' + app.name + '</h4>' +
+          '<div class="app-compact-tagline">' + tagline + '</div>' +
+          '</div>' +
+          '</div>' +
+          '<span class="status-badge ' + statusClass + '">' +
+          '<span class="status-dot"></span> ' + statusLabel +
+          '</span>' +
+          '</div>' +
+          '<p class="body-sm">' + description + '</p>' +
+          '</div>' +
+          linkClose;
+      });
+
+      allHtml += '</div>';
+      allAppsContainer.innerHTML = allHtml;
     }
 
-    window.addEventListener('hashchange', checkHash);
-    checkHash();
+    initFadeObserver();
   }
 
   /* ============================================================
-     8. DEVICE SWITCHER (Apps Detail)
-     ============================================================ */
-  var deviceBtns = document.querySelectorAll('.device-btn');
-  var deviceDropdown = document.getElementById('screenshotsTablet');
-
-  deviceBtns.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var device = this.getAttribute('data-device');
-
-      deviceBtns.forEach(function (b) { b.classList.remove('active'); });
-      this.classList.add('active');
-
-      if (device === 'tablet' && deviceDropdown) {
-        deviceDropdown.classList.toggle('open');
-      } else if (deviceDropdown) {
-        deviceDropdown.classList.remove('open');
-      }
-    });
-  });
-
-  /* ============================================================
-     9. SEARCH PANEL (Non-home pages)
-     Slides down a search panel when search icon is tapped
+     6. SEARCH PANEL
      ============================================================ */
   var searchToggle = document.getElementById('searchToggle');
   var searchPanel = document.getElementById('searchPanel');
 
   if (searchToggle && searchPanel) {
-    var searchPanelInput = searchPanel.querySelector('input');
+    var searchInput = searchPanel.querySelector('input');
 
     searchToggle.addEventListener('click', function () {
       var isOpen = searchPanel.classList.contains('open');
       searchPanel.classList.toggle('open');
-
-      if (!isOpen && searchPanelInput) {
-        setTimeout(function () {
-          searchPanelInput.focus();
-        }, 100);
+      if (!isOpen && searchInput) {
+        setTimeout(function () { searchInput.focus(); }, 120);
       }
     });
 
-    // Close when clicking outside
     document.addEventListener('click', function (e) {
       if (searchPanel.classList.contains('open') &&
           !searchPanel.contains(e.target) &&
@@ -325,71 +323,80 @@
       }
     });
 
-    // Close on Escape
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && searchPanel.classList.contains('open')) {
         searchPanel.classList.remove('open');
       }
     });
 
-    // Submit search
-    if (searchPanelInput) {
-      searchPanelInput.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' && this.value.trim()) {
-          window.location.href = 'index.html?q=' + encodeURIComponent(this.value.trim());
+    if (searchInput) {
+      searchInput.addEventListener('input', function () {
+        var query = this.value.trim().toLowerCase();
+        if (!query) {
+          document.querySelectorAll('.app-compact-card, .app-card').forEach(function (el) {
+            el.style.display = '';
+          });
+          return;
         }
+
+        document.querySelectorAll('.app-compact-card, .app-card').forEach(function (el) {
+          var text = el.textContent.toLowerCase();
+          el.style.display = text.indexOf(query) !== -1 ? '' : 'none';
+        });
       });
     }
   }
 
   /* ============================================================
-     10. SMOOTH SCROLL FOR INTERNAL LINKS
+     7. FAQ ACCORDION
      ============================================================ */
-  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-    anchor.addEventListener('click', function (e) {
-      var targetId = this.getAttribute('href');
-      if (targetId === '#') return;
+  var faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(function (item) {
+    var question = item.querySelector('.faq-question');
+    if (!question) return;
 
-      var target = document.querySelector(targetId);
-      if (target) {
-        e.preventDefault();
-        var offset = 180;
-        var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
-
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
-      }
+    question.addEventListener('click', function () {
+      var isActive = item.classList.contains('active');
+      faqItems.forEach(function (other) {
+        if (other !== item) {
+          other.classList.remove('active');
+          var btn = other.querySelector('.faq-question');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+      item.classList.toggle('active', !isActive);
+      question.setAttribute('aria-expanded', !isActive);
     });
   });
 
   /* ============================================================
-     11. FAVICON - DARK/LIGHT MODE
-     stalone_white for dark, stalone_black for light
+     8. DYNAMIC FAVICON
      ============================================================ */
   function updateFavicon() {
-    var isDark = window.matchMedia('(prefers-color-scheme: dark)').matches ||
-                 document.documentElement.getAttribute('data-theme') === 'dark';
+    var isDark = window.matchMedia('(prefers-color-scheme: dark)').matches || true;
     var favicon = document.querySelector('link[rel="icon"]');
     if (!favicon) {
       favicon = document.createElement('link');
       favicon.rel = 'icon';
       document.head.appendChild(favicon);
     }
-    favicon.href = isDark ? 'assets/icons/stalone_white.png' : 'assets/icons/stalone_black.png';
+    var iconRel = isDark ? 'assets/icons/stalone_white.png' : 'assets/icons/stalone_black.png';
+    favicon.href = SS.url ? SS.url(iconRel) : iconRel;
   }
 
-  updateFavicon();
-  window.matchMedia('(prefers-color-scheme: change)').addEventListener('change', updateFavicon);
-
   /* ============================================================
-     12. PAGE-CONTENT PADDING REMOVED
+     9. RUN ON DOM READY
      ============================================================ */
+  document.addEventListener('DOMContentLoaded', function () {
+    initI18n();
+    renderEcosystemSections();
+    updateFavicon();
+    initFadeObserver();
+  });
 
-  /* ============================================================
-     13. INITIAL SETUP
-     ============================================================ */
-  handleNavbarScroll();
+  // Re-render when language changes
+  window.addEventListener('ss:languageChanged', function () {
+    renderEcosystemSections();
+  });
 
 })();

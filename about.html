@@ -1,219 +1,300 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="google-site-verification" content="1hWeK7uRG7fk2pqx_jTE9qWvT1CCHcU8YiCxYLmanOg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="About Paper Ecosystem - Our vision, mission, and story. Crafted by Standalone Studio.">
-  <meta name="keywords" content="About Paper, Standalone Studio, Vision, Mission, Timeline">
+  <meta name="description" content="About Standalone Studio - Independent studio crafting mindful creative applications for Android.">
+  <meta name="keywords" content="Standalone Studio, Paperleaf, Creative Ecosystem, Android Developer, About Us">
   <meta name="author" content="Standalone Studio">
   <meta name="theme-color" content="#090909">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://standalone-studio.github.io/about.html">
-  <meta property="og:title" content="About - Paper Ecosystem">
-  <meta property="og:description" content="Building tools that empower creativity, one app at a time. Discover the story of Paper.">
-  <meta property="og:image" content="https://standalone-studio.github.io/assets/screenshots/ss_paperleaf2.jpg">
+  <meta property="og:title" content="Tentang Kami - Standalone Studio">
+  <meta property="og:description" content="Mengenal Standalone Studio dan visi kami dalam membangun ekosistem kreatif digital untuk Android.">
+  <meta property="og:image" content="https://standalone-studio.github.io/assets/screenshots/ss_paperleaf1.webp">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://standalone-studio.github.io/about.html">
-  <meta property="twitter:title" content="About - Paper Ecosystem">
-  <meta property="twitter:description" content="Building tools that empower creativity, one app at a time. Discover the story of Paper.">
-  <meta property="twitter:image" content="https://standalone-studio.github.io/assets/screenshots/ss_paperleaf2.jpg">
+  <meta property="twitter:title" content="Tentang Kami - Standalone Studio">
+  <meta property="twitter:description" content="Mengenal Standalone Studio dan visi kami dalam membangun ekosistem kreatif digital untuk Android.">
+  <meta property="twitter:image" content="https://standalone-studio.github.io/assets/screenshots/ss_paperleaf1.webp">
 
-  <title>About - Paper Ecosystem</title>
+  <title>Tentang Kami - Standalone Studio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0">
   <link rel="stylesheet" href="css/styles.css">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com;">
-<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <link rel="icon" href="assets/icons/stalone_white.png" type="image/png">
 </head>
 <body>
 
+  <!-- NAVBAR -->
   <nav class="navbar liquid-glass" id="navbar">
     <div class="liquid-glass-highlight"></div>
     <div class="navbar-inner">
       <div class="navbar-left">
-        <a href="index.html" class="navbar-brand" aria-label="Home">
+        <a href="index.html" class="navbar-brand" aria-label="Standalone Studio Home">
           <div class="brand-icon">
-            <img src="assets/icons/stalone_white.png" alt="Standalone Studio Logo" loading="lazy" decoding="async">
+            <img src="assets/icons/stalone_white.png" alt="Standalone Studio Logo" width="28" height="28">
           </div>
         </a>
       </div>
 
       <div class="navbar-nav">
         <div class="nav-item">
-          <a href="apps.html" class="nav-link">Apps</a>
+          <a href="apps.html" class="nav-link" data-i18n="nav_apps">Aplikasi</a>
           <div class="dropdown-menu">
             <a href="paperleaf/index.html" class="dropdown-link">Paperleaf</a>
+            <a href="apps.html#leafpaint" class="dropdown-link">LeafPaint</a>
             <a href="apps.html#leafly" class="dropdown-link">Leafly</a>
             <a href="apps.html#leafstudio" class="dropdown-link">LeafStudio</a>
           </div>
         </div>
         <div class="nav-item">
-          <a href="store.html" class="nav-link">Market</a>
+          <a href="store.html" class="nav-link" data-i18n="nav_market">Pasar Aset</a>
           <div class="dropdown-menu">
-            <a href="store.html#tema" class="dropdown-link">Tema</a>
-            <a href="store.html#sampul" class="dropdown-link">Sampul</a>
-            <a href="store.html#template" class="dropdown-link">Template</a>
-            <a href="store.html#buku" class="dropdown-link">Buku</a>
+            <a href="store.html#buku" class="dropdown-link">Buku & Template</a>
+            <a href="store.html#kuas" class="dropdown-link">Kuas & Tekstur</a>
+            <a href="store.html#stiker" class="dropdown-link">Stiker & Ornamen</a>
+            <a href="store.html#tema" class="dropdown-link">Sampul & Tema</a>
           </div>
         </div>
-        <a href="support.html" class="nav-link">Support</a>
+        <a href="support.html" class="nav-link" data-i18n="nav_support">Dukungan</a>
         <div class="nav-item">
-          <a href="about.html" class="nav-link active">About</a>
+          <a href="about.html" class="nav-link active" data-i18n="nav_about">Tentang Kami</a>
           <div class="dropdown-menu">
-            <a href="about.html#paperleaf-about" class="dropdown-link">Paperleaf</a>
-            <a href="about.html#developer" class="dropdown-link">Developer</a>
+            <a href="about.html#ekosistem" class="dropdown-link">Ekosistem</a>
+            <a href="about.html#developer" class="dropdown-link">Pengembang</a>
           </div>
         </div>
       </div>
 
       <div class="navbar-right">
-        <button class="navbar-btn" aria-label="Search" id="searchToggle">
+        <button class="lang-toggle-btn" id="langToggleBtn" type="button" aria-label="Ganti Bahasa">
+          ID
+        </button>
+
+        <button class="navbar-btn" aria-label="Cari" id="searchToggle" type="button">
           <span class="material-symbols-rounded">search</span>
+        </button>
+
+        <button class="mobile-menu-btn" id="mobileMenuToggle" type="button" aria-label="Buka Menu" aria-expanded="false">
+          <span class="material-symbols-rounded">menu</span>
         </button>
       </div>
     </div>
   </nav>
 
-  <div class="search-panel" id="searchPanel">
-    <div class="search-panel-inner">
-      <span class="material-symbols-rounded">search</span>
-      <input type="text" placeholder="Search Paper...">
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-nav">
+      <a href="index.html" class="mobile-menu-link">Beranda</a>
+      <a href="apps.html" class="mobile-menu-link" data-i18n="nav_apps">Aplikasi</a>
+      <a href="store.html" class="mobile-menu-link" data-i18n="nav_market">Pasar Aset</a>
+      <a href="support.html" class="mobile-menu-link" data-i18n="nav_support">Dukungan</a>
+      <a href="about.html" class="mobile-menu-link active" data-i18n="nav_about">Tentang Kami</a>
+      <a href="paperleaf/privacy.html" class="mobile-menu-link" data-i18n="footer_privacy">Kebijakan Privasi</a>
     </div>
   </div>
 
+  <!-- Search Panel -->
+  <div class="search-panel" id="searchPanel">
+    <div class="search-panel-inner">
+      <span class="material-symbols-rounded">search</span>
+      <input type="text" placeholder="Cari aplikasi, fitur, atau aset..." data-i18n-placeholder="search_placeholder" aria-label="Cari aplikasi">
+    </div>
+  </div>
 
+  <!-- MAIN CONTENT -->
+  <main class="page-content container">
 
-
-  <main class="page-content">
-
-    <section class="about-hero container fade-in">
-      <h1 class="heading-xl">About Paper</h1>
-      <p class="body-lg">Building tools that empower creativity, one app at a time.</p>
+    <section class="about-hero fade-in">
+      <span class="label">Standalone Studio</span>
+      <h1 class="heading-xl">Membangun Ekosistem Kreatif</h1>
+      <p class="body-lg">
+        Menghadirkan alat-alat digital yang membebaskan daya cipta, alami digunakan, dan elegan di Android.
+      </p>
     </section>
 
-    <section class="section container about-content">
-      <div class="about-section fade-in" id="paperleaf-about">
-        <span class="label">Our Story</span>
-        <h2 class="heading-md">What is Paper?</h2>
-        <p class="body-md">Paper is a growing ecosystem of creative applications built with a single philosophy: technology should feel natural, beautiful, and empowering. Each app in the Paper family is designed to strip away complexity and let you focus on what matters most: your ideas.</p>
-        <p class="body-md">From note-taking to painting, from reading to music creation, Paper brings a consistent, premium experience across every touchpoint.</p>
+    <!-- About Content -->
+    <section class="section about-content">
+      <div class="about-section fade-in" id="ekosistem">
+        <span class="label">Filosofi</span>
+        <h2 class="heading-md">Sentuhan Alami dalam Media Digital</h2>
+        <p class="body-md">
+          Kami percaya bahwa teknologi terbaik adalah teknologi yang tidak menghalangi aliran ide Anda. Ekosistem aplikasi kami dirancang dari nol untuk pengguna Android, memadukan keindahan interaksi fisik—seperti sensasi membalik halaman buku, goresan pensil bertekstur, serta kuas artistik alami—dengan kemudahan penyimpanan digital otomatis.
+        </p>
+        <p class="body-md">
+          Setiap aplikasi dalam ekosistem—mulai dari <strong>Paperleaf</strong> untuk catatan & jurnal, <strong>LeafPaint</strong> untuk lukis digital, hingga <strong>Leafly</strong> untuk animasi—memiliki peran spesifik yang saling melengkapi dalam satu alur kerja terpadu.
+        </p>
       </div>
 
       <div class="about-section fade-in" id="developer">
-        <span class="label">The Team</span>
+        <span class="label">Tim Pengembang</span>
         <h2 class="heading-md">Standalone Studio</h2>
-        <p class="body-md">Paper is crafted by Standalone Studio, an independent development studio passionate about building high-quality digital products. We believe in clean design, thoughtful engineering, and respect for our users.</p>
-        <p class="body-md">Every pixel, every interaction, every line of code is a reflection of our commitment to excellence.</p>
+        <p class="body-md">
+          Standalone Studio adalah studio pengembang independen yang berdedikasi membangun produk digital berkualitas tinggi. Kami menjunjung tinggi privasi pengguna, desain yang bersih dan bebas kekacauan, serta kinerja aplikasi yang ringan dan stabil.
+        </p>
       </div>
     </section>
 
-    <section class="section container fade-in">
+    <!-- Values Grid -->
+    <section class="section fade-in">
       <div class="values-grid">
-        <div class="value-card fade-in" style="--stagger-delay: 0;">
+        <div class="value-card fade-in">
           <span class="material-symbols-rounded">visibility</span>
-          <h3 class="heading-sm">Vision</h3>
-          <p class="body-md">To create a world where digital tools feel as natural and inspiring as the paper they are named after.</p>
+          <h3 class="heading-sm">Visi</h3>
+          <p class="body-md">Menciptakan ruang kerja digital yang terasa senyaman dan seotentik media fisik bagi setiap kreator.</p>
         </div>
-        <div class="value-card fade-in" style="--stagger-delay: 1;">
+        <div class="value-card fade-in">
           <span class="material-symbols-rounded">rocket_launch</span>
-          <h3 class="heading-sm">Mission</h3>
-          <p class="body-md">To build a cohesive ecosystem of premium applications that empower creativity across every medium.</p>
+          <h3 class="heading-sm">Misi</h3>
+          <p class="body-md">Membangun aplikasi kreatif Android berstandar premium yang saling terhubung dan memberdayakan para pembuat karya.</p>
         </div>
-        <div class="value-card fade-in" style="--stagger-delay: 2;">
+        <div class="value-card fade-in">
           <span class="material-symbols-rounded">center_focus_strong</span>
-          <h3 class="heading-sm">Simplicity</h3>
-          <p class="body-md">We believe the best tools are the ones you barely notice. Clean interfaces, zero clutter.</p>
+          <h3 class="heading-sm">Kesederhanaan</h3>
+          <p class="body-md">Antarmuka minimalis tanpa distraksi, sehingga perhatian Anda sepenuhnya terfokus pada karya.</p>
         </div>
-        <div class="value-card fade-in" style="--stagger-delay: 3;">
+        <div class="value-card fade-in">
           <span class="material-symbols-rounded">verified</span>
-          <h3 class="heading-sm">Quality</h3>
-          <p class="body-md">Every detail matters. We obsess over pixels, performance, and polish.</p>
+          <h3 class="heading-sm">Kualitas & Presisi</h3>
+          <p class="body-md">Setiap piksel, goresan alat, dan responsivitas disentuh dengan perhatian mendalam pada detail.</p>
         </div>
-        <div class="value-card fade-in" style="--stagger-delay: 4;">
-          <span class="material-symbols-rounded">groups</span>
-          <h3 class="heading-sm">Community</h3>
-          <p class="body-md">Built for people, by people. We listen, adapt, and grow with our users.</p>
+        <div class="value-card fade-in">
+          <span class="material-symbols-rounded">lock</span>
+          <h3 class="heading-sm">Privasi Utama</h3>
+          <p class="body-md">Karya dan data Anda adalah milik Anda sepenuhnya, tersimpan aman tanpa pelacakan agresif.</p>
         </div>
-        <div class="value-card fade-in" style="--stagger-delay: 5;">
-          <span class="material-symbols-rounded">lightbulb</span>
-          <h3 class="heading-sm">Innovation</h3>
-          <p class="body-md">Pushing boundaries while staying grounded in what works.</p>
+        <div class="value-card fade-in">
+          <span class="material-symbols-rounded">storefront</span>
+          <h3 class="heading-sm">Dukungan Kreator</h3>
+          <p class="body-md">Membuka jalan bagi kreator untuk mempublikasikan dan menghasilkan nilai dari aset digital mereka.</p>
         </div>
       </div>
     </section>
 
-    <section class="section container">
-      <h2 class="heading-md text-center">Timeline</h2>
-      <p class="body-md text-center mb-48">The journey of Paper, from idea to ecosystem.</p>
-      <div class="timeline">
+    <!-- Timeline -->
+    <section class="section">
+      <h2 class="heading-md text-center fade-in">Perjalanan Ekosistem</h2>
+      <p class="body-md text-center mb-48 fade-in">Tahapan pertumbuhan Standalone Studio dari gagasan awal hingga ekosistem mandiri.</p>
+      <div class="timeline fade-in">
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-date">2024 Q3</div>
-          <div class="timeline-title">The Idea</div>
-          <div class="timeline-desc">Paperleaf concept born. A note-taking app that feels like real paper.</div>
+          <div class="timeline-title">Gagasan Paperleaf Lahir</div>
+          <div class="timeline-desc">Konsep buku catatan digital dengan animasi pembalik halaman nyata dan tekstur goresan alami mulai dikembangkan.</div>
         </div>
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-date">2025 Q1</div>
-          <div class="timeline-title">Development Begins</div>
-          <div class="timeline-desc">Standalone Studio starts building the Paper ecosystem from the ground up.</div>
+          <div class="timeline-title">Fondasi Ekosistem Standalone Studio</div>
+          <div class="timeline-desc">Arsitektur aplikasi terpadu disusun untuk menghadirkan rangkaian alat kreatif yang saling melengkapi di Android.</div>
         </div>
         <div class="timeline-item">
           <div class="timeline-dot"></div>
-          <div class="timeline-date">2025 Q3</div>
-          <div class="timeline-title">Paperleaf Beta</div>
-          <div class="timeline-desc">First public beta released. Early adopters join the journey.</div>
+          <div class="timeline-date">2025 Q4 - 2026 Q1</div>
+          <div class="timeline-title">Pratinjau Play Store & Pengujian</div>
+          <div class="timeline-desc">Paperleaf memasuki proses peninjauan produksi Play Store, dan LeafPaint memasuki pengujian fitur lukis digital.</div>
         </div>
         <div class="timeline-item">
           <div class="timeline-dot"></div>
-          <div class="timeline-date">2026 Q1</div>
-          <div class="timeline-title">Ecosystem Vision</div>
-          <div class="timeline-desc">Expansion plans announced. Paper Book, Studio, Paint, Space, and Music in development.</div>
+          <div class="timeline-date">2026 Q2</div>
+          <div class="timeline-title">LeafStudio & Leafly</div>
+          <div class="timeline-desc">Pengembangan ruang kerja kreator (LeafStudio) dan modul animasi (Leafly) untuk memperluas kemampuan kreatif pengguna.</div>
         </div>
         <div class="timeline-item">
           <div class="timeline-dot"></div>
-          <div class="timeline-date">2026 Q3</div>
-          <div class="timeline-title">Public Launch</div>
-          <div class="timeline-desc">Paper Ecosystem official website and app suite available to everyone.</div>
+          <div class="timeline-date">Masa Depan</div>
+          <div class="timeline-title">Peta Jalan Ekosistem Lengkap</div>
+          <div class="timeline-desc">Perilisan bertahap untuk LeafMarket, LeafBook, LeafMusic, LeafBox, Leafriend, dan Leafed.</div>
         </div>
       </div>
     </section>
 
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">
           <div class="brand-icon">
-            <img src="assets/icons/stalone_white.png" alt="Standalone Studio Logo" loading="lazy" decoding="async">
+            <img src="assets/icons/stalone_white.png" alt="Standalone Studio Logo" width="36" height="36" loading="lazy">
           </div>
           <span>Standalone Studio</span>
+
+          <div class="social-links">
+            <a href="https://www.instagram.com/paperleaf.app/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+              <span class="material-symbols-rounded">photo_camera</span>
+              <div class="social-tooltip">
+                <div class="tooltip-title">Instagram</div>
+                <div class="tooltip-item">@paperleaf.app</div>
+                <div class="tooltip-item">@stalone.studio</div>
+                <div class="tooltip-item">@saidattaufiq</div>
+              </div>
+            </a>
+
+            <a href="https://www.threads.net/@paperleaf.app" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Threads">
+              <span class="material-symbols-rounded">forum</span>
+              <div class="social-tooltip">
+                <div class="tooltip-title">Threads</div>
+                <div class="tooltip-item">@paperleaf.app</div>
+                <div class="tooltip-item">@stalone.studio</div>
+                <div class="tooltip-item">@saidattaufiq</div>
+              </div>
+            </a>
+
+            <a href="https://www.tiktok.com/@paperleaf.app" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="TikTok">
+              <span class="material-symbols-rounded">music_video</span>
+              <div class="social-tooltip">
+                <div class="tooltip-title">TikTok</div>
+                <div class="tooltip-item">@paperleaf.app</div>
+                <div class="tooltip-item">@stalone.studio</div>
+                <div class="tooltip-item">@saidattaufiq</div>
+              </div>
+            </a>
+
+            <a href="https://youtube.com/@standalonestudio-t1s" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
+              <span class="material-symbols-rounded">play_circle</span>
+              <div class="social-tooltip">
+                <div class="tooltip-title">YouTube</div>
+                <div class="tooltip-item">Standalone Studio</div>
+              </div>
+            </a>
+
+            <a href="mailto:stalone.studio@gmail.com" class="social-link" aria-label="Email">
+              <span class="material-symbols-rounded">mail</span>
+              <div class="social-tooltip">
+                <div class="tooltip-title">Email Dukungan</div>
+                <div class="tooltip-item">stalone.studio@gmail.com</div>
+              </div>
+            </a>
+          </div>
         </div>
+
         <div class="footer-links">
-          <a href="paperleaf/privacy.html" class="footer-link">Privacy Policy</a>
-          <a href="paperleaf/delete-account.html" class="footer-link">Delete Account</a>
-          <a href="paperleaf/term_of_service.html" class="footer-link">Terms of Service</a>
-          <a href="#" class="footer-link">Cookie Policy</a>
-          <a href="#" class="footer-link">License</a>
-          <a href="support.html" class="footer-link">Support</a>
-          <a href="#" class="footer-link">GitHub</a>
-          <a href="#" class="footer-link">Google Play</a>
-          <a href="#" class="footer-link">Contact</a>
+          <a href="paperleaf/privacy.html" class="footer-link" data-i18n="footer_privacy">Kebijakan Privasi</a>
+          <a href="paperleaf/delete-account.html" class="footer-link" data-i18n="footer_delete_account">Hapus Akun & Data</a>
+          <a href="paperleaf/term_of_service.html" class="footer-link" data-i18n="footer_tos">Syarat & Ketentuan</a>
+          <a href="support.html" class="footer-link" data-i18n="footer_support">Pusat Bantuan</a>
+          <a href="about.html" class="footer-link" data-i18n="footer_about">Tentang Kami</a>
         </div>
-        <p class="footer-copyright">&copy; 2026 Standalone Studio</p>
+
+        <p class="footer-copyright">&copy; 2026 Standalone Studio. <span data-i18n="footer_rights">Hak cipta dilindungi undang-undang.</span></p>
       </div>
     </div>
   </footer>
 
+  <script src="js/config.js"></script>
+  <script src="js/data/apps.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

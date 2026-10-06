@@ -1,229 +1,308 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="google-site-verification" content="1hWeK7uRG7fk2pqx_jTE9qWvT1CCHcU8YiCxYLmanOg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Paper Support - Get help with Paper applications. Find FAQs, documentation, and contact info.">
-  <meta name="keywords" content="Paper Support, FAQ, Bug Report, Feature Request, Documentation">
+  <meta name="description" content="Pusat Bantuan Standalone Studio - Temukan jawaban FAQ, bantuan Paperleaf, panduan akun, dan kontak tim kami.">
+  <meta name="keywords" content="Standalone Studio Support, Bantuan Paperleaf, FAQ, Hapus Akun, Kontak Pengembang">
   <meta name="author" content="Standalone Studio">
   <meta name="theme-color" content="#090909">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://standalone-studio.github.io/support.html">
-  <meta property="og:title" content="Support - Paper Ecosystem">
-  <meta property="og:description" content="We're here to help. Find answers, documentation, and resources for all Paper applications.">
-  <meta property="og:image" content="https://standalone-studio.github.io/assets/screenshots/ss_paperleaf2.jpg">
+  <meta property="og:title" content="Pusat Bantuan - Standalone Studio">
+  <meta property="og:description" content="Kami siap membantu Anda terkait penggunaan Paperleaf dan ekosistem Standalone Studio.">
+  <meta property="og:image" content="https://standalone-studio.github.io/assets/screenshots/ss_paperleaf2.webp">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://standalone-studio.github.io/support.html">
-  <meta property="twitter:title" content="Support - Paper Ecosystem">
-  <meta property="twitter:description" content="We're here to help. Find answers, documentation, and resources for all Paper applications.">
-  <meta property="twitter:image" content="https://standalone-studio.github.io/assets/screenshots/ss_paperleaf2.jpg">
+  <meta property="twitter:title" content="Pusat Bantuan - Standalone Studio">
+  <meta property="twitter:description" content="Kami siap membantu Anda terkait penggunaan Paperleaf dan ekosistem Standalone Studio.">
+  <meta property="twitter:image" content="https://standalone-studio.github.io/assets/screenshots/ss_paperleaf2.webp">
 
-  <title>Support - Paper Ecosystem</title>
+  <title>Pusat Bantuan - Standalone Studio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/icons/stalone_white.png" type="image/png">
 </head>
 <body>
 
+  <!-- NAVBAR -->
   <nav class="navbar liquid-glass" id="navbar">
     <div class="liquid-glass-highlight"></div>
     <div class="navbar-inner">
       <div class="navbar-left">
-        <a href="index.html" class="navbar-brand" aria-label="Home">
+        <a href="index.html" class="navbar-brand" aria-label="Standalone Studio Home">
           <div class="brand-icon">
-            <img src="assets/icons/stalone_white.png" alt="Standalone Studio Logo" loading="lazy" decoding="async">
+            <img src="assets/icons/stalone_white.png" alt="Standalone Studio Logo" width="28" height="28">
           </div>
         </a>
       </div>
 
       <div class="navbar-nav">
         <div class="nav-item">
-          <a href="apps.html" class="nav-link">Apps</a>
+          <a href="apps.html" class="nav-link" data-i18n="nav_apps">Aplikasi</a>
           <div class="dropdown-menu">
             <a href="paperleaf/index.html" class="dropdown-link">Paperleaf</a>
+            <a href="apps.html#leafpaint" class="dropdown-link">LeafPaint</a>
             <a href="apps.html#leafly" class="dropdown-link">Leafly</a>
             <a href="apps.html#leafstudio" class="dropdown-link">LeafStudio</a>
           </div>
         </div>
         <div class="nav-item">
-          <a href="store.html" class="nav-link">Market</a>
+          <a href="store.html" class="nav-link" data-i18n="nav_market">Pasar Aset</a>
           <div class="dropdown-menu">
-            <a href="store.html#tema" class="dropdown-link">Tema</a>
-            <a href="store.html#sampul" class="dropdown-link">Sampul</a>
-            <a href="store.html#template" class="dropdown-link">Template</a>
-            <a href="store.html#buku" class="dropdown-link">Buku</a>
+            <a href="store.html#buku" class="dropdown-link">Buku & Template</a>
+            <a href="store.html#kuas" class="dropdown-link">Kuas & Tekstur</a>
+            <a href="store.html#stiker" class="dropdown-link">Stiker & Ornamen</a>
+            <a href="store.html#tema" class="dropdown-link">Sampul & Tema</a>
           </div>
         </div>
-        <a href="support.html" class="nav-link active">Support</a>
+        <a href="support.html" class="nav-link active" data-i18n="nav_support">Dukungan</a>
         <div class="nav-item">
-          <a href="about.html" class="nav-link">About</a>
+          <a href="about.html" class="nav-link" data-i18n="nav_about">Tentang Kami</a>
           <div class="dropdown-menu">
-            <a href="about.html#paperleaf-about" class="dropdown-link">Paperleaf</a>
-            <a href="about.html#developer" class="dropdown-link">Developer</a>
+            <a href="about.html#ekosistem" class="dropdown-link">Ekosistem</a>
+            <a href="about.html#developer" class="dropdown-link">Pengembang</a>
           </div>
         </div>
       </div>
 
       <div class="navbar-right">
-        <button class="navbar-btn" aria-label="Search" id="searchToggle">
+        <button class="lang-toggle-btn" id="langToggleBtn" type="button" aria-label="Ganti Bahasa">
+          ID
+        </button>
+
+        <button class="navbar-btn" aria-label="Cari" id="searchToggle" type="button">
           <span class="material-symbols-rounded">search</span>
+        </button>
+
+        <button class="mobile-menu-btn" id="mobileMenuToggle" type="button" aria-label="Buka Menu" aria-expanded="false">
+          <span class="material-symbols-rounded">menu</span>
         </button>
       </div>
     </div>
   </nav>
 
-  <div class="search-panel" id="searchPanel">
-    <div class="search-panel-inner">
-      <span class="material-symbols-rounded">search</span>
-      <input type="text" placeholder="Search Paper...">
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-nav">
+      <a href="index.html" class="mobile-menu-link">Beranda</a>
+      <a href="apps.html" class="mobile-menu-link" data-i18n="nav_apps">Aplikasi</a>
+      <a href="store.html" class="mobile-menu-link" data-i18n="nav_market">Pasar Aset</a>
+      <a href="support.html" class="mobile-menu-link active" data-i18n="nav_support">Dukungan</a>
+      <a href="about.html" class="mobile-menu-link" data-i18n="nav_about">Tentang Kami</a>
+      <a href="paperleaf/privacy.html" class="mobile-menu-link" data-i18n="footer_privacy">Kebijakan Privasi</a>
     </div>
   </div>
 
+  <!-- Search Panel -->
+  <div class="search-panel" id="searchPanel">
+    <div class="search-panel-inner">
+      <span class="material-symbols-rounded">search</span>
+      <input type="text" placeholder="Cari aplikasi, fitur, atau aset..." data-i18n-placeholder="search_placeholder" aria-label="Cari aplikasi">
+    </div>
+  </div>
 
+  <!-- MAIN CONTENT -->
   <main class="page-content container">
-    <section class="page-header fade-in">
-      <span class="label">Help Center</span>
-      <h1 class="heading-lg">Support</h1>
-      <p class="body-lg">We're here to help. Find answers, documentation, and resources.</p>
-    </section>
 
-    <section class="section">
-      <h2 class="heading-md">Frequently Asked Questions</h2>
+    <header class="section-header fade-in">
+      <span class="label">Pusat Bantuan</span>
+      <h1 class="heading-lg" data-i18n="nav_support">Dukungan & Bantuan</h1>
+      <p class="body-lg">Kami siap membantu menjawab pertanyaan dan menyelesaikan kendala teknis Anda.</p>
+    </header>
+
+    <!-- FAQ Section -->
+    <section class="section" style="padding-top: 10px;">
+      <h2 class="heading-md mb-24 text-center">Pertanyaan yang Sering Diajukan (FAQ)</h2>
       <div class="faq-list">
+
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            What is Paper Ecosystem?
+            Apa itu ekosistem Standalone Studio?
             <span class="material-symbols-rounded">expand_more</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              Paper Ecosystem is a suite of creative applications designed for makers, thinkers, and dreamers. It includes apps for note-taking, reading, design, painting, cloud workspace, and music creation.
+              Standalone Studio adalah pengembang ekosistem aplikasi kreatif untuk Android. Ekosistem ini mencakup <strong>Paperleaf</strong> (buku catatan & scrapbook digital), <strong>LeafPaint</strong> (studio lukis digital dengan layer), <strong>Leafly</strong> (animasi frame-by-frame), <strong>LeafStudio</strong> (ruang kerja kreator untuk menjual aset), dan serangkaian aplikasi pendukung lainnya.
             </div>
           </div>
         </div>
+
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            Is Paperleaf free to use?
+            Apakah Paperleaf gratis diunduh?
             <span class="material-symbols-rounded">expand_more</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              Yes, Paperleaf is available for free on Google Play. Premium features may be available through in-app purchases in the future.
+              Ya, aplikasi Paperleaf dapat diunduh melalui Google Play Store. Fitur dasar mencakup buku catatan tanpa batas, pensil alami, pena kaligrafi, pewarnaan, dan penyimpanan lokal otomatis. Beberapa alat artistik khusus tersedia secara opsional.
             </div>
           </div>
         </div>
+
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            When will the other apps be available?
+            Bagaimana cara mencadangkan dan menyinkronkan data karya saya?
             <span class="material-symbols-rounded">expand_more</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              We are working hard to bring Paper Book, Paper Studio, Paper Paint, Paper Space, and Paper Music to you. Stay tuned for updates on our social channels.
+              Paperleaf dilengkapi dengan fitur penyimpanan otomatis pada perangkat, serta sinkronisasi aman melalui akun Google/Firebase terdaftar sehingga Anda dapat memulihkan jurnal karya Anda kapan saja.
             </div>
           </div>
         </div>
+
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            How can I report a bug?
+            Bagaimana cara meminta penghapusan akun atau data?
             <span class="material-symbols-rounded">expand_more</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              You can report bugs through our Bug Report form below or by visiting our GitHub repository and creating an issue.
+              Anda dapat menghapus akun langsung dari dalam menu Pengaturan di aplikasi Paperleaf, atau mengajukan permohonan melalui email resmi ke <strong>stalone.studio@gmail.com</strong>. Untuk panduan lengkap, silakan kunjungi halaman <a href="paperleaf/delete-account.html" style="text-decoration: underline; color: #FFFFFF;">Instruksi Penghapusan Akun</a>.
             </div>
           </div>
         </div>
+
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            How can I request a feature?
+            Kapan aplikasi LeafPaint, LeafStudio, dan Leafly dirilis?
             <span class="material-symbols-rounded">expand_more</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              We love hearing from our users! Use the Feature Request form below to share your ideas. Every suggestion is reviewed by our team.
+              Saat ini LeafPaint sedang dalam tahap pengujian performa kuas dan layer, sedangkan LeafStudio dan Leafly sedang dalam pengembangan intensif. Informasi pengujian beta akan diumumkan melalui kanal media sosial resmi kami.
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
+    <!-- Support Contact Cards -->
     <section class="section">
-      <h2 class="heading-md">Get in Touch</h2>
+      <h2 class="heading-md mb-24 text-center">Hubungi Kami</h2>
       <div class="support-grid">
-        <div class="support-card fade-in">
-          <div class="support-card-icon">
-            <span class="material-symbols-rounded">menu_book</span>
-          </div>
-          <div>
-            <div class="support-card-title">Documentation</div>
-            <div class="support-card-desc">Browse guides and tutorials for all Paper applications.</div>
-          </div>
-        </div>
-        <div class="support-card fade-in">
-          <div class="support-card-icon">
-            <span class="material-symbols-rounded">bug_report</span>
-          </div>
-          <div>
-            <div class="support-card-title">Bug Report</div>
-            <div class="support-card-desc">Found something wrong? Let us know so we can fix it.</div>
-          </div>
-        </div>
-        <div class="support-card fade-in">
-          <div class="support-card-icon">
-            <span class="material-symbols-rounded">lightbulb</span>
-          </div>
-          <div>
-            <div class="support-card-title">Feature Request</div>
-            <div class="support-card-desc">Have an idea? Share it with us and help shape the future.</div>
-          </div>
-        </div>
-        <div class="support-card fade-in">
+
+        <a href="mailto:stalone.studio@gmail.com" class="support-card fade-in" style="text-decoration: none; color: inherit;">
           <div class="support-card-icon">
             <span class="material-symbols-rounded">mail</span>
           </div>
           <div>
-            <div class="support-card-title">Contact</div>
-            <div class="support-card-desc">Reach out to our team directly for any inquiries.</div>
+            <h3 class="support-card-title">Email Resmi</h3>
+            <p class="support-card-desc">Kirim pertanyaan, laporan bug, atau masukan ke stalone.studio@gmail.com</p>
           </div>
-        </div>
+        </a>
+
+        <a href="paperleaf/delete-account.html" class="support-card fade-in" style="text-decoration: none; color: inherit;">
+          <div class="support-card-icon">
+            <span class="material-symbols-rounded">person_remove</span>
+          </div>
+          <div>
+            <h3 class="support-card-title">Layanan Akun</h3>
+            <p class="support-card-desc">Panduan penghapusan akun dan pengelolaan privasi data pengguna.</p>
+          </div>
+        </a>
+
+        <a href="paperleaf/privacy.html" class="support-card fade-in" style="text-decoration: none; color: inherit;">
+          <div class="support-card-icon">
+            <span class="material-symbols-rounded">security</span>
+          </div>
+          <div>
+            <h3 class="support-card-title">Kebijakan Privasi</h3>
+            <p class="support-card-desc">Informasi lengkap bagaimana data Anda dilindungi di ekosistem kami.</p>
+          </div>
+        </a>
+
       </div>
     </section>
+
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">
           <div class="brand-icon">
-            <img src="assets/icons/stalone_white.png" alt="Standalone Studio Logo" loading="lazy" decoding="async">
+            <img src="assets/icons/stalone_white.png" alt="Standalone Studio Logo" width="36" height="36" loading="lazy">
           </div>
           <span>Standalone Studio</span>
+
+          <div class="social-links">
+            <a href="https://www.instagram.com/paperleaf.app/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+              <span class="material-symbols-rounded">photo_camera</span>
+              <div class="social-tooltip">
+                <div class="tooltip-title">Instagram</div>
+                <div class="tooltip-item">@paperleaf.app</div>
+                <div class="tooltip-item">@stalone.studio</div>
+                <div class="tooltip-item">@saidattaufiq</div>
+              </div>
+            </a>
+
+            <a href="https://www.threads.net/@paperleaf.app" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Threads">
+              <span class="material-symbols-rounded">forum</span>
+              <div class="social-tooltip">
+                <div class="tooltip-title">Threads</div>
+                <div class="tooltip-item">@paperleaf.app</div>
+                <div class="tooltip-item">@stalone.studio</div>
+                <div class="tooltip-item">@saidattaufiq</div>
+              </div>
+            </a>
+
+            <a href="https://www.tiktok.com/@paperleaf.app" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="TikTok">
+              <span class="material-symbols-rounded">music_video</span>
+              <div class="social-tooltip">
+                <div class="tooltip-title">TikTok</div>
+                <div class="tooltip-item">@paperleaf.app</div>
+                <div class="tooltip-item">@stalone.studio</div>
+                <div class="tooltip-item">@saidattaufiq</div>
+              </div>
+            </a>
+
+            <a href="https://youtube.com/@standalonestudio-t1s" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
+              <span class="material-symbols-rounded">play_circle</span>
+              <div class="social-tooltip">
+                <div class="tooltip-title">YouTube</div>
+                <div class="tooltip-item">Standalone Studio</div>
+              </div>
+            </a>
+
+            <a href="mailto:stalone.studio@gmail.com" class="social-link" aria-label="Email">
+              <span class="material-symbols-rounded">mail</span>
+              <div class="social-tooltip">
+                <div class="tooltip-title">Email Dukungan</div>
+                <div class="tooltip-item">stalone.studio@gmail.com</div>
+              </div>
+            </a>
+          </div>
         </div>
+
         <div class="footer-links">
-          <a href="paperleaf/privacy.html" class="footer-link">Privacy Policy</a>
-          <a href="paperleaf/delete-account.html" class="footer-link">Delete Account</a>
-          <a href="paperleaf/term_of_service.html" class="footer-link">Terms of Service</a>
-          <a href="#" class="footer-link">Cookie Policy</a>
-          <a href="#" class="footer-link">License</a>
-          <a href="support.html" class="footer-link">Support</a>
-          <a href="#" class="footer-link">GitHub</a>
-          <a href="#" class="footer-link">Google Play</a>
-          <a href="#" class="footer-link">Contact</a>
+          <a href="paperleaf/privacy.html" class="footer-link" data-i18n="footer_privacy">Kebijakan Privasi</a>
+          <a href="paperleaf/delete-account.html" class="footer-link" data-i18n="footer_delete_account">Hapus Akun & Data</a>
+          <a href="paperleaf/term_of_service.html" class="footer-link" data-i18n="footer_tos">Syarat & Ketentuan</a>
+          <a href="support.html" class="footer-link" data-i18n="footer_support">Pusat Bantuan</a>
+          <a href="about.html" class="footer-link" data-i18n="footer_about">Tentang Kami</a>
         </div>
-        <p class="footer-copyright">&copy; 2026 Standalone Studio</p>
+
+        <p class="footer-copyright">&copy; 2026 Standalone Studio. <span data-i18n="footer_rights">Hak cipta dilindungi undang-undang.</span></p>
       </div>
     </div>
   </footer>
 
+  <script src="js/config.js"></script>
+  <script src="js/data/apps.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

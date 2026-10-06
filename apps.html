@@ -1,35 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="google-site-verification" content="1hWeK7uRG7fk2pqx_jTE9qWvT1CCHcU8YiCxYLmanOg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Paper Ecosystem Apps - Explore our suite of creative applications including Paperleaf, Paper Book, and more.">
-  <meta name="keywords" content="Paper Ecosystem, Paperleaf, Creative Apps, Note-taking, Design Apps">
+  <meta name="description" content="Standalone Studio Apps - Explore our creative ecosystem including Paperleaf, LeafPaint, Leafly, LeafStudio, and upcoming tools.">
+  <meta name="keywords" content="Standalone Studio, Paperleaf, LeafPaint, Leafly, LeafStudio, Android Apps, Creative Studio">
   <meta name="author" content="Standalone Studio">
   <meta name="theme-color" content="#090909">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://standalone-studio.github.io/apps.html">
-  <meta property="og:title" content="Apps - Paper Ecosystem">
-  <meta property="og:description" content="Explore our suite of creative applications designed for simplicity and power.">
-  <meta property="og:image" content="https://standalone-studio.github.io/assets/screenshots/ss_paperleaf1.jpg">
+  <meta property="og:title" content="Aplikasi - Standalone Studio">
+  <meta property="og:description" content="Jelajahi rangkaian aplikasi kreatif Standalone Studio di Android.">
+  <meta property="og:image" content="https://standalone-studio.github.io/assets/screenshots/ss_paperleaf1.webp">
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://standalone-studio.github.io/apps.html">
-  <meta property="twitter:title" content="Apps - Paper Ecosystem">
-  <meta property="twitter:description" content="Explore our suite of creative applications designed for simplicity and power.">
-  <meta property="twitter:image" content="https://standalone-studio.github.io/assets/screenshots/ss_paperleaf1.jpg">
-
-  <title>Apps - Paper Ecosystem</title>
+  <title>Aplikasi - Standalone Studio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/icons/stalone_white.png" type="image/png">
 </head>
 <body>
 
@@ -38,248 +32,94 @@
     <div class="liquid-glass-highlight"></div>
     <div class="navbar-inner">
       <div class="navbar-left">
-        <a href="index.html" class="navbar-brand" aria-label="Home">
+        <a href="index.html" class="navbar-brand" aria-label="Standalone Studio Home">
           <div class="brand-icon">
-            <img src="assets/icons/stalone_white.png" alt="Standalone Studio Logo" loading="lazy" decoding="async">
+            <img src="assets/icons/stalone_white.png" alt="Standalone Studio Logo" width="28" height="28">
           </div>
         </a>
       </div>
 
       <div class="navbar-nav">
         <div class="nav-item">
-          <a href="apps.html" class="nav-link active">Apps</a>
+          <a href="apps.html" class="nav-link active" data-i18n="nav_apps">Aplikasi</a>
           <div class="dropdown-menu">
             <a href="paperleaf/index.html" class="dropdown-link">Paperleaf</a>
+            <a href="apps.html#leafpaint" class="dropdown-link">LeafPaint</a>
             <a href="apps.html#leafly" class="dropdown-link">Leafly</a>
             <a href="apps.html#leafstudio" class="dropdown-link">LeafStudio</a>
           </div>
         </div>
         <div class="nav-item">
-          <a href="store.html" class="nav-link">Market</a>
+          <a href="store.html" class="nav-link" data-i18n="nav_market">Pasar Aset</a>
           <div class="dropdown-menu">
-            <a href="store.html#tema" class="dropdown-link">Tema</a>
-            <a href="store.html#sampul" class="dropdown-link">Sampul</a>
-            <a href="store.html#template" class="dropdown-link">Template</a>
-            <a href="store.html#buku" class="dropdown-link">Buku</a>
+            <a href="store.html#buku" class="dropdown-link">Buku & Template</a>
+            <a href="store.html#kuas" class="dropdown-link">Kuas & Tekstur</a>
+            <a href="store.html#stiker" class="dropdown-link">Stiker & Ornamen</a>
+            <a href="store.html#tema" class="dropdown-link">Sampul & Tema</a>
           </div>
         </div>
-        <a href="support.html" class="nav-link">Support</a>
+        <a href="support.html" class="nav-link" data-i18n="nav_support">Dukungan</a>
         <div class="nav-item">
-          <a href="about.html" class="nav-link">About</a>
+          <a href="about.html" class="nav-link" data-i18n="nav_about">Tentang Kami</a>
           <div class="dropdown-menu">
-            <a href="about.html#paperleaf-about" class="dropdown-link">Paperleaf</a>
-            <a href="about.html#developer" class="dropdown-link">Developer</a>
+            <a href="about.html#ekosistem" class="dropdown-link">Ekosistem</a>
+            <a href="about.html#developer" class="dropdown-link">Pengembang</a>
           </div>
         </div>
       </div>
 
       <div class="navbar-right">
-        <button class="navbar-btn" aria-label="Search" id="searchToggle">
+        <!-- Language Switcher -->
+        <button class="lang-toggle-btn" id="langToggleBtn" type="button" aria-label="Ganti Bahasa">
+          ID
+        </button>
+
+        <button class="navbar-btn" aria-label="Cari" id="searchToggle" type="button">
           <span class="material-symbols-rounded">search</span>
+        </button>
+
+        <button class="mobile-menu-btn" id="mobileMenuToggle" type="button" aria-label="Buka Menu" aria-expanded="false">
+          <span class="material-symbols-rounded">menu</span>
         </button>
       </div>
     </div>
   </nav>
 
-  <div class="search-panel" id="searchPanel">
-    <div class="search-panel-inner">
-      <span class="material-symbols-rounded">search</span>
-      <input type="text" placeholder="Search Paper...">
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-nav">
+      <a href="index.html" class="mobile-menu-link">Beranda</a>
+      <a href="apps.html" class="mobile-menu-link active" data-i18n="nav_apps">Aplikasi</a>
+      <a href="store.html" class="mobile-menu-link" data-i18n="nav_market">Pasar Aset</a>
+      <a href="support.html" class="mobile-menu-link" data-i18n="nav_support">Dukungan</a>
+      <a href="about.html" class="mobile-menu-link" data-i18n="nav_about">Tentang Kami</a>
+      <a href="paperleaf/privacy.html" class="mobile-menu-link" data-i18n="footer_privacy">Kebijakan Privasi</a>
     </div>
   </div>
 
-
+  <!-- Search Panel -->
+  <div class="search-panel" id="searchPanel">
+    <div class="search-panel-inner">
+      <span class="material-symbols-rounded">search</span>
+      <input type="text" placeholder="Cari aplikasi, fitur, atau aset..." data-i18n-placeholder="search_placeholder" aria-label="Cari aplikasi">
+    </div>
+  </div>
 
   <!-- MAIN CONTENT -->
-  <main class="page-content">
+  <main class="page-content container">
 
-    <!-- Page Title -->
-    <div class="page-title container fade-in">
-      <span class="label">Collection</span>
-      <h1 class="heading-lg">All Applications</h1>
-      <p class="body-lg" style="margin-top: 12px; max-width: 500px; margin-left: auto; margin-right: auto;">
-        Explore the complete Paper Ecosystem. Built for creativity, designed for simplicity.
+    <!-- Page Header -->
+    <div class="page-title fade-in">
+      <span class="label">Ekosistem</span>
+      <h1 class="heading-lg" data-i18n="section_apps_title">Aplikasi Unggulan</h1>
+      <p class="body-lg" style="margin-top: 12px; max-width: 600px; margin-left: auto; margin-right: auto;" data-i18n="section_apps_desc">
+        Alat digital mutakhir yang dirancang dengan presisi, keindahan, dan kemudahan penggunaan.
       </p>
     </div>
 
-    <!-- Apps Grid -->
-    <section class="section container">
-      <div class="app-grid">
-
-        <!-- Paperleaf -->
-        <div class="app-compact-card fade-in" data-app="paperleaf">
-          <div class="app-compact-header">
-            <div class="app-compact-left">
-              <div class="app-compact-icon">
-                <img src="assets/icons/logo_paperleaf.jpg" alt="Paperleaf App Icon" loading="lazy" decoding="async">
-              </div>
-              <div>
-                <div class="app-compact-name">Paperleaf</div>
-              </div>
-            </div>
-            <div class="status-badge available">
-              <span class="status-dot"></span>
-              Open
-            </div>
-          </div>
-          <p class="app-compact-tagline">
-            Your digital notebook, reimagined.
-          </p>
-          <div class="app-card-actions">
-            <a href="paperleaf/" class="btn btn-secondary">
-              Selengkapnya
-            </a>
-            <a href="#" class="btn btn-primary">
-              Download
-            </a>
-          </div>
-        </div>
-
-        <!-- Leafly -->
-        <div class="app-compact-card fade-in" data-app="leafly" id="leafly">
-          <div class="app-compact-header">
-            <div class="app-compact-left">
-              <div class="app-compact-icon">
-                <img src="assets/icons/leafly_icon.webp" alt="Leafly App Icon" loading="lazy" decoding="async">
-              </div>
-              <div>
-                <div class="app-compact-name">Leafly</div>
-              </div>
-            </div>
-            <div class="status-badge coming-soon">
-              <span class="status-dot"></span>
-              Coming Soon
-            </div>
-          </div>
-          <p class="app-compact-tagline">
-            Professional digital painting studio in your pocket.
-          </p>
-          <div class="app-card-actions">
-            <a href="apps.html#leafly" class="btn btn-secondary">
-              Selengkapnya
-            </a>
-          </div>
-        </div>
-
-        <!-- LeafStudio -->
-        <div class="app-compact-card fade-in" data-app="leafstudio" id="leafstudio">
-          <div class="app-compact-header">
-            <div class="app-compact-left">
-              <div class="app-compact-icon">
-                <img src="assets/icons/leafstudio_icon.webp" alt="LeafStudio App Icon" loading="lazy" decoding="async">
-              </div>
-              <div>
-                <div class="app-compact-name">LeafStudio</div>
-              </div>
-            </div>
-            <div class="status-badge coming-soon">
-              <span class="status-dot"></span>
-              Coming Soon
-            </div>
-          </div>
-          <p class="app-compact-tagline">
-            The ultimate marketplace for digital creators.
-          </p>
-          <div class="app-card-actions">
-            <a href="apps.html#leafstudio" class="btn btn-secondary">
-              Selengkapnya
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- App Detail Sections (hidden by default, shown via JS) -->
-    <section class="section container" id="appDetail" style="display: none;">
-      <a href="apps.html" class="back-link">
-        <span class="material-symbols-rounded">arrow_back</span>
-        Back to Apps
-      </a>
-
-      <div class="app-detail-hero fade-in">
-        <div class="app-detail-icon" id="detailIcon">
-          <img src="assets/icons/logo_paperleaf.jpg" alt="Paperleaf App Icon" loading="lazy" decoding="async">
-        </div>
-        <div class="app-detail-meta">
-          <h1 class="app-detail-name" id="detailName">Paperleaf</h1>
-          <p class="app-detail-slogan" id="detailSlogan">Your digital notebook, reimagined.</p>
-          <div class="app-detail-actions" id="detailActions">
-            <a href="#" class="btn btn-primary">
-              Download
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="app-detail-screenshots fade-in">
-        <div class="device-switcher">
-          <button class="device-btn active" data-device="phone">
-            <span class="material-symbols-rounded">smartphone</span>
-            Phone
-          </button>
-          <button class="device-btn" data-device="tablet">
-            <span class="material-symbols-rounded">tablet</span>
-            Tablet
-            <span class="material-symbols-rounded arrow">expand_more</span>
-          </button>
-        </div>
-        <div class="screenshots-row" id="screenshotsPhone">
-          <div class="screenshot-item">
-            <img src="assets/screenshots/ss_paperleaf1.jpg" alt="Paperleaf Phone Screenshot 1" loading="lazy" decoding="async">
-          </div>
-          <div class="screenshot-item">
-            <img src="assets/screenshots/ss_paperleaf2.jpg" alt="Paperleaf Phone Screenshot 2" loading="lazy" decoding="async">
-          </div>
-          <div class="screenshot-item">
-            <img src="assets/screenshots/ss_paperleaf3.jpg" alt="Paperleaf Phone Screenshot 3" loading="lazy" decoding="async">
-          </div>
-        </div>
-        <div class="device-dropdown" id="screenshotsTablet">
-          <div class="screenshots-row">
-            <div class="screenshot-item" style="width: 380px; height: 280px;">
-              <img src="assets/screenshots/ss_paperleaf2.jpg" alt="Paperleaf Tablet Screenshot 1" loading="lazy" decoding="async">
-            </div>
-            <div class="screenshot-item" style="width: 380px; height: 280px;">
-              <img src="assets/screenshots/ss_paperleaf3.jpg" alt="Paperleaf Tablet Screenshot 2" loading="lazy" decoding="async">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="app-detail-features fade-in">
-        <h2 class="heading-md mb-24">Features</h2>
-        <div class="feature-list" id="detailFeatures">
-          <div class="feature-item">
-            <span class="material-symbols-rounded">check_circle</span>
-            <div>
-              <div class="feature-item-title">Natural Writing</div>
-              <div class="feature-item-desc">Write with a feel that mimics real pen on paper.</div>
-            </div>
-          </div>
-          <div class="feature-item">
-            <span class="material-symbols-rounded">check_circle</span>
-            <div>
-              <div class="feature-item-title">Smart Organization</div>
-              <div class="feature-item-desc">Automatically organize notes with intelligent tags.</div>
-            </div>
-          </div>
-          <div class="feature-item">
-            <span class="material-symbols-rounded">check_circle</span>
-            <div>
-              <div class="feature-item-title">Cloud Sync</div>
-              <div class="feature-item-desc">Access your notes across all your devices.</div>
-            </div>
-          </div>
-          <div class="feature-item">
-            <span class="material-symbols-rounded">check_circle</span>
-            <div>
-              <div class="feature-item-title">Beautiful Themes</div>
-              <div class="feature-item-desc">Choose from elegant themes that suit your style.</div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!-- All Apps Grid (Rendered Dynamically via js/data/apps.js) -->
+    <section class="section" style="padding-top: 10px;">
+      <div id="allAppsContainer"></div>
     </section>
 
   </main>
@@ -290,26 +130,75 @@
       <div class="footer-inner">
         <div class="footer-brand">
           <div class="brand-icon">
-            <img src="assets/icons/stalone_white.png" alt="Standalone Studio Logo" loading="lazy" decoding="async">
+            <img src="assets/icons/stalone_white.png" alt="Standalone Studio Logo" width="36" height="36" loading="lazy">
           </div>
           <span>Standalone Studio</span>
+
+          <div class="social-links">
+            <a href="https://www.instagram.com/paperleaf.app/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+              <span class="material-symbols-rounded">photo_camera</span>
+              <div class="social-tooltip">
+                <div class="tooltip-title">Instagram</div>
+                <div class="tooltip-item">@paperleaf.app</div>
+                <div class="tooltip-item">@stalone.studio</div>
+                <div class="tooltip-item">@saidattaufiq</div>
+              </div>
+            </a>
+
+            <a href="https://www.threads.net/@paperleaf.app" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Threads">
+              <span class="material-symbols-rounded">forum</span>
+              <div class="social-tooltip">
+                <div class="tooltip-title">Threads</div>
+                <div class="tooltip-item">@paperleaf.app</div>
+                <div class="tooltip-item">@stalone.studio</div>
+                <div class="tooltip-item">@saidattaufiq</div>
+              </div>
+            </a>
+
+            <a href="https://www.tiktok.com/@paperleaf.app" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="TikTok">
+              <span class="material-symbols-rounded">music_video</span>
+              <div class="social-tooltip">
+                <div class="tooltip-title">TikTok</div>
+                <div class="tooltip-item">@paperleaf.app</div>
+                <div class="tooltip-item">@stalone.studio</div>
+                <div class="tooltip-item">@saidattaufiq</div>
+              </div>
+            </a>
+
+            <a href="https://youtube.com/@standalonestudio-t1s" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
+              <span class="material-symbols-rounded">play_circle</span>
+              <div class="social-tooltip">
+                <div class="tooltip-title">YouTube</div>
+                <div class="tooltip-item">Standalone Studio</div>
+              </div>
+            </a>
+
+            <a href="mailto:stalone.studio@gmail.com" class="social-link" aria-label="Email">
+              <span class="material-symbols-rounded">mail</span>
+              <div class="social-tooltip">
+                <div class="tooltip-title">Email Dukungan</div>
+                <div class="tooltip-item">stalone.studio@gmail.com</div>
+              </div>
+            </a>
+          </div>
         </div>
+
         <div class="footer-links">
-          <a href="paperleaf/privacy.html" class="footer-link">Privacy Policy</a>
-          <a href="paperleaf/delete-account.html" class="footer-link">Delete Account</a>
-          <a href="paperleaf/term_of_service.html" class="footer-link">Terms of Service</a>
-          <a href="#" class="footer-link">Cookie Policy</a>
-          <a href="#" class="footer-link">License</a>
-          <a href="support.html" class="footer-link">Support</a>
-          <a href="#" class="footer-link">GitHub</a>
-          <a href="#" class="footer-link">Google Play</a>
-          <a href="#" class="footer-link">Contact</a>
+          <a href="paperleaf/privacy.html" class="footer-link" data-i18n="footer_privacy">Kebijakan Privasi</a>
+          <a href="paperleaf/delete-account.html" class="footer-link" data-i18n="footer_delete_account">Hapus Akun & Data</a>
+          <a href="paperleaf/term_of_service.html" class="footer-link" data-i18n="footer_tos">Syarat & Ketentuan</a>
+          <a href="support.html" class="footer-link" data-i18n="footer_support">Pusat Bantuan</a>
+          <a href="about.html" class="footer-link" data-i18n="footer_about">Tentang Kami</a>
         </div>
-        <p class="footer-copyright">&copy; 2026 Standalone Studio</p>
+
+        <p class="footer-copyright">&copy; 2026 Standalone Studio. <span data-i18n="footer_rights">Hak cipta dilindungi undang-undang.</span></p>
       </div>
     </div>
   </footer>
 
+  <script src="js/config.js"></script>
+  <script src="js/data/apps.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

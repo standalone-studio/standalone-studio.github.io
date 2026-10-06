@@ -1,184 +1,260 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="google-site-verification" content="1hWeK7uRG7fk2pqx_jTE9qWvT1CCHcU8YiCxYLmanOg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Paper Store - Assets and resources for Paper applications. Get fonts, brushes, templates, and more.">
-  <meta name="keywords" content="Paper Store, Assets, Fonts, Brushes, Templates, Creative Tools">
+  <meta name="description" content="LeafMarket - Marketplace for creator assets in the Standalone Studio ecosystem. Digital books, custom brushes, stickers, and notebook themes.">
+  <meta name="keywords" content="LeafMarket, Standalone Studio, Paperleaf Assets, Digital Brushes, Notebook Covers, Stickers, Android Creative">
   <meta name="author" content="Standalone Studio">
   <meta name="theme-color" content="#090909">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://standalone-studio.github.io/store.html">
-  <meta property="og:title" content="Store - Paper Ecosystem">
-  <meta property="og:description" content="Browse our collection of assets, resources, and creative tools to enhance your Paper experience.">
-  <meta property="og:image" content="https://standalone-studio.github.io/assets/screenshots/ss_paperleaf2.jpg">
+  <meta property="og:title" content="LeafMarket - Standalone Studio">
+  <meta property="og:description" content="Temukan dan dapatkan aset pilihan untuk ekosistem kreatif Standalone Studio di Android.">
+  <meta property="og:image" content="https://standalone-studio.github.io/assets/screenshots/ss_paperleaf2.webp">
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://standalone-studio.github.io/store.html">
-  <meta property="twitter:title" content="Store - Paper Ecosystem">
-  <meta property="twitter:description" content="Browse our collection of assets, resources, and creative tools to enhance your Paper experience.">
-  <meta property="twitter:image" content="https://standalone-studio.github.io/assets/screenshots/ss_paperleaf2.jpg">
-
-  <title>Store - Paper Ecosystem</title>
+  <title>LeafMarket - Standalone Studio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/icons/stalone_white.png" type="image/png">
 </head>
 <body>
 
+  <!-- NAVBAR -->
   <nav class="navbar liquid-glass" id="navbar">
     <div class="liquid-glass-highlight"></div>
     <div class="navbar-inner">
       <div class="navbar-left">
-        <a href="index.html" class="navbar-brand" aria-label="Home">
+        <a href="index.html" class="navbar-brand" aria-label="Standalone Studio Home">
           <div class="brand-icon">
-            <img src="assets/icons/stalone_white.png" alt="Standalone Studio Logo" loading="lazy" decoding="async">
+            <img src="assets/icons/stalone_white.png" alt="Standalone Studio Logo" width="28" height="28">
           </div>
         </a>
       </div>
 
       <div class="navbar-nav">
         <div class="nav-item">
-          <a href="apps.html" class="nav-link">Apps</a>
+          <a href="apps.html" class="nav-link" data-i18n="nav_apps">Aplikasi</a>
           <div class="dropdown-menu">
             <a href="paperleaf/index.html" class="dropdown-link">Paperleaf</a>
+            <a href="apps.html#leafpaint" class="dropdown-link">LeafPaint</a>
             <a href="apps.html#leafly" class="dropdown-link">Leafly</a>
             <a href="apps.html#leafstudio" class="dropdown-link">LeafStudio</a>
           </div>
         </div>
         <div class="nav-item">
-          <a href="store.html" class="nav-link active">Market</a>
+          <a href="store.html" class="nav-link active" data-i18n="nav_market">Pasar Aset</a>
           <div class="dropdown-menu">
-            <a href="store.html#tema" class="dropdown-link">Tema</a>
-            <a href="store.html#sampul" class="dropdown-link">Sampul</a>
-            <a href="store.html#template" class="dropdown-link">Template</a>
-            <a href="store.html#buku" class="dropdown-link">Buku</a>
+            <a href="store.html#buku" class="dropdown-link">Buku & Template</a>
+            <a href="store.html#kuas" class="dropdown-link">Kuas & Tekstur</a>
+            <a href="store.html#stiker" class="dropdown-link">Stiker & Ornamen</a>
+            <a href="store.html#tema" class="dropdown-link">Sampul & Tema</a>
           </div>
         </div>
-        <a href="support.html" class="nav-link">Support</a>
+        <a href="support.html" class="nav-link" data-i18n="nav_support">Dukungan</a>
         <div class="nav-item">
-          <a href="about.html" class="nav-link">About</a>
+          <a href="about.html" class="nav-link" data-i18n="nav_about">Tentang Kami</a>
           <div class="dropdown-menu">
-            <a href="about.html#paperleaf-about" class="dropdown-link">Paperleaf</a>
-            <a href="about.html#developer" class="dropdown-link">Developer</a>
+            <a href="about.html#ekosistem" class="dropdown-link">Ekosistem</a>
+            <a href="about.html#developer" class="dropdown-link">Pengembang</a>
           </div>
         </div>
       </div>
 
       <div class="navbar-right">
-        <button class="navbar-btn" aria-label="Search" id="searchToggle">
+        <button class="lang-toggle-btn" id="langToggleBtn" type="button" aria-label="Ganti Bahasa">
+          ID
+        </button>
+
+        <button class="navbar-btn" aria-label="Cari" id="searchToggle" type="button">
           <span class="material-symbols-rounded">search</span>
+        </button>
+
+        <button class="mobile-menu-btn" id="mobileMenuToggle" type="button" aria-label="Buka Menu" aria-expanded="false">
+          <span class="material-symbols-rounded">menu</span>
         </button>
       </div>
     </div>
   </nav>
 
-  <div class="search-panel" id="searchPanel">
-    <div class="search-panel-inner">
-      <span class="material-symbols-rounded">search</span>
-      <input type="text" placeholder="Search Paper...">
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-nav">
+      <a href="index.html" class="mobile-menu-link">Beranda</a>
+      <a href="apps.html" class="mobile-menu-link" data-i18n="nav_apps">Aplikasi</a>
+      <a href="store.html" class="mobile-menu-link active" data-i18n="nav_market">Pasar Aset</a>
+      <a href="support.html" class="mobile-menu-link" data-i18n="nav_support">Dukungan</a>
+      <a href="about.html" class="mobile-menu-link" data-i18n="nav_about">Tentang Kami</a>
+      <a href="paperleaf/privacy.html" class="mobile-menu-link" data-i18n="footer_privacy">Kebijakan Privasi</a>
     </div>
   </div>
 
+  <!-- Search Panel -->
+  <div class="search-panel" id="searchPanel">
+    <div class="search-panel-inner">
+      <span class="material-symbols-rounded">search</span>
+      <input type="text" placeholder="Cari aplikasi, fitur, atau aset..." data-i18n-placeholder="search_placeholder" aria-label="Cari aplikasi">
+    </div>
+  </div>
 
-
-
+  <!-- MAIN CONTENT -->
   <main class="page-content container">
-    <section class="section fade-in">
-      <div class="section-header">
-        <span class="label">Marketplace</span>
-        <h1 class="heading-lg">Market</h1>
-        <p class="body-lg">Browse our collection of assets, resources, and creative tools to enhance your Paper experience.</p>
-      </div>
-    </section>
 
+    <!-- Header Section -->
+    <header class="section-header fade-in">
+      <span class="label">LeafMarket</span>
+      <h1 class="heading-lg" data-i18n="market_title">LeafMarket & Aset Kreator</h1>
+      <p class="body-lg" data-i18n="market_desc">
+        Buku, template, kuas artistik, dan sampul pilihan yang dirancang untuk alur kerja Anda.
+      </p>
+      <div style="margin-top: 16px;">
+        <span class="status-badge planned">
+          <span class="status-dot"></span> <span data-i18n="status_planned">Segera Hadir</span>
+        </span>
+      </div>
+    </header>
+
+    <!-- Categories Grid -->
     <section class="section">
       <div class="store-grid">
-        <div class="store-card fade-in fade-in-delay-1">
-          <div class="store-card-icon">
-            <span class="material-symbols-rounded">font_download</span>
-          </div>
-          <div class="store-card-name">Fonts</div>
-          <div class="store-card-count">24 Items</div>
-        </div>
-        <div class="store-card fade-in fade-in-delay-2">
-          <div class="store-card-icon">
-            <span class="material-symbols-rounded">brush</span>
-          </div>
-          <div class="store-card-name">Brushes</div>
-          <div class="store-card-count">18 Items</div>
-        </div>
-        <div class="store-card fade-in fade-in-delay-3" id="template">
-          <div class="store-card-icon">
-            <span class="material-symbols-rounded">dashboard</span>
-          </div>
-          <div class="store-card-name">Templates</div>
-          <div class="store-card-count">12 Items</div>
-        </div>
-        <div class="store-card fade-in fade-in-delay-4" id="tema">
-          <div class="store-card-icon">
-            <span class="material-symbols-rounded">palette</span>
-          </div>
-          <div class="store-card-name">Themes</div>
-          <div class="store-card-count">15 Items</div>
-        </div>
-        <div class="store-card fade-in fade-in-delay-5" id="sampul">
-          <div class="store-card-icon">
-            <span class="material-symbols-rounded">book</span>
-          </div>
-          <div class="store-card-name">Covers</div>
-          <div class="store-card-count">8 Items</div>
-        </div>
-        <div class="store-card fade-in fade-in-delay-6">
-          <div class="store-card-icon">
-            <span class="material-symbols-rounded">emoji_emotions</span>
-          </div>
-          <div class="store-card-name">Stickers</div>
-          <div class="store-card-count">32 Items</div>
-        </div>
+
+        <!-- Buku & Template -->
         <div class="store-card fade-in" id="buku">
           <div class="store-card-icon">
             <span class="material-symbols-rounded">menu_book</span>
           </div>
-          <div class="store-card-name">Digital Books</div>
-          <div class="store-card-count">45 Items</div>
+          <h2 class="store-card-name" data-i18n="market_books">Buku Digital</h2>
+          <p class="store-card-count" data-i18n="market_books_desc">Template buku catatan dan buku bergambar pilihan.</p>
         </div>
+
+        <!-- Kuas & Tekstur -->
+        <div class="store-card fade-in" id="kuas">
+          <div class="store-card-icon">
+            <span class="material-symbols-rounded">brush</span>
+          </div>
+          <h2 class="store-card-name" data-i18n="market_brushes">Kuas & Tekstur</h2>
+          <p class="store-card-count" data-i18n="market_brushes_desc">Tekstur seni alami dan goresan kuas khusus.</p>
+        </div>
+
+        <!-- Stiker & Ornamen -->
+        <div class="store-card fade-in" id="stiker">
+          <div class="store-card-icon">
+            <span class="material-symbols-rounded">sentiment_satisfied</span>
+          </div>
+          <h2 class="store-card-name" data-i18n="market_stickers">Stiker & Ornamen</h2>
+          <p class="store-card-count" data-i18n="market_stickers_desc">Aset dekoratif dan stempel ilustrasi artistik.</p>
+        </div>
+
+        <!-- Sampul & Tema -->
+        <div class="store-card fade-in" id="tema">
+          <div class="store-card-icon">
+            <span class="material-symbols-rounded">auto_stories</span>
+          </div>
+          <h2 class="store-card-name" data-i18n="market_themes">Sampul & Tema</h2>
+          <p class="store-card-count" data-i18n="market_themes_desc">Tema buku catatan dan desain sampul ekspresif.</p>
+        </div>
+
       </div>
     </section>
+
+    <!-- Creator Hub Callout -->
+    <section class="section fade-in" style="text-align: center; max-width: 800px; margin: 0 auto; padding-top: 20px;">
+      <div class="app-card" style="padding: 40px; border: 1px solid rgba(255,255,255,0.06); border-radius: 24px; background: rgba(255,255,255,0.02);">
+        <span class="material-symbols-rounded" style="font-size: 40px; margin-bottom: 16px; color: #FFFFFF;">storefront</span>
+        <h3 class="heading-md mb-16">Dibuat untuk Para Kreator (LeafStudio)</h3>
+        <p class="body-md mb-24">
+          Melalui aplikasi <strong>LeafStudio</strong> yang sedang dikembangkan, Anda dapat merancang aset kreatif sendiri—mulai dari template buku, kuas, hingga stiker—dan mempublikasikannya langsung ke LeafMarket untuk pengguna ekosistem.
+        </p>
+        <a href="apps.html#leafstudio" class="btn btn-secondary">
+          <span class="material-symbols-rounded">info</span> Pelajari LeafStudio
+        </a>
+      </div>
+    </section>
+
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">
           <div class="brand-icon">
-            <img src="assets/icons/stalone_white.png" alt="Standalone Studio Logo" loading="lazy" decoding="async">
+            <img src="assets/icons/stalone_white.png" alt="Standalone Studio Logo" width="36" height="36" loading="lazy">
           </div>
           <span>Standalone Studio</span>
+
+          <div class="social-links">
+            <a href="https://www.instagram.com/paperleaf.app/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+              <span class="material-symbols-rounded">photo_camera</span>
+              <div class="social-tooltip">
+                <div class="tooltip-title">Instagram</div>
+                <div class="tooltip-item">@paperleaf.app</div>
+                <div class="tooltip-item">@stalone.studio</div>
+                <div class="tooltip-item">@saidattaufiq</div>
+              </div>
+            </a>
+
+            <a href="https://www.threads.net/@paperleaf.app" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Threads">
+              <span class="material-symbols-rounded">forum</span>
+              <div class="social-tooltip">
+                <div class="tooltip-title">Threads</div>
+                <div class="tooltip-item">@paperleaf.app</div>
+                <div class="tooltip-item">@stalone.studio</div>
+                <div class="tooltip-item">@saidattaufiq</div>
+              </div>
+            </a>
+
+            <a href="https://www.tiktok.com/@paperleaf.app" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="TikTok">
+              <span class="material-symbols-rounded">music_video</span>
+              <div class="social-tooltip">
+                <div class="tooltip-title">TikTok</div>
+                <div class="tooltip-item">@paperleaf.app</div>
+                <div class="tooltip-item">@stalone.studio</div>
+                <div class="tooltip-item">@saidattaufiq</div>
+              </div>
+            </a>
+
+            <a href="https://youtube.com/@standalonestudio-t1s" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
+              <span class="material-symbols-rounded">play_circle</span>
+              <div class="social-tooltip">
+                <div class="tooltip-title">YouTube</div>
+                <div class="tooltip-item">Standalone Studio</div>
+              </div>
+            </a>
+
+            <a href="mailto:stalone.studio@gmail.com" class="social-link" aria-label="Email">
+              <span class="material-symbols-rounded">mail</span>
+              <div class="social-tooltip">
+                <div class="tooltip-title">Email Dukungan</div>
+                <div class="tooltip-item">stalone.studio@gmail.com</div>
+              </div>
+            </a>
+          </div>
         </div>
+
         <div class="footer-links">
-          <a href="paperleaf/privacy.html" class="footer-link">Privacy Policy</a>
-          <a href="paperleaf/delete-account.html" class="footer-link">Delete Account</a>
-          <a href="paperleaf/term_of_service.html" class="footer-link">Terms of Service</a>
-          <a href="#" class="footer-link">Cookie Policy</a>
-          <a href="#" class="footer-link">License</a>
-          <a href="support.html" class="footer-link">Support</a>
-          <a href="#" class="footer-link">GitHub</a>
-          <a href="#" class="footer-link">Google Play</a>
-          <a href="#" class="footer-link">Contact</a>
+          <a href="paperleaf/privacy.html" class="footer-link" data-i18n="footer_privacy">Kebijakan Privasi</a>
+          <a href="paperleaf/delete-account.html" class="footer-link" data-i18n="footer_delete_account">Hapus Akun & Data</a>
+          <a href="paperleaf/term_of_service.html" class="footer-link" data-i18n="footer_tos">Syarat & Ketentuan</a>
+          <a href="support.html" class="footer-link" data-i18n="footer_support">Pusat Bantuan</a>
+          <a href="about.html" class="footer-link" data-i18n="footer_about">Tentang Kami</a>
         </div>
-        <p class="footer-copyright">&copy; 2026 Standalone Studio</p>
+
+        <p class="footer-copyright">&copy; 2026 Standalone Studio. <span data-i18n="footer_rights">Hak cipta dilindungi undang-undang.</span></p>
       </div>
     </div>
   </footer>
 
+  <script src="js/config.js"></script>
+  <script src="js/data/apps.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
