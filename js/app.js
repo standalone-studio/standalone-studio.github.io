@@ -212,49 +212,58 @@
     var roadmapContainer = document.getElementById('roadmapAppsContainer');
     if (roadmapContainer && SS.getRoadmapApps) {
       var roadmapApps = SS.getRoadmapApps();
-      var roadHtml = '<div class="app-grid">';
+      var roadmapSection = roadmapContainer.closest('section');
 
-      roadmapApps.forEach(function (app) {
-        var tagline = getLocalizedText(app.tagline);
-        var description = getLocalizedText(app.description);
-        var statusLabel = getStatusLabel(app.status);
+      if (!roadmapApps || roadmapApps.length === 0) {
+        if (roadmapSection) roadmapSection.style.display = 'none';
+        roadmapContainer.innerHTML = '';
+      } else {
+        if (roadmapSection) roadmapSection.style.display = '';
+        var roadHtml = '<div class="app-grid">';
 
-        var iconHtml = '';
-        if (app.icon) {
-          var iconPath = SS.url ? SS.url(app.icon) : app.icon;
-          iconHtml = '<img src="' + iconPath + '" alt="' + app.name + ' Icon" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\';">' +
-            '<span class="material-symbols-rounded" style="display:none;">' + (app.symbol || 'apps') + '</span>';
-        } else {
-          iconHtml = '<span class="material-symbols-rounded">' + (app.symbol || 'apps') + '</span>';
-        }
+        roadmapApps.forEach(function (app) {
+          var tagline = getLocalizedText(app.tagline);
+          var description = getLocalizedText(app.description);
+          var statusLabel = getStatusLabel(app.status);
 
-        roadHtml += '<div class="app-compact-card fade-in" id="' + app.id + '">' +
-          '<div class="app-compact-header">' +
-          '<div class="app-compact-left">' +
-          '<div class="app-compact-icon">' + iconHtml + '</div>' +
-          '<div>' +
-          '<h4 class="app-compact-name">' + app.name + '</h4>' +
-          '<div class="app-compact-tagline">' + tagline + '</div>' +
-          '</div>' +
-          '</div>' +
-          '<span class="status-badge planned">' +
-          '<span class="status-dot"></span> ' + statusLabel +
-          '</span>' +
-          '</div>' +
-          '<p class="body-sm">' + description + '</p>' +
-          '</div>';
-      });
+          var iconHtml = '';
+          if (app.icon) {
+            var iconPath = SS.url ? SS.url(app.icon) : app.icon;
+            iconHtml = '<img src="' + iconPath + '" alt="' + app.name + ' Icon" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\';">' +
+              '<span class="material-symbols-rounded" style="display:none;">' + (app.symbol || 'apps') + '</span>';
+          } else {
+            iconHtml = '<span class="material-symbols-rounded">' + (app.symbol || 'apps') + '</span>';
+          }
 
-      roadHtml += '</div>';
-      roadmapContainer.innerHTML = roadHtml;
+          roadHtml += '<div class="app-compact-card fade-in" id="' + app.id + '">' +
+            '<div class="app-compact-header">' +
+            '<div class="app-compact-left">' +
+            '<div class="app-compact-icon">' + iconHtml + '</div>' +
+            '<div>' +
+            '<h4 class="app-compact-name">' + app.name + '</h4>' +
+            '<div class="app-compact-tagline">' + tagline + '</div>' +
+            '</div>' +
+            '</div>' +
+            '<span class="status-badge planned">' +
+            '<span class="status-dot"></span> ' + statusLabel +
+            '</span>' +
+            '</div>' +
+            '<p class="body-sm">' + description + '</p>' +
+            '</div>';
+        });
+
+        roadHtml += '</div>';
+        roadmapContainer.innerHTML = roadHtml;
+      }
     }
 
     // 3. Render All Apps on Apps Page (#allAppsContainer)
     var allAppsContainer = document.getElementById('allAppsContainer');
-    if (allAppsContainer && SS.apps) {
+    if (allAppsContainer && (SS.getPublicApps || SS.apps)) {
+      var publicApps = SS.getPublicApps ? SS.getPublicApps() : SS.apps.filter(function (a) { return !a.private; });
       var allHtml = '<div class="app-grid">';
 
-      SS.apps.forEach(function (app) {
+      publicApps.forEach(function (app) {
         var tagline = getLocalizedText(app.tagline);
         var description = getLocalizedText(app.description);
         var statusLabel = getStatusLabel(app.status);

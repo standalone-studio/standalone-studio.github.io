@@ -59,6 +59,7 @@
       id: 'leafly',
       name: 'Leafly',
       status: 'development',
+      private: true,
       icon: 'assets/icons/leafly_icon.webp',
       symbol: 'animation',
       tagline: {
@@ -99,6 +100,7 @@
       id: 'leafmarket',
       name: 'LeafMarket',
       status: 'planned',
+      private: true,
       icon: 'assets/icons/leafmarket_icon.webp',
       symbol: 'shopping_bag',
       page: 'store.html',
@@ -112,6 +114,7 @@
       id: 'leafbook',
       name: 'LeafBook',
       status: 'planned',
+      private: true,
       icon: 'assets/icons/leafbook_icon.webp',
       symbol: 'auto_stories',
       tagline: { en: 'Read digital books.', id: 'Baca buku digital.' },
@@ -124,6 +127,7 @@
       id: 'leafmusic',
       name: 'LeafMusic',
       status: 'planned',
+      private: true,
       icon: 'assets/icons/leafmusic_icon.webp',
       symbol: 'music_note',
       tagline: { en: 'Your music library.', id: 'Perpustakaan musik Anda.' },
@@ -136,6 +140,7 @@
       id: 'leafbox',
       name: 'LeafBox',
       status: 'planned',
+      private: true,
       icon: 'assets/icons/leafbox_icon.webp',
       symbol: 'cloud',
       tagline: { en: 'Cloud storage for your work.', id: 'Penyimpanan cloud untuk karya Anda.' },
@@ -148,6 +153,7 @@
       id: 'leafriend',
       name: 'Leafriend',
       status: 'planned',
+      private: true,
       icon: 'assets/icons/leafriend_icon.webp',
       symbol: 'group',
       tagline: { en: 'Share and connect.', id: 'Berbagi dan terhubung.' },
@@ -160,6 +166,7 @@
       id: 'leafed',
       name: 'Leafed',
       status: 'planned',
+      private: true,
       icon: 'assets/icons/leafed_icon.webp',
       symbol: 'design_services',
       tagline: { en: 'Vector & graphic design.', id: 'Desain grafis & vektor.' },
@@ -170,14 +177,19 @@
     }
   ];
 
-  /** Apps that already exist (shown in the main list). */
-  SS.getActiveApps = function () {
-    return SS.apps.filter(function (a) { return a.status !== 'planned'; });
+  /** Public apps (not marked private). */
+  SS.getPublicApps = function () {
+    return SS.apps.filter(function (a) { return !a.private; });
   };
 
-  /** Apps on the roadmap (coming soon). */
+  /** Apps that already exist and are public (shown in the main list). */
+  SS.getActiveApps = function () {
+    return SS.apps.filter(function (a) { return !a.private && a.status !== 'planned'; });
+  };
+
+  /** Apps on the roadmap that are public (coming soon). */
   SS.getRoadmapApps = function () {
-    return SS.apps.filter(function (a) { return a.status === 'planned'; });
+    return SS.apps.filter(function (a) { return !a.private && a.status === 'planned'; });
   };
 
   SS.getApp = function (id) {
