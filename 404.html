@@ -23,6 +23,19 @@
         window.location.replace('/Paperleaf/' + search + hash);
         return;
       }
+
+      // Jika URL meminta /LeafStudio/ atau /Leafstudio/, alihkan ke /leafstudio/
+      var lower = pathname.toLowerCase();
+      if (lower.indexOf('/leafstudio') !== -1 && pathname.indexOf('/leafstudio') === -1) {
+        window.location.replace(lower + search + hash);
+        return;
+      }
+
+      // Jika URL meminta /LeafPaint/ atau /Leafpaint/, alihkan ke /leafpaint/
+      if (lower.indexOf('/leafpaint') !== -1 && pathname.indexOf('/leafpaint') === -1) {
+        window.location.replace(lower + search + hash);
+        return;
+      }
     })();
   </script>
 

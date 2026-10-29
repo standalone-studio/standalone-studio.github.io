@@ -35,6 +35,47 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.26s cubic-bezier(0.2, 0, 0, 1),
+              transform 0.26s cubic-bezier(0.2, 0, 0, 1),
+              filter 0.26s cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* Transisi Halaman Keluar & Masuk */
+body.page-enter-init {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+body.is-page-exiting {
+  opacity: 0 !important;
+  transform: translateY(-8px) scale(0.995) !important;
+  filter: blur(1.5px) !important;
+  pointer-events: none !important;
+}
+
+/* Modern View Transitions API (Chrome / Edge / Safari Modern) */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root) {
+  animation: ssPageFadeOut 0.22s cubic-bezier(0.4, 0, 1, 1) both;
+}
+
+::view-transition-new(root) {
+  animation: ssPageFadeIn 0.3s cubic-bezier(0, 0, 0.2, 1) both;
+}
+
+@keyframes ssPageFadeOut {
+  from { opacity: 1; transform: scale(1); filter: blur(0); }
+  to { opacity: 0; transform: scale(0.992) translateY(-6px); filter: blur(2px); }
+}
+
+@keyframes ssPageFadeIn {
+  from { opacity: 0; transform: scale(1.006) translateY(8px); filter: blur(2px); }
+  to { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
 }
 
 a {
@@ -1525,9 +1566,11 @@ img.social-icon {
 /* Fade In Up */
 .fade-in {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateY(20px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
 .fade-in.visible {
@@ -1547,7 +1590,8 @@ img.social-icon {
 .scale-in {
   opacity: 0;
   transform: scale(0.95);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
 .scale-in.visible {
@@ -1591,7 +1635,7 @@ img.social-icon {
   display: flex;
   align-items: center;
   gap: 24px;
-  padding: 60px 0 40px;
+  padding: 12px 0 32px;
 }
 
 .app-detail-icon {
@@ -1969,16 +2013,155 @@ img.social-icon {
   gap: 6px;
   font-size: 0.875rem;
   color: #B8B8B8;
-  margin-bottom: 32px;
-  transition: color 0.2s ease;
+  margin-top: 2px;
+  margin-bottom: 14px;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .back-link:hover {
   color: #FFFFFF;
+  transform: translateX(-3px);
 }
 
 .back-link .material-symbols-rounded {
   font-size: 18px;
+}
+
+/* Khusus Tata Letak Halaman Detail Aplikasi (Paperleaf, LeafPaint, LeafStudio) */
+.page-content.app-detail-page {
+  padding-top: 86px;
+  padding-bottom: 80px;
+}
+
+.page-content.app-detail-page .back-link {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.page-content.app-detail-page .app-detail-hero-section {
+  padding: 0;
+}
+
+.page-content.app-detail-page .app-detail-hero {
+  padding: 4px 0 24px;
+}
+
+/* Preview Canvas Frame Khusus LeafPaint */
+.leafpaint-preview-wrapper {
+  max-width: 900px;
+  margin: 28px auto 0;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(18, 18, 22, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 24px 60px -15px rgba(0, 0, 0, 0.8), 0 0 45px rgba(138, 43, 226, 0.12);
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.leafpaint-preview-wrapper:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.9), 0 0 55px rgba(138, 43, 226, 0.2);
+}
+
+.leafpaint-preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.8125rem;
+  color: #B8B8B8;
+}
+
+.leafpaint-preview-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.leafpaint-preview-dots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.leafpaint-preview-dots span:nth-child(1) { background: rgba(255, 95, 87, 0.6); }
+.leafpaint-preview-dots span:nth-child(2) { background: rgba(254, 188, 46, 0.6); }
+.leafpaint-preview-dots span:nth-child(3) { background: rgba(40, 200, 64, 0.6); }
+
+.leafpaint-preview-body {
+  position: relative;
+  background: #090909;
+}
+
+.leafpaint-preview-body img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Showcase Grid Khusus LeafStudio */
+.leafstudio-hub-card {
+  padding: 36px 28px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.008) 100%);
+  margin-top: 28px;
+}
+
+.leafstudio-pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.leafstudio-pillar-item {
+  padding: 20px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+  transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+  text-align: left;
+}
+
+.leafstudio-pillar-item:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.leafstudio-pillar-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  color: #FFFFFF;
+}
+
+.leafstudio-pillar-icon .material-symbols-rounded {
+  font-size: 24px;
+}
+
+.leafstudio-pillar-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #FFFFFF;
+}
+
+.leafstudio-pillar-desc {
+  font-size: 0.8125rem;
+  color: #B8B8B8;
+  line-height: 1.5;
 }
 
 /* Page title */

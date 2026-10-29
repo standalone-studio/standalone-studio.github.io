@@ -191,7 +191,7 @@
         var visualSource = app.thumbnail || (app.screenshots && app.screenshots.length > 0 ? app.screenshots[0] : null);
         if (visualSource) {
           var ssPath = SS.url ? SS.url(visualSource) : visualSource;
-          visualHtml = '<img src="' + ssPath + '" alt="' + app.name + ' Thumbnail" loading="lazy">';
+          visualHtml = '<img src="' + ssPath + '" alt="' + app.name + ' Thumbnail" loading="lazy" onerror="this.onerror=null;if(this.src.indexOf(\'Leaaf\')===-1&&this.src.indexOf(\'Leaf\')!==-1){this.src=\'assets/images/LeaafPaint_thumbnail.webp\';}else{this.style.display=\'none\';}">';
         } else {
           visualHtml = '<div class="screenshot-placeholder">' +
             '<span class="material-symbols-rounded">' + (app.symbol || 'devices') + '</span>' +
@@ -408,13 +408,62 @@
   }
 
   /* ============================================================
-     9. RUN ON DOM READY
+     9. SMOOTH PAGE & CONTENT TRANSITIONS
+     ============================================================ */
+  function initPageTransitions() {
+    // 1. Reset status transisi ketika halaman ditampilkan kembali dari browser cache (bfcache)
+    window.addEventListener('pageshow', function () {
+      document.body.classList.remove('is-page-exiting');
+      document.body.classList.remove('page-enter-init');
+    });
+
+    // 2. Transisi halus saat mengklik tautan internal
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest('a');
+      if (!link) return;
+
+      var href = link.getAttribute('href');
+      if (!href) return;
+
+      // Abaikan target tab baru, download, tautan khusus, anchor lokal
+      if (link.target === '_blank' || link.hasAttribute('download')) return;
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+      var currentUrl = new URL(window.location.href);
+      var targetUrl;
+      try {
+        targetUrl = new URL(link.href, window.location.href);
+      } catch (err) {
+        return;
+      }
+
+      // Pastikan domain sama
+      if (targetUrl.origin !== currentUrl.origin) return;
+
+      // Jika hanya berpindah hash pada halaman yang sama, jangan reload transisi
+      if (targetUrl.pathname === currentUrl.pathname && targetUrl.search === currentUrl.search && targetUrl.hash) return;
+      if (targetUrl.href === currentUrl.href) return;
+
+      // Jalankan animasi transisi keluar mulus
+      e.preventDefault();
+      document.body.classList.add('is-page-exiting');
+
+      setTimeout(function () {
+        window.location.href = targetUrl.href;
+      }, 200);
+    });
+  }
+
+  /* ============================================================
+     10. RUN ON DOM READY
      ============================================================ */
   document.addEventListener('DOMContentLoaded', function () {
     initI18n();
     renderEcosystemSections();
     updateFavicon();
     initFadeObserver();
+    initPageTransitions();
   });
 
   // Re-render when language changes
