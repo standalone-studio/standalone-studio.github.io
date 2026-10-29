@@ -156,13 +156,26 @@
             '<span class="material-symbols-rounded">download</span> ' +
             (SS.i18n ? SS.i18n.get('btn_download') : 'Unduh di Play Store') +
             '</a>' +
-            '<a href="' + (SS.url ? SS.url(app.page) : 'Paperleaf/index.html') + '" class="btn btn-secondary">' +
+            '<a href="' + (SS.url ? SS.url(app.page) : 'paperleaf/index.html') + '" class="btn btn-secondary">' +
             (SS.i18n ? SS.i18n.get('btn_detail') : 'Pelajari Fitur') +
             '</a>';
+        } else if (app.id === 'leafstudio' || app.actionUrl) {
+          var targetUrl = app.actionUrl || 'https://tally.so/r/VpL6rj';
+          var btnLabel = app.actionLabel || (SS.i18n ? SS.i18n.get('btn_preregister') : 'Pre-register');
+          downloadBtnHtml = '<a href="' + targetUrl + '" target="_blank" rel="noopener noreferrer" class="btn btn-primary">' +
+            '<span class="material-symbols-rounded">how_to_reg</span> ' +
+            btnLabel +
+            '</a>' +
+            (app.page ? '<a href="' + (SS.url ? SS.url(app.page) : app.page) + '" class="btn btn-secondary">' +
+              (SS.i18n ? SS.i18n.get('btn_detail') : 'Pelajari Fitur') +
+              '</a>' : '');
         } else {
           downloadBtnHtml = '<span class="status-badge ' + statusClass + '">' +
             '<span class="status-dot"></span> ' + statusLabel +
-            '</span>';
+            '</span>' +
+            (app.page ? '<a href="' + (SS.url ? SS.url(app.page) : app.page) + '" class="btn btn-secondary">' +
+              (SS.i18n ? SS.i18n.get('btn_detail') : 'Pelajari Fitur') +
+              '</a>' : '');
         }
 
         var iconHtml = '';
@@ -175,9 +188,10 @@
 
         // Preview screenshot or visual block
         var visualHtml = '';
-        if (app.screenshots && app.screenshots.length > 0) {
-          var ssPath = SS.url ? SS.url(app.screenshots[0]) : app.screenshots[0];
-          visualHtml = '<img src="' + ssPath + '" alt="' + app.name + ' Screenshot" loading="lazy">';
+        var visualSource = app.thumbnail || (app.screenshots && app.screenshots.length > 0 ? app.screenshots[0] : null);
+        if (visualSource) {
+          var ssPath = SS.url ? SS.url(visualSource) : visualSource;
+          visualHtml = '<img src="' + ssPath + '" alt="' + app.name + ' Thumbnail" loading="lazy">';
         } else {
           visualHtml = '<div class="screenshot-placeholder">' +
             '<span class="material-symbols-rounded">' + (app.symbol || 'devices') + '</span>' +
@@ -266,7 +280,7 @@
       publicApps.forEach(function (app) {
         var tagline = getLocalizedText(app.tagline);
         var description = getLocalizedText(app.description);
-        var statusLabel = getStatusLabel(app.status);
+        var statusLabel = (app.id === 'leafstudio' && app.actionLabel) ? app.actionLabel : getStatusLabel(app.status);
         var statusClass = app.status;
 
         var iconHtml = '';

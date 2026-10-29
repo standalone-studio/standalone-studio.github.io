@@ -40,6 +40,7 @@
       // CTAs
       btn_download: "Get on Play Store",
       btn_detail: "Learn More",
+      btn_preregister: "Pre-register",
       btn_coming_soon: "Coming Soon",
       btn_back_apps: "Back to Apps",
       btn_back_home: "Back to Home",
@@ -100,6 +101,7 @@
       // CTAs
       btn_download: "Unduh di Play Store",
       btn_detail: "Pelajari Fitur",
+      btn_preregister: "Pre-register",
       btn_coming_soon: "Segera Hadir",
       btn_back_apps: "Kembali ke Aplikasi",
       btn_back_home: "Kembali ke Beranda",

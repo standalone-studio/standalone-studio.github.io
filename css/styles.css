@@ -1386,6 +1386,12 @@ input {
   transition: transform 0.2s ease;
 }
 
+img.social-icon {
+  object-fit: contain;
+  opacity: 0.72;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
 .social-item:hover .social-link,
 .social-link:hover {
   background: rgba(255, 255, 255, 0.12);
@@ -1393,7 +1399,10 @@ input {
   transform: translateY(-2px);
 }
 
-.social-item:hover .social-icon {
+.social-item:hover .social-icon,
+.social-item:hover img.social-icon,
+.social-link:hover img.social-icon {
+  opacity: 1;
   transform: scale(1.05);
 }
 

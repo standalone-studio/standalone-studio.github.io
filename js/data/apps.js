@@ -16,6 +16,7 @@
       name: 'Paperleaf',
       status: 'early-access',
       icon: 'assets/icons/logo_paperleaf.jpg',
+      thumbnail: 'assets/images/Paperleaf_thumbnail.webp',
       screenshots: [
         'assets/screenshots/ss_paperleaf1.webp',
         'assets/screenshots/ss_paperleaf2.webp',
@@ -41,7 +42,9 @@
       name: 'LeafPaint',
       status: 'testing',
       icon: 'assets/icons/leaf_paint.png',
+      thumbnail: 'assets/images/Leafpaint_thumbnail.webp',
       symbol: 'brush',
+      page: 'leafpaint/index.html',
       tagline: {
         en: 'Professional digital painting.',
         id: 'Melukis digital profesional.'
@@ -81,6 +84,9 @@
       status: 'development',
       icon: 'assets/icons/leafstudio_icon.webp',
       symbol: 'storefront',
+      page: 'leafstudio/index.html',
+      actionUrl: 'https://tally.so/r/VpL6rj',
+      actionLabel: 'Pre-register',
       tagline: {
         en: 'Create and sell your assets.',
         id: 'Buat dan jual aset Anda.'
