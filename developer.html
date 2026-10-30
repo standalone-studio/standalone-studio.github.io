@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pengembang - Standalone Studio</title>
+  <meta name="description" content="Kisah perjalanan hidup, filosofi, dan dedikasi Said Attaufiq (Saeful Fitri) sebagai pendiri dan pengembang mandiri di balik Stand Alone Studio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/icons/stalone_white.png" type="image/png">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar liquid-glass" id="navbar">
+    <div class="liquid-glass-highlight"></div>
+    <div class="navbar-inner">
+      <div class="navbar-left">
+        <a href="index.html" class="navbar-brand" aria-label="Standalone Studio Home">
+          <div class="brand-icon">
+            <img src="assets/icons/stalone_white.png" alt="Standalone Studio Logo" width="28" height="28">
+          </div>
+        </a>
+      </div>
+
+      <div class="navbar-nav">
+        <div class="nav-item">
+          <a href="apps.html" class="nav-link" data-i18n="nav_apps">Aplikasi</a>
+          <div class="dropdown-menu">
+            <a href="Paperleaf/index.html" class="dropdown-link">Paperleaf</a>
+            <a href="leafpaint/index.html" class="dropdown-link">LeafPaint</a>
+            <a href="leafstudio/index.html" class="dropdown-link">LeafStudio</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="store.html" class="nav-link" data-i18n="nav_market">Leaf Market</a>
+          <div class="dropdown-menu">
+            <a href="store.html?category=COVER" class="dropdown-link">Sampul Buku</a>
+            <a href="store.html?category=BOOK" class="dropdown-link">Buku</a>
+            <a href="store.html?category=TEMPLATE" class="dropdown-link">Template</a>
+            <a href="store.html?category=STICKER" class="dropdown-link">Sticker</a>
+            <a href="store.html?category=THEME" class="dropdown-link">Tema</a>
+          </div>
+        </div>
+        <a href="support.html" class="nav-link" data-i18n="nav_support">Dukungan</a>
+        <div class="nav-item">
+          <a href="about.html" class="nav-link active" data-i18n="nav_about">Tentang Kami</a>
+          <div class="dropdown-menu">
+            <a href="about.html" class="dropdown-link" data-i18n="nav_about_eco">Ekosistem</a>
+            <a href="developer.html" class="dropdown-link active" data-i18n="nav_about_dev">Pengembang</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar-right">
+        <button class="lang-toggle-btn" id="langToggleBtn" type="button" aria-label="Ganti Bahasa">
+          ID
+        </button>
+
+        <button class="navbar-btn" aria-label="Cari" id="searchToggle" type="button">
+          <span class="material-symbols-rounded">search</span>
+        </button>
+
+        <button class="mobile-menu-btn" id="mobileMenuToggle" type="button" aria-label="Buka Menu" aria-expanded="false">
+          <span class="material-symbols-rounded">menu</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-nav">
+      <a href="index.html" class="mobile-menu-link">Beranda</a>
+      <a href="apps.html" class="mobile-menu-link" data-i18n="nav_apps">Aplikasi</a>
+      <a href="store.html" class="mobile-menu-link" data-i18n="nav_market">Leaf Market</a>
+      <a href="support.html" class="mobile-menu-link" data-i18n="nav_support">Dukungan</a>
+      <a href="about.html" class="mobile-menu-link" data-i18n="nav_about_eco">Ekosistem</a>
+      <a href="developer.html" class="mobile-menu-link active" data-i18n="nav_about_dev">Pengembang</a>
+      <a href="Paperleaf/privacy.html" class="mobile-menu-link" data-i18n="footer_privacy">Kebijakan Privasi</a>
+    </div>
+  </div>
+
+  <!-- Search Panel -->
+  <div class="search-panel" id="searchPanel">
+    <div class="search-panel-inner">
+      <span class="material-symbols-rounded">search</span>
+      <input type="text" placeholder="Cari aplikasi, fitur, atau aset..." data-i18n-placeholder="search_placeholder" aria-label="Cari aplikasi">
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main class="page-content container">
+
+    <!-- Hero Section -->
+    <section class="about-hero fade-in">
+      <span class="label" data-i18n="dev_hero_badge">SANG PENGEMBANG</span>
+      <h1 class="heading-xl" data-i18n="dev_section_title">Di Balik Layar: Berdiri di Atas Kaki Sendiri</h1>
+      <p class="body-lg" data-i18n="dev_hero_desc">
+        Kisah perjalanan hidup, ketabahan, dan filosofi Said Attaufiq di balik lahirnya setiap baris kode di Stand Alone Studio.
+      </p>
+    </section>
+
+    <!-- Developer Profile Section -->
+    <section class="section about-content" style="padding-top: 10px;">
+      <div class="fade-in">
+        
+        <!-- Profile Card -->
+        <div class="developer-profile-card fade-in">
+          <div class="developer-avatar-wrap">
+            <span class="avatar-initials">SA</span>
+          </div>
+          <div class="developer-profile-meta">
+            <span class="developer-role-badge">
+              <span class="material-symbols-rounded" style="font-size: 14px;">terminal</span>
+              <span data-i18n="dev_badge">Founder & Solo Developer</span>
+            </span>
+            <h2 style="font-size: 1.5rem; font-weight: 700; color: #FFFFFF; margin: 0;">Said Attaufiq <span style="font-size: 1rem; font-weight: 400; color: #8E8E93;">(Saeful Fitri)</span></h2>
+            <p class="body-sm" style="color: #A8A8A8; margin: 0;" data-i18n="dev_origin">Tasikmalaya, 20 Februari 1996 • Solo Engineer & Designer</p>
+          </div>
+        </div>
+
+        <!-- Core Quote -->
+        <div class="developer-quote-box fade-in">
+          <p data-i18n="dev_quote">"Memberi orang lain kesempatan untuk menunjukkan kreativitas dirinya."</p>
+        </div>
+
+        <!-- Story Chapters -->
+        <div class="story-chapters-wrap">
+
+          <!-- Babak 1 -->
+          <article class="story-chapter fade-in">
+            <span class="story-chapter-number" data-i18n="dev_ch1_num">Babak I</span>
+            <h3 class="story-chapter-title" data-i18n="dev_ch1_title">Asap Tungku Subuh dan Selembar Kertas Gambar</h3>
+            <p class="story-paragraph" data-i18n="dev_ch1_p1">
+              Lahir pada hari raya di Tasikmalaya dari keluarga sederhana, langkah awal Said Attaufiq ditempa oleh ketabahan seorang ibu yang tiap subuh berkutat dengan asap tungku dapur penjual surabi. Tumbuh tanpa kehadiran figur ayah dan tanpa arah yang menuntun masa kecilnya, ia kerap merasa asing dengan dunia permainan anak laki-laki pada umumnya.
+            </p>
+            <p class="story-paragraph" data-i18n="dev_ch1_p2">
+              Hingga di suatu hari, sebuah perjumpaan sederhana di lantai dengan seorang teman kecil yang membawa alat gambar membukakan gerbang baru. Mereka menggambar bersama, menertawakan coretan abstrak, dan saling mengagumi imajinasi masing-masing. Di sanalah dunia seni menyapanya untuk pertama kali. Di atas selembar kertas, ia menemukan suaka pertama tempat jiwanya merasa utuh dan bernapas bebas.
+            </p>
+          </article>
+
+          <!-- Babak 2 -->
+          <article class="story-chapter fade-in">
+            <span class="story-chapter-number" data-i18n="dev_ch2_num">Babak II</span>
+            <h3 class="story-chapter-title" data-i18n="dev_ch2_title">Menemukan Suara di Tengah Keheningan</h3>
+            <p class="story-paragraph" data-i18n="dev_ch2_p1">
+              Kepekaan rasa dan kecintaannya pada seni visual sering kali disalahpahami oleh lingkungan sekitarnya. Masa kecil dan remajanya diwarnai oleh kepedihan dan ketiadaan ruang aman untuk bersandar, yang memaksanya belajar melindungi dirinya sendiri dalam keheningan yang panjang.
+            </p>
+            <p class="story-paragraph" data-i18n="dev_ch2_p2">
+              Saat duduk di bangku sekolah kejuruan bidang komputer, perpustakaan menjadi rumah favoritnya. Di antara rak-rak buku yang sunyi, coretan cerita pendek, dan lembar-lembar sketsa, ia merajut kecintaan mendalam pada sastra, seni visual, dan teknologi. Ia memilih diam, mengamati, dan belajar menata rasa sakit menjadi kekuatan batin yang tenang.
+            </p>
+          </article>
+
+          <!-- Babak 3 -->
+          <article class="story-chapter fade-in">
+            <span class="story-chapter-number" data-i18n="dev_ch3_num">Babak III</span>
+            <h3 class="story-chapter-title" data-i18n="dev_ch3_title">Langkah Kaki Menembus Badai (Garut, 2018)</h3>
+            <p class="story-paragraph" data-i18n="dev_ch3_p1">
+              Tahun 2018 menjadi titik nadir tergelap dalam kehidupannya. Rasa terasing, keputusasaan, dan perasaan tak berharga nyaris memadamkan seluruh harapannya untuk bertahan hidup. Namun, di ujung jurang terdalam itu, secercah tekad membimbingnya untuk mencari arah hidup yang baru.
+            </p>
+            <p class="story-paragraph" data-i18n="dev_ch3_p2">
+              Dengan ransel berat di punggungnya, ia memutuskan melangkah—berjalan kaki puluhan kilometer dari Tasikmalaya menuju Pesantren Attaufiq di Ciucing, Garut. Sepanjang perjalanan yang melelahkan fisik dan batin, ia justru dipertemukan dengan kebaikan-kebaikan tulus dari orang-orang asing di jalanan: tumpangan tulus, senyuman ramah, hingga bekal di jalan dari sesama pengelana, serta seorang sahabat yang setia menjemputnya. Kebaikan tak terduga itu perlahan meruntuhkan rasa putus asanya dan membuktikan bahwa dunia masih memiliki kehangatan dan cinta.
+            </p>
+          </article>
+
+          <!-- Babak 4 -->
+          <article class="story-chapter fade-in">
+            <span class="story-chapter-number" data-i18n="dev_ch4_num">Babak IV</span>
+            <h3 class="story-chapter-title" data-i18n="dev_ch4_title">Said Attaufiq: Tempat Menemukan Rumah</h3>
+            <p class="story-paragraph" data-i18n="dev_ch4_p1">
+              Setibanya di Pesantren Attaufiq, ia tidak disambut dengan penghakiman atau celaan, melainkan dengan pelukan hangat dan keteladanan kemanusiaan yang mendalam dari sang guru. Di tempat yang penuh ketenangan ini, ia belajar mengenal dirinya sendiri, memulihkan damai di dalam hati, dan menemukan satu prinsip hidup yang kokoh: <em>memberi manfaat bagi orang lain.</em>
+            </p>
+            <p class="story-paragraph" data-i18n="dev_ch4_p2">
+              Dari sanalah nama <strong>Said Attaufiq</strong> lahir. Nama ini merajut kembali identitas masa kecilnya dengan nama pesantren yang memberinya kehidupan kedua—sebuah simbol kelahiran kembali seorang manusia yang telah berdamai dengan masa lalunya dan siap melangkah menatap masa depan.
+            </p>
+          </article>
+
+          <!-- Babak 5 -->
+          <article class="story-chapter fade-in">
+            <span class="story-chapter-number" data-i18n="dev_ch5_num">Babak V</span>
+            <h3 class="story-chapter-title" data-i18n="dev_ch5_title">The Wounded Healer & Berdirinya Stand Alone Studio</h3>
+            <p class="story-paragraph" data-i18n="dev_ch5_p1">
+              Perjalanan bangkit dari titik nol melahirkan empati yang sangat mendalam. Filosofi <em>The Wounded Healer</em>—seseorang yang menggunakan pemulihan lukanya sendiri untuk mengulurkan tangan bagi orang lain—menjadi jiwa dari setiap baris kode yang ia tulis.
+            </p>
+            <p class="story-paragraph" data-i18n="dev_ch5_p2">
+              Pada 10 Juli 2026, studio mandiri ini resmi bertransformasi menjadi <strong>Stand Alone Studio</strong>. Nama ini bukan tentang kesendirian, melainkan deklarasi keteguhan hati: bahwa ia mampu berdiri mandiri di atas kakinya sendiri. Setiap baris kode di Paperleaf, LeafPaint, dan LeafStudio ia dedikasikan untuk satu tujuan: menghadirkan "kanvas aman" bagi setiap jiwa untuk berekspresi secara bebas, indah, dan bermakna.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Bridge to Ecosystem Section -->
+    <section class="section fade-in" style="margin-top: 48px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.06); padding-bottom: 20px;">
+      <div class="developer-invite-card" style="display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 36px 32px; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; flex-wrap: wrap;">
+        <div style="max-width: 640px;">
+          <span class="label" data-i18n="eco_invite_badge">EKOSISTEM KAMI</span>
+          <h3 class="heading-md mb-8" data-i18n="eco_invite_title">Jelajahi Ekosistem Aplikasi</h3>
+          <p class="body-md" style="color: #A8A8A8; line-height: 1.6;" data-i18n="eco_invite_desc">
+            Ketahui lebih dalam bagaimana Paperleaf, LeafPaint, dan LeafStudio dirancang untuk saling melengkapi alur kreatif Anda.
+          </p>
+        </div>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="about.html" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; border-radius: 999px; text-decoration: none; font-weight: 600;">
+            <span data-i18n="eco_invite_btn">Lihat Ekosistem</span>
+            <span class="material-symbols-rounded" style="font-size: 20px;">arrow_forward</span>
+          </a>
+          <a href="apps.html" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 999px; text-decoration: none; font-weight: 600;">
+            <span data-i18n="hero_explore">Jelajahi Aplikasi</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="brand-icon">
+            <img src="assets/icons/stalone_white.png" alt="Standalone Studio Logo" width="36" height="36" loading="lazy">
+          </div>
+          <span>Standalone Studio</span>
+
+          <!-- Official Social Media Links -->
+          <div class="social-links">
+            <!-- Instagram -->
+            <div class="social-item">
+              <a href="https://www.instagram.com/paperleaf.app/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </a>
+              <div class="social-tooltip" role="menu">
+                <div class="tooltip-title">Instagram</div>
+                <a href="https://www.instagram.com/paperleaf.app/" target="_blank" rel="noopener noreferrer" class="tooltip-item">
+                  <span>@paperleaf.app</span>
+                </a>
+                <a href="https://www.instagram.com/stalone.studio/" target="_blank" rel="noopener noreferrer" class="tooltip-item">
+                  <span>@stalone.studio</span>
+                </a>
+                <a href="https://www.instagram.com/saidattaufiq/" target="_blank" rel="noopener noreferrer" class="tooltip-item">
+                  <span>@saidattaufiq</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Threads -->
+            <div class="social-item">
+              <a href="https://www.threads.net/@paperleaf.app" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Threads">
+                <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M12.186 24C5.454 24 0 18.546 0 11.814 0 5.082 5.454 0 12.186 0c6.606 0 11.97 5.232 12.18 11.814v.534c0 .306-.248.552-.552.552h-2.184c-.306 0-.552-.246-.552-.552v-.534C20.874 5.922 16.968 1.8 12.186 1.8 6.666 1.8 2.16 6.306 2.16 11.814c0 5.508 4.506 10.014 10.026 10.014 4.338 0 8.07-2.778 9.384-6.84.09-.282.354-.468.648-.468h2.238c.348 0 .618.318.528.654C23.364 20.088 18.198 24 12.186 24zm4.128-8.868c-.288-.048-.558.102-.672.372-.654 1.578-2.004 2.592-3.666 2.592-2.178 0-3.954-1.776-3.954-3.954s1.776-3.954 3.954-3.954c1.662 0 3.012 1.014 3.666 2.592.114.27.384.42.672.372l1.974-.324c.288-.048.486-.312.438-.6-.99-3.078-3.792-5.124-7.014-5.124-4.062 0-7.368 3.306-7.368 7.368s3.306 7.368 7.368 7.368c3.222 0 6.024-2.046 7.014-5.124.048-.288-.15-.552-.438-.6l-1.974-.324z"/>
+                </svg>
+              </a>
+              <div class="social-tooltip" role="menu">
+                <div class="tooltip-title">Threads</div>
+                <a href="https://www.threads.net/@paperleaf.app" target="_blank" rel="noopener noreferrer" class="tooltip-item">
+                  <span>@paperleaf.app</span>
+                </a>
+                <a href="https://www.threads.net/@stalone.studio" target="_blank" rel="noopener noreferrer" class="tooltip-item">
+                  <span>@stalone.studio</span>
+                </a>
+                <a href="https://www.threads.net/@saidattaufiq" target="_blank" rel="noopener noreferrer" class="tooltip-item">
+                  <span>@saidattaufiq</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- TikTok -->
+            <div class="social-item">
+              <a href="https://www.tiktok.com/@paperleaf.app" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="TikTok">
+                <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.47 6.27 6.27 0 0 0 1.86-4.47V8.71a8.18 8.18 0 0 0 4.91 1.62v-3.64z"/>
+                </svg>
+              </a>
+              <div class="social-tooltip" role="menu">
+                <div class="tooltip-title">TikTok</div>
+                <a href="https://www.tiktok.com/@paperleaf.app" target="_blank" rel="noopener noreferrer" class="tooltip-item">
+                  <span>@paperleaf.app</span>
+                </a>
+                <a href="https://www.tiktok.com/@stalone.studio" target="_blank" rel="noopener noreferrer" class="tooltip-item">
+                  <span>@stalone.studio</span>
+                </a>
+                <a href="https://www.tiktok.com/@saidattaufiq" target="_blank" rel="noopener noreferrer" class="tooltip-item">
+                  <span>@saidattaufiq</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- YouTube -->
+            <div class="social-item">
+              <a href="https://youtube.com/@standalonestudio-t1s" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
+                <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+              </a>
+              <div class="social-tooltip" role="menu">
+                <div class="tooltip-title">YouTube</div>
+                <a href="https://youtube.com/@standalonestudio-t1s" target="_blank" rel="noopener noreferrer" class="tooltip-item">
+                  <span>Standalone Studio</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="social-item">
+              <a href="mailto:stalone.studio@gmail.com" class="social-link" aria-label="Email">
+                <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+              </a>
+              <div class="social-tooltip" role="menu">
+                <div class="tooltip-title">Email Dukungan</div>
+                <a href="mailto:stalone.studio@gmail.com" class="tooltip-item">
+                  <span>stalone.studio@gmail.com</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <a href="Paperleaf/privacy.html" class="footer-link" data-i18n="footer_privacy">Kebijakan Privasi</a>
+          <a href="Paperleaf/delete-account.html" class="footer-link" data-i18n="footer_delete_account">Hapus Akun & Data</a>
+          <a href="Paperleaf/term_of_service.html" class="footer-link" data-i18n="footer_tos">Syarat & Ketentuan</a>
+          <a href="support.html" class="footer-link" data-i18n="footer_support">Pusat Bantuan</a>
+          <a href="about.html" class="footer-link" data-i18n="footer_about">Ekosistem</a>
+          <a href="developer.html" class="footer-link active" data-i18n="footer_dev">Pengembang</a>
+        </div>
+
+        <p class="footer-copyright">&copy; 2026 Standalone Studio. <span data-i18n="footer_rights">Hak cipta dilindungi undang-undang.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/data/apps.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
