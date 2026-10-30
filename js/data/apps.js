@@ -1,11 +1,6 @@
 /**
  * Standalone Studio — App catalog
- * All ecosystem apps live here. Pages render from this data, so adding or
- * updating an app only requires editing this file (+ icon in assets/icons).
- *
- * status: 'early-access' | 'testing' | 'development' | 'planned'
- * icon:   path relative to site root. If the file is missing, the
- *         Material Symbol in `symbol` is shown as a fallback.
+ * Core Ecosystem: Paperleaf, LeafStudio, LeafPaint.
  */
 (function (SS) {
   'use strict';
@@ -15,6 +10,10 @@
       id: 'paperleaf',
       name: 'Paperleaf',
       status: 'early-access',
+      statusBadge: {
+        en: 'Play Store',
+        id: 'Play Store'
+      },
       icon: 'assets/icons/logo_paperleaf.jpg',
       thumbnail: 'assets/images/Paperleaf_thumbnail.webp',
       screenshots: [
@@ -25,177 +24,84 @@
       symbol: 'menu_book',
       page: 'Paperleaf/index.html',
       tagline: {
-        en: 'Your digital scrapbook & journal.',
-        id: 'Scrapbook & jurnal digital Anda.'
+        en: 'Your digital scrapbook & authentic journal.',
+        id: 'Scrapbook & jurnal digital otentik Anda.'
       },
       description: {
-        en: 'Write, sketch and decorate real page-turning books. Natural pencils, pens, paints and markers, stickers and photos with automatic background removal — all saved automatically.',
-        id: 'Menulis, membuat sketsa, dan menghias buku dengan efek balik halaman yang nyata. Pensil, pena, cat, dan spidol yang natural, stiker dan foto dengan hapus latar otomatis — semuanya tersimpan otomatis.'
+        en: 'Write, sketch, and decorate real page-turning books. Natural pencils, pens, paints, and markers, stickers and photos with automatic background removal — all saved automatically.',
+        id: 'Menulis, membuat sketsa, dan menghias buku dengan efek balik halaman 3D yang nyata. Pensil, pena, cat, dan spidol natural, stiker dan foto dengan hapus latar otomatis — semuanya tersimpan otomatis.'
       },
       highlights: {
-        en: ['Page-turning books', 'Natural brushes', 'Stickers & photos'],
-        id: ['Buku balik halaman', 'Kuas natural', 'Stiker & foto']
-      }
-    },
-    {
-      id: 'leafpaint',
-      name: 'LeafPaint',
-      status: 'testing',
-      icon: 'assets/icons/leaf_paint.png',
-      thumbnail: 'assets/images/Leafpaint_thumbnail.webp',
-      symbol: 'brush',
-      page: 'leafpaint/index.html',
-      tagline: {
-        en: 'Professional digital painting.',
-        id: 'Melukis digital profesional.'
-      },
-      description: {
-        en: 'A full digital painting studio with layers, expressive brushes and a distraction-free canvas — built for illustrators on Android tablets and phones.',
-        id: 'Studio lukis digital lengkap dengan layer, kuas ekspresif, dan kanvas bebas gangguan — dibuat untuk ilustrator di tablet dan ponsel Android.'
-      },
-      highlights: {
-        en: ['Layers', 'Expressive brushes', 'Large canvas'],
-        id: ['Layer', 'Kuas ekspresif', 'Kanvas besar']
-      }
-    },
-    {
-      id: 'leafly',
-      name: 'Leafly',
-      status: 'development',
-      private: true,
-      icon: 'assets/icons/leafly_icon.webp',
-      symbol: 'animation',
-      tagline: {
-        en: 'Bring your drawings to life.',
-        id: 'Hidupkan gambar Anda.'
-      },
-      description: {
-        en: 'Frame-by-frame animation with onion skin, timeline and playback — turn sketches into moving stories.',
-        id: 'Animasi frame demi frame dengan onion skin, timeline, dan pemutaran — ubah sketsa menjadi cerita yang bergerak.'
-      },
-      highlights: {
-        en: ['Frame-by-frame', 'Onion skin', 'Timeline'],
-        id: ['Frame demi frame', 'Onion skin', 'Timeline']
+        en: ['3D Page-turning', 'Natural brushes', 'Automatic save'],
+        id: ['Buku balik halaman 3D', 'Kuas natural', 'Simpan otomatis']
       }
     },
     {
       id: 'leafstudio',
       name: 'LeafStudio',
-      status: 'development',
+      status: 'planned',
+      statusBadge: {
+        en: 'Target: Nov 2026',
+        id: 'Target: Nov 2026'
+      },
       icon: 'assets/icons/leafstudio_icon.webp',
       symbol: 'storefront',
       page: 'leafstudio/index.html',
       actionUrl: 'https://tally.so/r/VpL6rj',
       actionLabel: 'Pre-register',
       tagline: {
-        en: 'Create and sell your assets.',
-        id: 'Buat dan jual aset Anda.'
+        en: 'Creator workspace & asset design.',
+        id: 'Ruang kerja kreator & desain aset.'
       },
       description: {
-        en: 'The creator workspace of the ecosystem. Design books, templates, brushes, stickers, themes and covers, then publish them for Paperleaf users.',
-        id: 'Ruang kerja kreator di ekosistem. Rancang buku, template, kuas, stiker, tema, dan sampul, lalu terbitkan untuk pengguna Paperleaf.'
+        en: 'The creator workspace of the ecosystem. Design custom notebook templates, expressive brushes, graphic stickers, and cover themes, then publish your creations for Paperleaf users.',
+        id: 'Ruang kerja kreator terpadu. Rancang template buku, kuas lukis, stiker grafis, hingga tema sampul kustom, lalu terbitkan karya Anda untuk seluruh komunitas Paperleaf.'
       },
       highlights: {
-        en: ['For creators', 'Publish assets', 'Earn from your work'],
-        id: ['Untuk kreator', 'Terbitkan aset', 'Hasilkan dari karya']
-      }
-    },
-
-    /* ---------- Roadmap ---------- */
-    {
-      id: 'leafmarket',
-      name: 'LeafMarket',
-      status: 'planned',
-      private: true,
-      icon: 'assets/icons/leafmarket_icon.webp',
-      symbol: 'shopping_bag',
-      page: 'store.html',
-      tagline: { en: 'Marketplace for creator assets.', id: 'Pasar aset kreator.' },
-      description: {
-        en: 'Discover books, templates, brushes and stickers made by creators for the ecosystem.',
-        id: 'Temukan buku, template, kuas, dan stiker buatan kreator untuk ekosistem.'
+        en: ['For creators', 'Publish assets', 'November 2026'],
+        id: ['Untuk kreator', 'Terbitkan aset', 'November 2026']
       }
     },
     {
-      id: 'leafbook',
-      name: 'LeafBook',
-      status: 'planned',
-      private: true,
-      icon: 'assets/icons/leafbook_icon.webp',
-      symbol: 'auto_stories',
-      tagline: { en: 'Read digital books.', id: 'Baca buku digital.' },
+      id: 'leafpaint',
+      name: 'LeafPaint',
+      status: 'development',
+      statusBadge: {
+        en: 'Target: Jan 2027',
+        id: 'Target: Jan 2027'
+      },
+      icon: 'assets/icons/leaf_paint.png',
+      thumbnail: 'assets/images/Leafpaint_thumbnail.webp',
+      symbol: 'brush',
+      page: 'leafpaint/index.html',
+      tagline: {
+        en: 'Precision digital painting studio.',
+        id: 'Studio seni lukis digital presisi.'
+      },
       description: {
-        en: 'A comfortable reader for e-books and illustrated books from creators.',
-        id: 'Pembaca yang nyaman untuk e-book dan buku bergambar dari kreator.'
-      }
-    },
-    {
-      id: 'leafmusic',
-      name: 'LeafMusic',
-      status: 'planned',
-      private: true,
-      icon: 'assets/icons/leafmusic_icon.webp',
-      symbol: 'music_note',
-      tagline: { en: 'Your music library.', id: 'Perpustakaan musik Anda.' },
-      description: {
-        en: 'Play and organize your music collection in one beautiful place.',
-        id: 'Putar dan kelola koleksi musik Anda di satu tempat yang indah.'
-      }
-    },
-    {
-      id: 'leafbox',
-      name: 'LeafBox',
-      status: 'planned',
-      private: true,
-      icon: 'assets/icons/leafbox_icon.webp',
-      symbol: 'cloud',
-      tagline: { en: 'Cloud storage for your work.', id: 'Penyimpanan cloud untuk karya Anda.' },
-      description: {
-        en: 'Store, back up and sync files across every app in the ecosystem.',
-        id: 'Simpan, cadangkan, dan sinkronkan file di semua aplikasi ekosistem.'
-      }
-    },
-    {
-      id: 'leafriend',
-      name: 'Leafriend',
-      status: 'planned',
-      private: true,
-      icon: 'assets/icons/leafriend_icon.webp',
-      symbol: 'group',
-      tagline: { en: 'Share and connect.', id: 'Berbagi dan terhubung.' },
-      description: {
-        en: 'A social space to share your creations and follow other creators.',
-        id: 'Ruang sosial untuk membagikan karya dan mengikuti kreator lain.'
-      }
-    },
-    {
-      id: 'leafed',
-      name: 'Leafed',
-      status: 'planned',
-      private: true,
-      icon: 'assets/icons/leafed_icon.webp',
-      symbol: 'design_services',
-      tagline: { en: 'Vector & graphic design.', id: 'Desain grafis & vektor.' },
-      description: {
-        en: 'Precise vector tools for logos, layouts and illustrations.',
-        id: 'Alat vektor presisi untuk logo, tata letak, dan ilustrasi.'
+        en: 'A full digital painting studio with advanced layers, expressive natural brushes, and a distraction-free canvas — built specifically for illustrators on Android.',
+        id: 'Studio lukis digital lengkap dengan sistem layer canggih, kuas ekspresif alami, dan kanvas luas bebas distraksi — dirancang khusus untuk ilustrator dan seniman visual di Android.'
+      },
+      highlights: {
+        en: ['Advanced layers', 'Expressive brushes', 'January 2027'],
+        id: ['Sistem layer', 'Kuas ekspresif', 'Januari 2027']
       }
     }
   ];
 
-  /** Public apps (not marked private). */
+  /** Public apps (all 3 core apps). */
   SS.getPublicApps = function () {
-    return SS.apps.filter(function (a) { return !a.private; });
+    return SS.apps;
   };
 
-  /** Apps that already exist and are public (shown in the main list). */
+  /** Active apps on the home page. */
   SS.getActiveApps = function () {
-    return SS.apps.filter(function (a) { return !a.private && a.status !== 'planned'; });
+    return SS.apps;
   };
 
-  /** Apps on the roadmap that are public (coming soon). */
+  /** No roadmap items — studio is strictly focused on 3 core apps. */
   SS.getRoadmapApps = function () {
-    return SS.apps.filter(function (a) { return !a.private && a.status === 'planned'; });
+    return [];
   };
 
   SS.getApp = function (id) {

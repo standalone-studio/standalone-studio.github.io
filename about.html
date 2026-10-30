@@ -69,8 +69,8 @@
         <div class="nav-item">
           <a href="about.html" class="nav-link active" data-i18n="nav_about">Tentang Kami</a>
           <div class="dropdown-menu">
-            <a href="about.html#ekosistem" class="dropdown-link">Ekosistem</a>
-            <a href="about.html#developer" class="dropdown-link">Pengembang</a>
+            <a href="about.html" class="dropdown-link active" data-i18n="nav_about_eco">Ekosistem</a>
+            <a href="developer.html" class="dropdown-link" data-i18n="nav_about_dev">Pengembang</a>
           </div>
         </div>
       </div>
@@ -98,7 +98,8 @@
       <a href="apps.html" class="mobile-menu-link" data-i18n="nav_apps">Aplikasi</a>
       <a href="store.html" class="mobile-menu-link" data-i18n="nav_market">Leaf Market</a>
       <a href="support.html" class="mobile-menu-link" data-i18n="nav_support">Dukungan</a>
-      <a href="about.html" class="mobile-menu-link active" data-i18n="nav_about">Tentang Kami</a>
+      <a href="about.html" class="mobile-menu-link active" data-i18n="nav_about_eco">Ekosistem</a>
+      <a href="developer.html" class="mobile-menu-link" data-i18n="nav_about_dev">Pengembang</a>
       <a href="Paperleaf/privacy.html" class="mobile-menu-link" data-i18n="footer_privacy">Kebijakan Privasi</a>
     </div>
   </div>
@@ -235,98 +236,22 @@
       </div>
     </section>
 
-    <!-- Section 2: Sang Pengembang (The Developer Story) -->
-    <section class="section about-content" id="developer" style="padding-top: 60px;">
-      <div class="fade-in">
-        
-        <span class="label" data-i18n="dev_section_label">Tentang Pengembang</span>
-        <h2 class="heading-lg mb-24" data-i18n="dev_section_title">Di Balik Layar: Berdiri di Atas Kaki Sendiri</h2>
-
-        <!-- Developer Profile Card -->
-        <div class="developer-profile-card fade-in">
-          <div class="developer-avatar-wrap">
-            <span class="avatar-initials">SA</span>
-          </div>
-          <div class="developer-profile-meta">
-            <span class="developer-role-badge">
-              <span class="material-symbols-rounded" style="font-size: 14px;">terminal</span>
-              <span data-i18n="dev_badge">Founder & Solo Developer</span>
-            </span>
-            <h3 style="font-size: 1.5rem; font-weight: 700; color: #FFFFFF;">Said Attaufiq <span style="font-size: 1rem; font-weight: 400; color: #8E8E93;">(Saeful Fitri)</span></h3>
-            <p class="body-sm" style="color: #A8A8A8;" data-i18n="dev_origin">Tasikmalaya, 20 Februari 1996 • Solo Engineer & Designer</p>
-          </div>
+    <!-- Section 2: Pintu Masuk ke Kisah Pengembang -->
+    <section class="section fade-in" style="margin-top: 48px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.06);">
+      <div class="developer-invite-card" style="display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 36px 32px; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; flex-wrap: wrap;">
+        <div style="max-width: 640px;">
+          <span class="label" data-i18n="dev_invite_badge">DI BALIK KARYA</span>
+          <h3 class="heading-md mb-8" data-i18n="dev_invite_title">Mengenal Sosok Pengembang</h3>
+          <p class="body-md" style="color: #A8A8A8; line-height: 1.6;" data-i18n="dev_invite_desc">
+            Pelajari kisah perjalanan hidup, filosofi, dan dedikasi Said Attaufiq dalam membangun seluruh ekosistem Stand Alone Studio secara mandiri.
+          </p>
         </div>
-
-        <!-- Core Quote -->
-        <div class="developer-quote-box fade-in">
-          <p data-i18n="dev_quote">"Memberi orang lain kesempatan untuk menunjukkan kreativitas dirinya."</p>
+        <div>
+          <a href="developer.html" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; border-radius: 999px; text-decoration: none; font-weight: 600;">
+            <span data-i18n="dev_invite_btn">Baca Kisah Pengembang</span>
+            <span class="material-symbols-rounded" style="font-size: 20px;">arrow_forward</span>
+          </a>
         </div>
-
-        <!-- Story Chapters -->
-        <div class="story-chapters-wrap">
-
-          <!-- Babak 1 -->
-          <article class="story-chapter fade-in">
-            <span class="story-chapter-number" data-i18n="dev_ch1_num">Babak I</span>
-            <h3 class="story-chapter-title" data-i18n="dev_ch1_title">Asap Tungku Subuh dan Selembar Kertas Gambar</h3>
-            <p class="story-paragraph" data-i18n="dev_ch1_p1">
-              Lahir pada hari raya di Tasikmalaya dari keluarga sederhana, langkah awal Said Attaufiq ditempa oleh ketabahan seorang ibu yang tiap subuh berkutat dengan asap tungku dapur penjual surabi. Tumbuh tanpa kehadiran figur ayah dan tanpa arah yang menuntun masa kecilnya, ia kerap merasa asing dengan dunia permainan anak laki-laki pada umumnya.
-            </p>
-            <p class="story-paragraph" data-i18n="dev_ch1_p2">
-              Hingga di suatu hari, sebuah perjumpaan sederhana di lantai dengan seorang teman kecil yang membawa alat gambar membukakan gerbang baru. Mereka menggambar bersama, menertawakan coretan abstrak, dan saling mengagumi imajinasi masing-masing. Di sanalah dunia seni menyapanya untuk pertama kali. Di atas selembar kertas, ia menemukan suaka pertama tempat jiwanya merasa utuh dan bernapas bebas.
-            </p>
-          </article>
-
-          <!-- Babak 2 -->
-          <article class="story-chapter fade-in">
-            <span class="story-chapter-number" data-i18n="dev_ch2_num">Babak II</span>
-            <h3 class="story-chapter-title" data-i18n="dev_ch2_title">Menemukan Suara di Tengah Keheningan</h3>
-            <p class="story-paragraph" data-i18n="dev_ch2_p1">
-              Kepekaan rasa dan kecintaannya pada seni visual sering kali disalahpahami oleh lingkungan sekitarnya. Masa kecil dan remajanya diwarnai oleh kepedihan dan ketiadaan ruang aman untuk bersandar, yang memaksanya belajar melindungi dirinya sendiri dalam keheningan yang panjang.
-            </p>
-            <p class="story-paragraph" data-i18n="dev_ch2_p2">
-              Saat duduk di bangku sekolah kejuruan bidang komputer, perpustakaan menjadi rumah favoritnya. Di antara rak-rak buku yang sunyi, coretan cerita pendek, dan lembar-lembar sketsa, ia merajut kecintaan mendalam pada sastra, seni visual, dan teknologi. Ia memilih diam, mengamati, dan belajar menata rasa sakit menjadi kekuatan batin yang tenang.
-            </p>
-          </article>
-
-          <!-- Babak 3 -->
-          <article class="story-chapter fade-in">
-            <span class="story-chapter-number" data-i18n="dev_ch3_num">Babak III</span>
-            <h3 class="story-chapter-title" data-i18n="dev_ch3_title">Langkah Kaki Menembus Badai (Garut, 2018)</h3>
-            <p class="story-paragraph" data-i18n="dev_ch3_p1">
-              Tahun 2018 menjadi titik nadir tergelap dalam kehidupannya. Rasa terasing, keputusasaan, dan perasaan tak berharga nyaris memadamkan seluruh harapannya untuk bertahan hidup. Namun, di ujung jurang terdalam itu, secercah tekad membimbingnya untuk mencari arah hidup yang baru.
-            </p>
-            <p class="story-paragraph" data-i18n="dev_ch3_p2">
-              Dengan ransel berat di punggungnya, ia memutuskan melangkah—berjalan kaki puluhan kilometer dari Tasikmalaya menuju Pesantren Attaufiq di Ciucing, Garut. Sepanjang perjalanan yang melelahkan fisik dan batin, ia justru dipertemukan dengan kebaikan-kebaikan tulus dari orang-orang asing di jalanan: tumpangan tulus, senyuman ramah, hingga bekal di jalan dari sesama pengelana, serta seorang sahabat yang setia menjemputnya. Kebaikan tak terduga itu perlahan meruntuhkan rasa putus asanya dan membuktikan bahwa dunia masih memiliki kehangatan dan cinta.
-            </p>
-          </article>
-
-          <!-- Babak 4 -->
-          <article class="story-chapter fade-in">
-            <span class="story-chapter-number" data-i18n="dev_ch4_num">Babak IV</span>
-            <h3 class="story-chapter-title" data-i18n="dev_ch4_title">Said Attaufiq: Tempat Menemukan Rumah</h3>
-            <p class="story-paragraph" data-i18n="dev_ch4_p1">
-              Setibanya di Pesantren Attaufiq, ia tidak disambut dengan penghakiman atau celaan, melainkan dengan pelukan hangat dan keteladanan kemanusiaan yang mendalam dari sang guru. Di tempat yang penuh ketenangan ini, ia belajar mengenal dirinya sendiri, memulihkan damai di dalam hati, dan menemukan satu prinsip hidup yang kokoh: <em>memberi manfaat bagi orang lain.</em>
-            </p>
-            <p class="story-paragraph" data-i18n="dev_ch4_p2">
-              Dari sanalah nama <strong>Said Attaufiq</strong> lahir. Nama ini merajut kembali identitas masa kecilnya dengan nama pesantren yang memberinya kehidupan kedua—sebuah simbol kelahiran kembali seorang manusia yang telah berdamai dengan masa lalunya dan siap melangkah menatap masa depan.
-            </p>
-          </article>
-
-          <!-- Babak 5 -->
-          <article class="story-chapter fade-in">
-            <span class="story-chapter-number" data-i18n="dev_ch5_num">Babak V</span>
-            <h3 class="story-chapter-title" data-i18n="dev_ch5_title">The Wounded Healer & Berdirinya Stand Alone Studio</h3>
-            <p class="story-paragraph" data-i18n="dev_ch5_p1">
-              Perjalanan bangkit dari titik nol melahirkan empati yang sangat mendalam. Filosofi <em>The Wounded Healer</em>—seseorang yang menggunakan pemulihan lukanya sendiri untuk mengulurkan tangan bagi orang lain—menjadi jiwa dari setiap baris kode yang ia tulis.
-            </p>
-            <p class="story-paragraph" data-i18n="dev_ch5_p2">
-              Pada 10 Juli 2026, studio mandiri ini resmi bertransformasi menjadi <strong>Stand Alone Studio</strong>. Nama ini bukan tentang kesendirian, melainkan deklarasi keteguhan hati: bahwa ia mampu berdiri mandiri di atas kakinya sendiri. Setiap baris kode di Paperleaf, LeafPaint, dan LeafStudio ia dedikasikan untuk satu tujuan: menghadirkan "kanvas aman" bagi setiap jiwa untuk berekspresi secara bebas, indah, dan bermakna.
-            </p>
-          </article>
-
-        </div>
-
       </div>
     </section>
 
@@ -442,7 +367,8 @@
           <a href="Paperleaf/delete-account.html" class="footer-link" data-i18n="footer_delete_account">Hapus Akun & Data</a>
           <a href="Paperleaf/term_of_service.html" class="footer-link" data-i18n="footer_tos">Syarat & Ketentuan</a>
           <a href="support.html" class="footer-link" data-i18n="footer_support">Pusat Bantuan</a>
-          <a href="about.html" class="footer-link" data-i18n="footer_about">Tentang Kami</a>
+          <a href="about.html" class="footer-link" data-i18n="footer_about">Ekosistem</a>
+          <a href="developer.html" class="footer-link" data-i18n="footer_dev">Pengembang</a>
         </div>
 
         <p class="footer-copyright">&copy; 2026 Standalone Studio. <span data-i18n="footer_rights">Hak cipta dilindungi undang-undang.</span></p>

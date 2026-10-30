@@ -13,7 +13,9 @@
       nav_apps: "Apps",
       nav_market: "Leaf Market",
       nav_support: "Support",
-      nav_about: "About",
+      nav_about: "About Us",
+      nav_about_eco: "Ecosystem",
+      nav_about_dev: "Developer",
       nav_search: "Search",
 
       // Hero
@@ -62,12 +64,27 @@
       footer_delete_account: "Delete Account",
       footer_tos: "Terms of Service",
       footer_support: "Support",
-      footer_about: "About",
+      footer_about: "Ecosystem",
+      footer_dev: "Developer",
       footer_rights: "All rights reserved.",
 
       // Search & General
       search_placeholder: "Search applications, features, or assets...",
       no_results: "No results found.",
+
+      // Ecosystem Page Invites
+      dev_invite_badge: "BEHIND THE CRAFT",
+      dev_invite_title: "Meet the Developer",
+      dev_invite_desc: "Explore the life story, philosophical roots, and dedication of Said Attaufiq in creating the Stand Alone Studio ecosystem.",
+      dev_invite_btn: "Read Developer Story",
+
+      // Developer Page Invites & Hero
+      dev_hero_badge: "THE DEVELOPER",
+      dev_hero_desc: "The life journey, resilience, and creative philosophy of Said Attaufiq behind every line of code at Stand Alone Studio.",
+      eco_invite_badge: "OUR ECOSYSTEM",
+      eco_invite_title: "Explore the App Ecosystem",
+      eco_invite_desc: "Discover how Paperleaf, LeafPaint, and LeafStudio are designed to seamlessly complement your creative workflow.",
+      eco_invite_btn: "View Ecosystem",
 
       // About & Ecosystem
       about_hero_badge: "STANDALONE STUDIO",
@@ -129,6 +146,8 @@
       nav_market: "Leaf Market",
       nav_support: "Dukungan",
       nav_about: "Tentang Kami",
+      nav_about_eco: "Ekosistem",
+      nav_about_dev: "Pengembang",
       nav_search: "Cari",
 
       // Hero
@@ -177,12 +196,27 @@
       footer_delete_account: "Hapus Akun & Data",
       footer_tos: "Syarat & Ketentuan",
       footer_support: "Pusat Bantuan",
-      footer_about: "Tentang",
+      footer_about: "Ekosistem",
+      footer_dev: "Pengembang",
       footer_rights: "Hak cipta dilindungi undang-undang.",
 
       // Search & General
       search_placeholder: "Cari aplikasi, fitur, atau aset...",
       no_results: "Tidak ada hasil ditemukan.",
+
+      // Ecosystem Page Invites
+      dev_invite_badge: "DI BALIK KARYA",
+      dev_invite_title: "Mengenal Sosok Pengembang",
+      dev_invite_desc: "Pelajari kisah perjalanan hidup, filosofi, dan dedikasi Said Attaufiq dalam membangun seluruh ekosistem Stand Alone Studio secara mandiri.",
+      dev_invite_btn: "Baca Kisah Pengembang",
+
+      // Developer Page Invites & Hero
+      dev_hero_badge: "SANG PENGEMBANG",
+      dev_hero_desc: "Kisah perjalanan hidup, ketabahan, dan filosofi Said Attaufiq di balik lahirnya setiap baris kode di Stand Alone Studio.",
+      eco_invite_badge: "EKOSISTEM KAMI",
+      eco_invite_title: "Jelajahi Ekosistem Aplikasi",
+      eco_invite_desc: "Ketahui lebih dalam bagaimana Paperleaf, LeafPaint, dan LeafStudio dirancang untuk saling melengkapi alur kreatif Anda.",
+      eco_invite_btn: "Lihat Ekosistem",
 
       // About & Ecosystem
       about_hero_badge: "STANDALONE STUDIO",

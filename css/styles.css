@@ -711,7 +711,7 @@ input {
   flex-direction: row-reverse;
   align-items: center;
   justify-content: space-between;
-  gap: 80px; /* Sedikit lebih lebar antar kolom */
+  gap: 56px;
   min-height: auto;
   padding: 0;
 }
@@ -834,48 +834,60 @@ input {
 
 .screenshot-placeholder {
   width: 100%;
-  height: 100%;
+  min-height: 280px;
+  max-width: 540px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 40px 24px;
+  color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .screenshot-placeholder .material-symbols-rounded {
-  font-size: 48px;
+  font-size: 44px;
 }
 
 .screenshot-placeholder span:last-child {
   font-size: 0.75rem;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
 }
 
 /* App Grid */
 .app-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 24px;
 }
 
 /* Compact Card for Apps Page */
 .app-compact-card {
-  background: transparent; /* Clean look */
-  border: none;
-  border-radius: 0;
-  padding: 24px 0; /* Reduced padding, removed horizontal padding */
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 24px;
+  padding: 28px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  justify-content: space-between;
+  gap: 18px;
   cursor: pointer;
-  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  min-height: 210px;
 }
 
 .app-compact-card:hover {
   transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.035);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
 }
 
 .app-compact-header {

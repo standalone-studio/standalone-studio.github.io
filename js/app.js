@@ -146,17 +146,17 @@
         var isReverse = (index % 2 === 1) ? 'reverse-layout' : '';
         var tagline = getLocalizedText(app.tagline);
         var description = getLocalizedText(app.description);
-        var statusLabel = getStatusLabel(app.status);
+        var statusLabel = (app.statusBadge && getLocalizedText(app.statusBadge)) || getStatusLabel(app.status);
         var statusClass = app.status;
 
         var downloadBtnHtml = '';
         if (app.id === 'paperleaf') {
-          var dlUrl = (SS.config && SS.config.paperleafDownloadUrl) || '#';
+          var dlUrl = (SS.config && SS.config.paperleafDownloadUrl) || 'https://play.google.com/store/apps/details?id=com.paperleaf.scrapbook';
           downloadBtnHtml = '<a href="' + dlUrl + '" target="_blank" rel="noopener noreferrer" class="btn btn-primary">' +
             '<span class="material-symbols-rounded">download</span> ' +
             (SS.i18n ? SS.i18n.get('btn_download') : 'Unduh di Play Store') +
             '</a>' +
-            '<a href="' + (SS.url ? SS.url(app.page) : 'paperleaf/index.html') + '" class="btn btn-secondary">' +
+            '<a href="' + (SS.url ? SS.url(app.page) : 'Paperleaf/index.html') + '" class="btn btn-secondary">' +
             (SS.i18n ? SS.i18n.get('btn_detail') : 'Pelajari Fitur') +
             '</a>';
         } else if (app.id === 'leafstudio' || app.actionUrl) {
@@ -170,12 +170,10 @@
               (SS.i18n ? SS.i18n.get('btn_detail') : 'Pelajari Fitur') +
               '</a>' : '');
         } else {
-          downloadBtnHtml = '<span class="status-badge ' + statusClass + '">' +
-            '<span class="status-dot"></span> ' + statusLabel +
-            '</span>' +
-            (app.page ? '<a href="' + (SS.url ? SS.url(app.page) : app.page) + '" class="btn btn-secondary">' +
-              (SS.i18n ? SS.i18n.get('btn_detail') : 'Pelajari Fitur') +
-              '</a>' : '');
+          downloadBtnHtml = (app.page ? '<a href="' + (SS.url ? SS.url(app.page) : app.page) + '" class="btn btn-secondary">' +
+            '<span class="material-symbols-rounded">visibility</span> ' +
+            (SS.i18n ? SS.i18n.get('btn_detail') : 'Pelajari Fitur') +
+            '</a>' : '');
         }
 
         var iconHtml = '';
@@ -194,8 +192,13 @@
           visualHtml = '<img src="' + ssPath + '" alt="' + app.name + ' Thumbnail" loading="lazy" onerror="this.onerror=null;if(this.src.indexOf(\'Leaaf\')===-1&&this.src.indexOf(\'Leaf\')!==-1){this.src=\'assets/images/LeaafPaint_thumbnail.webp\';}else{this.style.display=\'none\';}">';
         } else {
           visualHtml = '<div class="screenshot-placeholder">' +
-            '<span class="material-symbols-rounded">' + (app.symbol || 'devices') + '</span>' +
-            '<span>' + statusLabel + '</span>' +
+            '<div style="width:68px;height:68px;border-radius:20px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;margin-bottom:8px;">' +
+            '<span class="material-symbols-rounded" style="font-size:36px;color:#FFFFFF;">' + (app.symbol || 'storefront') + '</span>' +
+            '</div>' +
+            '<div style="font-size:1.25rem;font-weight:700;color:#FFFFFF;letter-spacing:-0.01em;">' + app.name + '</div>' +
+            '<span class="status-badge ' + statusClass + '" style="margin-top:6px;">' +
+            '<span class="status-dot"></span> ' + statusLabel +
+            '</span>' +
             '</div>';
         }
 
@@ -206,7 +209,12 @@
           '<div class="app-card-header">' +
           '<div class="app-card-icon">' + iconHtml + '</div>' +
           '<div>' +
-          '<h3 class="app-card-name">' + app.name + '</h3>' +
+          '<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:4px;">' +
+          '<h3 class="app-card-name" style="margin:0;">' + app.name + '</h3>' +
+          '<span class="status-badge ' + statusClass + '">' +
+          '<span class="status-dot"></span> ' + statusLabel +
+          '</span>' +
+          '</div>' +
           '<p class="app-card-slogan">' + tagline + '</p>' +
           '</div>' +
           '</div>' +
@@ -280,7 +288,7 @@
       publicApps.forEach(function (app) {
         var tagline = getLocalizedText(app.tagline);
         var description = getLocalizedText(app.description);
-        var statusLabel = (app.id === 'leafstudio' && app.actionLabel) ? app.actionLabel : getStatusLabel(app.status);
+        var statusLabel = (app.statusBadge && getLocalizedText(app.statusBadge)) || getStatusLabel(app.status);
         var statusClass = app.status;
 
         var iconHtml = '';
