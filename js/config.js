@@ -26,6 +26,14 @@
       supportedLangs: ['en', 'id'],
       storageKeyLang: 'ss_lang',
 
+      // Supabase Cloud Configuration for LeafMarket
+      supabase: {
+        url: 'https://pejqkiabwckzfwfydruo.supabase.co',
+        anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBlanFraWFid2NremZ3ZnlkcnVvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk3MzkzNTMsImV4cCI6MjEwNTMxNTM1M30.sh7b4e0oGruoSy52jwF6kVk5exTb8WE6mRyN_EQA3MU',
+        table: 'market_assets',
+        storageBucket: 'leaf-market-assets'
+      },
+
       // Android download link for Paperleaf. Set to null to show "Coming soon".
       paperleafDownloadUrl: 'https://play.google.com/store/apps/details?id=com.paperleaf.scrapbook',
 

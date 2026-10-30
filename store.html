@@ -49,12 +49,13 @@
           </div>
         </div>
         <div class="nav-item">
-          <a href="store.html" class="nav-link active" data-i18n="nav_market">Pasar Aset</a>
+          <a href="store.html" class="nav-link active" data-i18n="nav_market">Leaf Market</a>
           <div class="dropdown-menu">
-            <a href="store.html#buku" class="dropdown-link">Buku & Template</a>
-            <a href="store.html#kuas" class="dropdown-link">Kuas & Tekstur</a>
-            <a href="store.html#stiker" class="dropdown-link">Stiker & Ornamen</a>
-            <a href="store.html#tema" class="dropdown-link">Sampul & Tema</a>
+            <a href="store.html?category=COVER" class="dropdown-link">Sampul Buku</a>
+            <a href="store.html?category=BOOK" class="dropdown-link">Buku</a>
+            <a href="store.html?category=TEMPLATE" class="dropdown-link">Template</a>
+            <a href="store.html?category=STICKER" class="dropdown-link">Sticker</a>
+            <a href="store.html?category=THEME" class="dropdown-link">Tema</a>
           </div>
         </div>
         <a href="support.html" class="nav-link" data-i18n="nav_support">Dukungan</a>
@@ -88,7 +89,7 @@
     <div class="mobile-menu-nav">
       <a href="index.html" class="mobile-menu-link">Beranda</a>
       <a href="apps.html" class="mobile-menu-link" data-i18n="nav_apps">Aplikasi</a>
-      <a href="store.html" class="mobile-menu-link active" data-i18n="nav_market">Pasar Aset</a>
+      <a href="store.html" class="mobile-menu-link active" data-i18n="nav_market">Leaf Market</a>
       <a href="support.html" class="mobile-menu-link" data-i18n="nav_support">Dukungan</a>
       <a href="about.html" class="mobile-menu-link" data-i18n="nav_about">Tentang Kami</a>
       <a href="Paperleaf/privacy.html" class="mobile-menu-link" data-i18n="footer_privacy">Kebijakan Privasi</a>
@@ -111,60 +112,50 @@
       <span class="label">LeafMarket</span>
       <h1 class="heading-lg" data-i18n="market_title">LeafMarket & Aset Kreator</h1>
       <p class="body-lg" data-i18n="market_desc">
-        Buku, template, kuas artistik, dan sampul pilihan yang dirancang untuk alur kerja Anda.
+        Buku, template, kuas artistik, stiker, dan sampul pilihan yang dirancang untuk alur kerja Anda di Paperleaf.
       </p>
-      <div style="margin-top: 16px;">
-        <span class="status-badge planned">
-          <span class="status-dot"></span> <span data-i18n="status_planned">Segera Hadir</span>
-        </span>
-      </div>
     </header>
 
-    <!-- Categories Grid -->
-    <section class="section">
-      <div class="store-grid">
+    <!-- Category Filter Tabs -->
+    <div class="market-filter-bar fade-in" id="marketFilterBar">
+      <button class="market-filter-btn active" data-filter="all" type="button">
+        <span class="material-symbols-rounded">apps</span>
+        <span>Semua</span>
+      </button>
+      <button class="market-filter-btn" data-filter="COVER" type="button">
+        <span class="material-symbols-rounded">auto_stories</span>
+        <span>Sampul Buku</span>
+      </button>
+      <button class="market-filter-btn" data-filter="BOOK" type="button">
+        <span class="material-symbols-rounded">menu_book</span>
+        <span>Buku</span>
+      </button>
+      <button class="market-filter-btn" data-filter="TEMPLATE" type="button">
+        <span class="material-symbols-rounded">description</span>
+        <span>Template</span>
+      </button>
+      <button class="market-filter-btn" data-filter="STICKER" type="button">
+        <span class="material-symbols-rounded">sentiment_satisfied</span>
+        <span>Sticker</span>
+      </button>
+      <button class="market-filter-btn" data-filter="THEME" type="button">
+        <span class="material-symbols-rounded">palette</span>
+        <span>Tema</span>
+      </button>
+    </div>
 
-        <!-- Buku & Template -->
-        <div class="store-card fade-in" id="buku">
-          <div class="store-card-icon">
-            <span class="material-symbols-rounded">menu_book</span>
-          </div>
-          <h2 class="store-card-name" data-i18n="market_books">Buku Digital</h2>
-          <p class="store-card-count" data-i18n="market_books_desc">Template buku catatan dan buku bergambar pilihan.</p>
-        </div>
-
-        <!-- Kuas & Tekstur -->
-        <div class="store-card fade-in" id="kuas">
-          <div class="store-card-icon">
-            <span class="material-symbols-rounded">brush</span>
-          </div>
-          <h2 class="store-card-name" data-i18n="market_brushes">Kuas & Tekstur</h2>
-          <p class="store-card-count" data-i18n="market_brushes_desc">Tekstur seni alami dan goresan kuas khusus.</p>
-        </div>
-
-        <!-- Stiker & Ornamen -->
-        <div class="store-card fade-in" id="stiker">
-          <div class="store-card-icon">
-            <span class="material-symbols-rounded">sentiment_satisfied</span>
-          </div>
-          <h2 class="store-card-name" data-i18n="market_stickers">Stiker & Ornamen</h2>
-          <p class="store-card-count" data-i18n="market_stickers_desc">Aset dekoratif dan stempel ilustrasi artistik.</p>
-        </div>
-
-        <!-- Sampul & Tema -->
-        <div class="store-card fade-in" id="tema">
-          <div class="store-card-icon">
-            <span class="material-symbols-rounded">auto_stories</span>
-          </div>
-          <h2 class="store-card-name" data-i18n="market_themes">Sampul & Tema</h2>
-          <p class="store-card-count" data-i18n="market_themes_desc">Tema buku catatan dan desain sampul ekspresif.</p>
-        </div>
-
+    <!-- Live Supabase Market Assets Grid -->
+    <section class="section" style="padding-top: 10px;">
+      <div class="market-assets-grid" id="marketAssetsContainer">
+        <!-- Skeleton Loaders rendered initially -->
+        <div class="market-skeleton-card"></div>
+        <div class="market-skeleton-card"></div>
+        <div class="market-skeleton-card"></div>
       </div>
     </section>
 
-    <!-- Creator Hub Callout -->
-    <section class="section fade-in" style="text-align: center; max-width: 800px; margin: 0 auto; padding-top: 20px;">
+    <!-- Creator Hub Callout (LeafStudio) -->
+    <section class="section fade-in" style="text-align: center; max-width: 820px; margin: 40px auto 0; padding-top: 20px;">
       <div class="app-card" style="padding: 40px; border: 1px solid rgba(255,255,255,0.06); border-radius: 24px; background: rgba(255,255,255,0.02);">
         <span class="material-symbols-rounded" style="font-size: 40px; margin-bottom: 16px; color: #FFFFFF;">storefront</span>
         <h3 class="heading-md mb-16">Dibuat untuk Para Kreator (LeafStudio)</h3>
@@ -183,6 +174,32 @@
     </section>
 
   </main>
+
+  <!-- Modal Pratinjau Detail Aset -->
+  <div class="market-modal" id="marketDetailModal" aria-hidden="true" role="dialog">
+    <div class="market-modal-overlay" id="marketModalOverlay"></div>
+    <div class="market-modal-dialog">
+      <button class="market-modal-close" id="marketModalClose" aria-label="Tutup Pratinjau" type="button">
+        <span class="material-symbols-rounded">close</span>
+      </button>
+      <div class="market-modal-preview-wrap" id="modalPreviewWrap">
+        <!-- Rendered Image -->
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px;">
+        <span class="market-card-category-badge" style="position: static;" id="modalCategoryBadge">Sampul</span>
+        <span class="market-card-price-badge" style="position: static;" id="modalPriceBadge">Rp 6.000</span>
+      </div>
+      <h3 class="heading-md mb-8" id="modalTitle" style="color: #FFFFFF;">Judul Aset</h3>
+      <p class="body-sm mb-16" id="modalSlogan" style="color: #A0A0A0; font-style: italic;"></p>
+      <p class="body-md mb-24" id="modalDescription" style="color: #CCCCCC; line-height: 1.6;"></p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 18px;">
+        <a href="https://play.google.com/store/apps/details?id=com.paperleaf.scrapbook" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 12px 24px;">
+          <span class="material-symbols-rounded">download</span>
+          <span>Buka di Paperleaf</span>
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <footer class="footer">

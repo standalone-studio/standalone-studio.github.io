@@ -1,0 +1,121 @@
+About Stand Alone Studio
+Mengubah Lanskap Aplikasi Kreatif di Ekosistem Android
+Stand Alone Studio (sebelumnya Basta Developer) adalah studio pengembangan perangkat lunak independen yang berfokus menciptakan aplikasi dan ekosistem digital kreatif kelas atas (premium) untuk pengguna Android di seluruh dunia.
+
+Lahir dari semangat untuk menutup celah kualitas antara aplikasi perangkat bergerak di Android dan ekosistem sistem operasi lainnya, Stand Alone Studio berdedikasi menghadirkan pengalaman visual yang estetik, performa tinggi, serta antarmuka intuitif yang sejajar dengan standar global.
+
+
+Misi & Visi Kami
+•	Redefining Android UI/UX: Menghadirkan antarmuka dan pengalaman pengguna yang segar, modern, dan bernilai estetika tinggi pada setiap aplikasi kreatif yang dirancang.
+
+•	Empowering Creators: Membangun ekosistem terpadu—mulai dari tahap penuangan ide, proses berkarya (painting, sketching, vector, animation), hingga monetisasi aset bagi para kreator digital.
+
+•	Quality & Performance: Memastikan setiap produk berjalan responsif, stabil, dan memberikan kenyamanan penuh bagi pengguna.
+
+Filosofi & Keberlanjutan Produk
+Sebagai studio independen, kami percaya pada transparansi dan fleksibilitas model bisnis (fair & sustainable pricing). Setiap aplikasi dalam ekosistem Stand Alone Studio dirancang dengan pendekatan model bisnis yang disesuaikan dengan kebutuhan pengguna—mulai dari Lifetime Access (sekali beli), Freemium, hingga opsi langganan/pembelian dalam aplikasi.
+
+Model ini diterapkan untuk mendukung pengembangan fitur berkala, perawatan infrastruktur cloud/database, serta menjaga agar studio tetap konsisten menghasilkan inovasi baru yang berdampak positif bagi komunitas kreator.
+
+
+Ikuti Perjalanan Kami
+Tetap terhubung dengan perkembangan dan rilis produk terbaru dari Stand Alone Studio:
+
+
+•	Instagram: @Stalone.studio
+
+•	TikTok: @Stalone.studio
+
+ 
+
+Our Products & Ecosystem
+Satu Ekosistem Lengkap untuk Semua Kebutuhan Kreatif Anda di Android.
+
+1. Paperleaf : Digital Scrapbook
+•	Kategori: Journaling, Sketching, & Scrapbooking
+
+•	Deskripsi: Aplikasi eksklusif yang menghadirkan pengalaman menulis jurnal dan membuat scrapbook digital yang otentik. Dilengkapi dengan simulasi efek lipat buku 3D yang halus, estetik, dan intuitif.
+
+•	Status: Production Review (Google Play Store)
+
+•	Sosial Media: @Paperleaf.App
+
+2. LeafPaint
+•	Kategori: Digital Painting & Illustration
+
+•	Deskripsi: Studio lukis digital yang dirancang khusus untuk para seniman dan ilustrator. Menawarkan kanvas digital yang responsif, brush alami, dan pengalaman melukis tanpa hambatan.
+
+•	Status: In Development
+
+3. Vecleaf (jangan dulu di tampilkan)
+•	Kategori: Vector Graphic Design
+
+•	Deskripsi: Perangkat desain vektor presisi untuk membuat ilustrasi, logo, dan karya grafis yang bersih serta skalabel langsung dari perangkat Android Anda.
+
+•	Status: In Development
+
+4. Leafly  (jangan dulu di tampilkan)
+•	Kategori: Digital Animation
+
+•	Deskripsi: Platform animasi intuitif bagi para animator untuk menghidupkan ide, membuat sketsa bergerak, dan menghasilkan karya animasi berkualitas.
+
+•	Status: In Development
+
+5. Leafbook
+•	Kategori: E-Book Reader & Digital Reading
+
+•	Deskripsi: Menghadirkan dimensi baru dalam membaca dokumen dan buku digital dengan visual efek lipatan halaman 3D yang nyata dan nyaman di mata.
+
+•	Status: In Development
+
+6. LeafStudio & Leaf Market
+•	Kategori: Creator Economy & Asset Marketplace
+
+•	Deskripsi: Hub terpadu yang menghubungkan kreator dengan pembeli. Tempat untuk menjual, mendistribusikan, dan membeli aset kreatif digital secara aman dan transparan.
+
+
+
+
+
+The Story Behind Stand Alone Studio
+Sebuah Perjalanan: Dari Pesantren hingga Berdiri Mandiri
+Perjalanan Stand Alone Studio tidak dimulai dari sebuah ruang kantor yang megah, melainkan dari sebuah titik balik kehidupan.
+
+Pada tahun 2018, di tengah rasa putus asa dan titik terendah dalam hidup, founder studio ini melangkah ke Pesantren Attaufiq (Ciucing, Garut). Tempat ini menjadi wadah tempat ia diberikan kesempatan kedua untuk menemukan arah dan tujuan hidup yang baru: "Memberi manfaat bagi orang lain."
+
+Rasa terima kasih yang mendalam dan keinginan untuk mengharumkan nama pesantren yang telah menyelamatkannya menjadi alasan mendasar di balik lahirnya Basta (Barudak Santri Attaufiq) pada 24 Mei 2022. Niat yang tulus: menghidupkan komunitas santri, menunjukkan keberadaan mereka kepada dunia, serta berjuang dan meraih keberhasilan bersama.
+
+Ketika proses pengembangan aplikasi Android dimulai pada tahun 2024 di bawah nama Basta Developer, proyek ini dibawa dengan semangat untuk memberi makna dan membawa nama komunitas tersebut. Namun, perjalanan seorang pionir sering kali harus ditempuh seorang diri. Di tengah perjuangan merancang dan menguji aplikasi Paperleaf, dukungan dari komunitas tidak kunjung hadir.
+
+Pada 10 Juli 2026, nama tersebut resmi bertransformasi menjadi Stand Alone Studio.
+
+Nama ini bukanlah sebuah simbol keputusasaan, melainkan sebuah deklarasi keteguhan hati: sebuah bukti bahwa ia mampu berdiri di atas kakinya sendiri, memperjuangkan visinya tanpa ragu, dan tetap memegang teguh prinsip awal untuk terus memberi manfaat bagi orang banyak.
+
+
+Filosofi "The Wounded Healer" & Dedaunan yang Tumbuh
+Perjalanan ini mencerminkan sebuah fenomena dalam psikologi yang dikenal sebagai The Wounded Healer (seorang yang pernah terluka, menggunakan rasa sakit dan proses pemulihan dirinya untuk menyembuhkan orang lain).
+
+Pengalaman bangkit dari masa-masa sulit membentuk empati mendalam dalam merancang setiap aplikasi. Studio ini hadir bukan hanya untuk membuat perangkat lunak, tetapi untuk menyediakan ruang aman bagi siapa saja yang ingin mengekspresikan diri, menyembuhkan rasa lelah, dan menyalurkan kreativitas mereka.
+
+Hal ini berlaras sempurna dengan filosofi "Leaf" (Daun) yang menjadi benang merah seluruh ekosistem produk (Paperleaf, LeafPaint, LeafStudio dan aplikasi lainnya yang akan hadir):
+
+
+•	Kehidupan & Pertumbuhan (Life & Growth): Daun adalah simbol utama dari kehidupan. Setiap aplikasi dirancang untuk memberi "oksigen" dan kehidupan bagi ide-ide kreatif pengguna agar dapat tumbuh tanpa batasan.
+
+•	Proses Alami (Organic & Natural): Merekam perasaan, melukis, mendesain, dan beranimasi seharusnya terasa mengalir secara alami, layaknya helai daun yang bergerak mengikuti angin.
+
+•	Gugur untuk Melahirkan yang Baru (Rebirth & Opportunity): Sehelai daun yang gugur ke tanah memberi nutrisi bagi tunas dan daun baru untuk tumbuh. Filosofi ini mencerminkan proses belajar dari kegagalan serta dedikasi untuk terus memfasilitasi lahirnya karya-karya baru bagi para kreator lainnya.
+
+Prinsip Utama Developer
+"Memberi orang lain kesempatan untuk menunjukkan kreativitas dirinya."
+
+Sebagai solo developer, setiap baris kode, desain antarmuka, dan arsitektur aplikasi yang dibangun di Stand Alone Studio dikerjakan dengan satu tujuan: menyediakan "kanvas" terbaik bagi setiap individu untuk berkarya secara bebas, estetik, dan bermakna.
+
+
+Headline (Hero Secstion):
+Membuka Ruang Tanpa Batas untuk Setiap Kreativitas.
+
+Sub-headline:
+Stand Alone Studio menghadirkan ekosistem aplikasi Android yang estetik dan dirancang khusus untuk memberi Anda kebebasan penuh dalam berkarya.
+
+

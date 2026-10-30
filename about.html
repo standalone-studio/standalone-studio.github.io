@@ -56,12 +56,13 @@
           </div>
         </div>
         <div class="nav-item">
-          <a href="store.html" class="nav-link" data-i18n="nav_market">Pasar Aset</a>
+          <a href="store.html" class="nav-link" data-i18n="nav_market">Leaf Market</a>
           <div class="dropdown-menu">
-            <a href="store.html#buku" class="dropdown-link">Buku & Template</a>
-            <a href="store.html#kuas" class="dropdown-link">Kuas & Tekstur</a>
-            <a href="store.html#stiker" class="dropdown-link">Stiker & Ornamen</a>
-            <a href="store.html#tema" class="dropdown-link">Sampul & Tema</a>
+            <a href="store.html?category=COVER" class="dropdown-link">Sampul Buku</a>
+            <a href="store.html?category=BOOK" class="dropdown-link">Buku</a>
+            <a href="store.html?category=TEMPLATE" class="dropdown-link">Template</a>
+            <a href="store.html?category=STICKER" class="dropdown-link">Sticker</a>
+            <a href="store.html?category=THEME" class="dropdown-link">Tema</a>
           </div>
         </div>
         <a href="support.html" class="nav-link" data-i18n="nav_support">Dukungan</a>
@@ -95,7 +96,7 @@
     <div class="mobile-menu-nav">
       <a href="index.html" class="mobile-menu-link">Beranda</a>
       <a href="apps.html" class="mobile-menu-link" data-i18n="nav_apps">Aplikasi</a>
-      <a href="store.html" class="mobile-menu-link" data-i18n="nav_market">Pasar Aset</a>
+      <a href="store.html" class="mobile-menu-link" data-i18n="nav_market">Leaf Market</a>
       <a href="support.html" class="mobile-menu-link" data-i18n="nav_support">Dukungan</a>
       <a href="about.html" class="mobile-menu-link active" data-i18n="nav_about">Tentang Kami</a>
       <a href="Paperleaf/privacy.html" class="mobile-menu-link" data-i18n="footer_privacy">Kebijakan Privasi</a>
@@ -113,107 +114,219 @@
   <!-- MAIN CONTENT -->
   <main class="page-content container">
 
+    <!-- Hero Section -->
     <section class="about-hero fade-in">
-      <span class="label">Standalone Studio</span>
-      <h1 class="heading-xl">Membangun Ekosistem Kreatif</h1>
-      <p class="body-lg">
-        Menghadirkan alat-alat digital yang membebaskan daya cipta, alami digunakan, dan elegan di Android.
+      <span class="label" data-i18n="about_hero_badge">STANDALONE STUDIO</span>
+      <h1 class="heading-xl" data-i18n="about_hero_title">Membuka Ruang Tanpa Batas untuk Setiap Kreativitas</h1>
+      <p class="body-lg" data-i18n="about_hero_desc">
+        Studio pengembangan independen yang berdedikasi menutup celah kualitas di Android melalui perpaduan antarmuka estetik, performa tinggi, dan kebebasan berekspresi.
       </p>
     </section>
 
-    <!-- About Content -->
-    <section class="section about-content">
-      <div class="about-section fade-in" id="ekosistem">
-        <span class="label">Filosofi</span>
-        <h2 class="heading-md">Sentuhan Alami dalam Media Digital</h2>
-        <p class="body-md">
-          Kami percaya bahwa teknologi terbaik adalah teknologi yang tidak menghalangi aliran ide Anda. Ekosistem aplikasi kami dirancang dari nol untuk pengguna Android, memadukan keindahan interaksi fisik—seperti sensasi membalik halaman buku, goresan pensil bertekstur, serta kuas artistik alami—dengan kemudahan penyimpanan digital otomatis.
+    <!-- Section 1: Ekosistem Stand Alone Studio -->
+    <section class="section about-content" id="ekosistem" style="border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 60px;">
+      <div class="fade-in">
+        <span class="label" data-i18n="about_eco_label">Ekosistem Kami</span>
+        <h2 class="heading-md mb-16" data-i18n="about_eco_title">Satu Ekosistem untuk Seluruh Alur Kreatif Android</h2>
+        <p class="body-md mb-24" data-i18n="about_eco_p1">
+          Stand Alone Studio adalah studio pengembangan perangkat lunak independen yang berfokus menciptakan aplikasi dan ekosistem digital kreatif kelas atas untuk pengguna Android di seluruh dunia. Lahir dari tekad untuk menghadirkan antarmuka visual yang estetik, performa tinggi, dan kendali intuitif yang sejajar dengan standar global.
         </p>
-        <p class="body-md">
-          Setiap aplikasi dalam ekosistem—mulai dari <strong>Paperleaf</strong> untuk catatan & jurnal, <strong>LeafPaint</strong> untuk lukis digital, hingga <strong>LeafStudio</strong> untuk ruang kerja kreator—memiliki peran spesifik yang saling melengkapi dalam satu alur kerja terpadu.
-        </p>
-      </div>
 
-      <div class="about-section fade-in" id="developer">
-        <span class="label">Tim Pengembang</span>
-        <h2 class="heading-md">Standalone Studio</h2>
-        <p class="body-md">
-          Standalone Studio adalah studio pengembang independen yang berdedikasi membangun produk digital berkualitas tinggi. Kami menjunjung tinggi privasi pengguna, desain yang bersih dan bebas kekacauan, serta kinerja aplikasi yang ringan dan stabil.
-        </p>
+        <!-- 3 Pilar Studio -->
+        <div class="values-grid" style="margin: 36px 0;">
+          <div class="value-card fade-in">
+            <span class="material-symbols-rounded">design_services</span>
+            <h3 class="heading-sm" data-i18n="about_pilar1_title">Redefining Android UI/UX</h3>
+            <p class="body-md" data-i18n="about_pilar1_desc">Menghadirkan antarmuka yang segar, minimalis, dan bernilai estetika tinggi pada setiap aplikasi kreatif yang dirancang.</p>
+          </div>
+          <div class="value-card fade-in">
+            <span class="material-symbols-rounded">handshake</span>
+            <h3 class="heading-sm" data-i18n="about_pilar2_title">Empowering Creators</h3>
+            <p class="body-md" data-i18n="about_pilar2_desc">Membangun ekosistem terpadu dari tahap pencatatan ide, proses berkarya visual, hingga penerbitan aset karya digital.</p>
+          </div>
+          <div class="value-card fade-in">
+            <span class="material-symbols-rounded">verified</span>
+            <h3 class="heading-sm" data-i18n="about_pilar3_title">Quality & Sustainability</h3>
+            <p class="body-md" data-i18n="about_pilar3_desc">Memastikan stabilitas dan performa responsif dengan model bisnis yang adil dan transparan demi keberlanjutan produk.</p>
+          </div>
+        </div>
+
+        <!-- 3 Produk Utama -->
+        <h3 class="heading-sm mb-16 mt-32" data-i18n="about_products_title">Tiga Aplikasi Inti Ekosistem</h3>
+        <div class="ecosystem-three-grid">
+          
+          <!-- Paperleaf -->
+          <a href="Paperleaf/index.html" class="ecosystem-app-card fade-in" style="text-decoration: none; color: inherit;">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <div class="app-icon-mini">
+                <img src="assets/icons/logo_paperleaf.jpg" alt="Paperleaf Icon" loading="lazy">
+              </div>
+              <span class="status-badge early-access" style="font-size: 0.7rem; padding: 4px 10px;">
+                <span class="status-dot"></span> Play Store
+              </span>
+            </div>
+            <h4 style="font-size: 1.125rem; font-weight: 700; color: #FFFFFF;">Paperleaf</h4>
+            <p class="body-sm" style="color: #A8A8A8; line-height: 1.5;" data-i18n="about_prod_paperleaf">
+              Digital scrapbook dan jurnal otentik dengan simulasi lipat buku 3D yang nyata, kuas ekspresif alami, dan simpan otomatis.
+            </p>
+          </a>
+
+          <!-- LeafPaint -->
+          <a href="leafpaint/index.html" class="ecosystem-app-card fade-in" style="text-decoration: none; color: inherit;">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <div class="app-icon-mini">
+                <img src="assets/icons/leaf_paint.png" alt="LeafPaint Icon" loading="lazy">
+              </div>
+              <span class="status-badge testing" style="font-size: 0.7rem; padding: 4px 10px;">
+                <span class="status-dot"></span> Pengujian
+              </span>
+            </div>
+            <h4 style="font-size: 1.125rem; font-weight: 700; color: #FFFFFF;">LeafPaint</h4>
+            <p class="body-sm" style="color: #A8A8A8; line-height: 1.5;" data-i18n="about_prod_leafpaint">
+              Studio lukis digital lengkap dengan sistem layer canggih, sensitivitas stylus presisi, dan kanvas bebas distraksi.
+            </p>
+          </a>
+
+          <!-- LeafStudio -->
+          <a href="leafstudio/index.html" class="ecosystem-app-card fade-in" style="text-decoration: none; color: inherit;">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <div class="app-icon-mini">
+                <img src="assets/icons/leafstudio_icon.webp" alt="LeafStudio Icon" loading="lazy">
+              </div>
+              <span class="status-badge planned" style="font-size: 0.7rem; padding: 4px 10px;">
+                <span class="status-dot"></span> Pre-register
+              </span>
+            </div>
+            <h4 style="font-size: 1.125rem; font-weight: 700; color: #FFFFFF;">LeafStudio</h4>
+            <p class="body-sm" style="color: #A8A8A8; line-height: 1.5;" data-i18n="about_prod_leafstudio">
+              Ruang kerja kreator terpadu untuk merancang template jurnal, kuas lukis, stiker grafis, hingga tema sampul kustom.
+            </p>
+          </a>
+
+        </div>
+
+        <!-- Filosofi Daun -->
+        <div style="margin-top: 48px;">
+          <span class="label" data-i18n="about_leaf_label">Filosofi Dedaunan</span>
+          <h3 class="heading-md mb-16" data-i18n="about_leaf_title">Makna "Leaf" di Balik Seluruh Karya</h3>
+          <p class="body-md mb-20" data-i18n="about_leaf_desc">
+            Sehelai daun bukan sekadar bentuk visual, melainkan benang merah yang mengalir di setiap aplikasi yang dibangun di studio ini:
+          </p>
+
+          <div class="leaf-pillars-grid">
+            <div class="leaf-pillar-card fade-in">
+              <span class="material-symbols-rounded leaf-pillar-icon">spa</span>
+              <h4 class="heading-sm mb-8" data-i18n="about_leaf1_title">Kehidupan & Pertumbuhan</h4>
+              <p class="body-sm" data-i18n="about_leaf1_desc">Daun adalah pemberi oksigen. Setiap aplikasi dirancang memberi napas dan ruang bagi ide kreatif Anda untuk tumbuh tanpa batasan.</p>
+            </div>
+            <div class="leaf-pillar-card fade-in">
+              <span class="material-symbols-rounded leaf-pillar-icon">air</span>
+              <h4 class="heading-sm mb-8" data-i18n="about_leaf2_title">Proses Alami</h4>
+              <p class="body-sm" data-i18n="about_leaf2_desc">Menulis, melukis, dan mencatat dirancang mengalir secara natural dan tenang, layaknya helai daun yang bergerak mengikuti angin.</p>
+            </div>
+            <div class="leaf-pillar-card fade-in">
+              <span class="material-symbols-rounded leaf-pillar-icon">cached</span>
+              <h4 class="heading-sm mb-8" data-i18n="about_leaf3_title">Gugur untuk Tunas Baru</h4>
+              <p class="body-sm" data-i18n="about_leaf3_desc">Daun yang gugur memberi nutrisi bagi tanah. Filosofi belajar dari kesulitan untuk melahirkan ruang berkarya bagi kreator lainnya.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- Values Grid -->
-    <section class="section fade-in">
-      <div class="values-grid">
-        <div class="value-card fade-in">
-          <span class="material-symbols-rounded">visibility</span>
-          <h3 class="heading-sm">Visi</h3>
-          <p class="body-md">Menciptakan ruang kerja digital yang terasa senyaman dan seotentik media fisik bagi setiap kreator.</p>
-        </div>
-        <div class="value-card fade-in">
-          <span class="material-symbols-rounded">rocket_launch</span>
-          <h3 class="heading-sm">Misi</h3>
-          <p class="body-md">Membangun aplikasi kreatif Android berstandar premium yang saling terhubung dan memberdayakan para pembuat karya.</p>
-        </div>
-        <div class="value-card fade-in">
-          <span class="material-symbols-rounded">center_focus_strong</span>
-          <h3 class="heading-sm">Kesederhanaan</h3>
-          <p class="body-md">Antarmuka minimalis tanpa distraksi, sehingga perhatian Anda sepenuhnya terfokus pada karya.</p>
-        </div>
-        <div class="value-card fade-in">
-          <span class="material-symbols-rounded">verified</span>
-          <h3 class="heading-sm">Kualitas & Presisi</h3>
-          <p class="body-md">Setiap piksel, goresan alat, dan responsivitas disentuh dengan perhatian mendalam pada detail.</p>
-        </div>
-        <div class="value-card fade-in">
-          <span class="material-symbols-rounded">lock</span>
-          <h3 class="heading-sm">Privasi Utama</h3>
-          <p class="body-md">Karya dan data Anda adalah milik Anda sepenuhnya, tersimpan aman tanpa pelacakan agresif.</p>
-        </div>
-        <div class="value-card fade-in">
-          <span class="material-symbols-rounded">storefront</span>
-          <h3 class="heading-sm">Dukungan Kreator</h3>
-          <p class="body-md">Membuka jalan bagi kreator untuk mempublikasikan dan menghasilkan nilai dari aset digital mereka.</p>
-        </div>
-      </div>
-    </section>
+    <!-- Section 2: Sang Pengembang (The Developer Story) -->
+    <section class="section about-content" id="developer" style="padding-top: 60px;">
+      <div class="fade-in">
+        
+        <span class="label" data-i18n="dev_section_label">Tentang Pengembang</span>
+        <h2 class="heading-lg mb-24" data-i18n="dev_section_title">Di Balik Layar: Berdiri di Atas Kaki Sendiri</h2>
 
-    <!-- Timeline -->
-    <section class="section">
-      <h2 class="heading-md text-center fade-in">Perjalanan Ekosistem</h2>
-      <p class="body-md text-center mb-48 fade-in">Tahapan pertumbuhan Standalone Studio dari gagasan awal hingga ekosistem mandiri.</p>
-      <div class="timeline fade-in">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2024 Q3</div>
-          <div class="timeline-title">Gagasan Paperleaf Lahir</div>
-          <div class="timeline-desc">Konsep buku catatan digital dengan animasi pembalik halaman nyata dan tekstur goresan alami mulai dikembangkan.</div>
+        <!-- Developer Profile Card -->
+        <div class="developer-profile-card fade-in">
+          <div class="developer-avatar-wrap">
+            <span class="avatar-initials">SA</span>
+          </div>
+          <div class="developer-profile-meta">
+            <span class="developer-role-badge">
+              <span class="material-symbols-rounded" style="font-size: 14px;">terminal</span>
+              <span data-i18n="dev_badge">Founder & Solo Developer</span>
+            </span>
+            <h3 style="font-size: 1.5rem; font-weight: 700; color: #FFFFFF;">Said Attaufiq <span style="font-size: 1rem; font-weight: 400; color: #8E8E93;">(Saeful Fitri)</span></h3>
+            <p class="body-sm" style="color: #A8A8A8;" data-i18n="dev_origin">Tasikmalaya, 20 Februari 1996 • Solo Engineer & Designer</p>
+          </div>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2025 Q1</div>
-          <div class="timeline-title">Fondasi Ekosistem Standalone Studio</div>
-          <div class="timeline-desc">Arsitektur aplikasi terpadu disusun untuk menghadirkan rangkaian alat kreatif yang saling melengkapi di Android.</div>
+
+        <!-- Core Quote -->
+        <div class="developer-quote-box fade-in">
+          <p data-i18n="dev_quote">"Memberi orang lain kesempatan untuk menunjukkan kreativitas dirinya."</p>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2025 Q4 - 2026 Q1</div>
-          <div class="timeline-title">Pratinjau Play Store & Pengujian</div>
-          <div class="timeline-desc">Paperleaf memasuki proses peninjauan produksi Play Store, dan LeafPaint memasuki pengujian fitur lukis digital.</div>
+
+        <!-- Story Chapters -->
+        <div class="story-chapters-wrap">
+
+          <!-- Babak 1 -->
+          <article class="story-chapter fade-in">
+            <span class="story-chapter-number" data-i18n="dev_ch1_num">Babak I</span>
+            <h3 class="story-chapter-title" data-i18n="dev_ch1_title">Asap Tungku Subuh dan Selembar Kertas Gambar</h3>
+            <p class="story-paragraph" data-i18n="dev_ch1_p1">
+              Lahir pada hari raya di Tasikmalaya dari keluarga sederhana, langkah awal Said Attaufiq ditempa oleh ketabahan seorang ibu yang tiap subuh berkutat dengan asap tungku dapur penjual surabi. Tumbuh tanpa kehadiran figur ayah dan tanpa arah yang menuntun masa kecilnya, ia kerap merasa asing dengan dunia permainan anak laki-laki pada umumnya.
+            </p>
+            <p class="story-paragraph" data-i18n="dev_ch1_p2">
+              Hingga di suatu hari, sebuah perjumpaan sederhana di lantai dengan seorang teman kecil yang membawa alat gambar membukakan gerbang baru. Mereka menggambar bersama, menertawakan coretan abstrak, dan saling mengagumi imajinasi masing-masing. Di sanalah dunia seni menyapanya untuk pertama kali. Di atas selembar kertas, ia menemukan suaka pertama tempat jiwanya merasa utuh dan bernapas bebas.
+            </p>
+          </article>
+
+          <!-- Babak 2 -->
+          <article class="story-chapter fade-in">
+            <span class="story-chapter-number" data-i18n="dev_ch2_num">Babak II</span>
+            <h3 class="story-chapter-title" data-i18n="dev_ch2_title">Menemukan Suara di Tengah Keheningan</h3>
+            <p class="story-paragraph" data-i18n="dev_ch2_p1">
+              Kepekaan rasa dan kecintaannya pada seni visual sering kali disalahpahami oleh lingkungan sekitarnya. Masa kecil dan remajanya diwarnai oleh kepedihan dan ketiadaan ruang aman untuk bersandar, yang memaksanya belajar melindungi dirinya sendiri dalam keheningan yang panjang.
+            </p>
+            <p class="story-paragraph" data-i18n="dev_ch2_p2">
+              Saat duduk di bangku sekolah kejuruan bidang komputer, perpustakaan menjadi rumah favoritnya. Di antara rak-rak buku yang sunyi, coretan cerita pendek, dan lembar-lembar sketsa, ia merajut kecintaan mendalam pada sastra, seni visual, dan teknologi. Ia memilih diam, mengamati, dan belajar menata rasa sakit menjadi kekuatan batin yang tenang.
+            </p>
+          </article>
+
+          <!-- Babak 3 -->
+          <article class="story-chapter fade-in">
+            <span class="story-chapter-number" data-i18n="dev_ch3_num">Babak III</span>
+            <h3 class="story-chapter-title" data-i18n="dev_ch3_title">Langkah Kaki Menembus Badai (Garut, 2018)</h3>
+            <p class="story-paragraph" data-i18n="dev_ch3_p1">
+              Tahun 2018 menjadi titik nadir tergelap dalam kehidupannya. Rasa terasing, keputusasaan, dan perasaan tak berharga nyaris memadamkan seluruh harapannya untuk bertahan hidup. Namun, di ujung jurang terdalam itu, secercah tekad membimbingnya untuk mencari arah hidup yang baru.
+            </p>
+            <p class="story-paragraph" data-i18n="dev_ch3_p2">
+              Dengan ransel berat di punggungnya, ia memutuskan melangkah—berjalan kaki puluhan kilometer dari Tasikmalaya menuju Pesantren Attaufiq di Ciucing, Garut. Sepanjang perjalanan yang melelahkan fisik dan batin, ia justru dipertemukan dengan kebaikan-kebaikan tulus dari orang-orang asing di jalanan: tumpangan tulus, senyuman ramah, hingga bekal di jalan dari sesama pengelana, serta seorang sahabat yang setia menjemputnya. Kebaikan tak terduga itu perlahan meruntuhkan rasa putus asanya dan membuktikan bahwa dunia masih memiliki kehangatan dan cinta.
+            </p>
+          </article>
+
+          <!-- Babak 4 -->
+          <article class="story-chapter fade-in">
+            <span class="story-chapter-number" data-i18n="dev_ch4_num">Babak IV</span>
+            <h3 class="story-chapter-title" data-i18n="dev_ch4_title">Said Attaufiq: Tempat Menemukan Rumah</h3>
+            <p class="story-paragraph" data-i18n="dev_ch4_p1">
+              Setibanya di Pesantren Attaufiq, ia tidak disambut dengan penghakiman atau celaan, melainkan dengan pelukan hangat dan keteladanan kemanusiaan yang mendalam dari sang guru. Di tempat yang penuh ketenangan ini, ia belajar mengenal dirinya sendiri, memulihkan damai di dalam hati, dan menemukan satu prinsip hidup yang kokoh: <em>memberi manfaat bagi orang lain.</em>
+            </p>
+            <p class="story-paragraph" data-i18n="dev_ch4_p2">
+              Dari sanalah nama <strong>Said Attaufiq</strong> lahir. Nama ini merajut kembali identitas masa kecilnya dengan nama pesantren yang memberinya kehidupan kedua—sebuah simbol kelahiran kembali seorang manusia yang telah berdamai dengan masa lalunya dan siap melangkah menatap masa depan.
+            </p>
+          </article>
+
+          <!-- Babak 5 -->
+          <article class="story-chapter fade-in">
+            <span class="story-chapter-number" data-i18n="dev_ch5_num">Babak V</span>
+            <h3 class="story-chapter-title" data-i18n="dev_ch5_title">The Wounded Healer & Berdirinya Stand Alone Studio</h3>
+            <p class="story-paragraph" data-i18n="dev_ch5_p1">
+              Perjalanan bangkit dari titik nol melahirkan empati yang sangat mendalam. Filosofi <em>The Wounded Healer</em>—seseorang yang menggunakan pemulihan lukanya sendiri untuk mengulurkan tangan bagi orang lain—menjadi jiwa dari setiap baris kode yang ia tulis.
+            </p>
+            <p class="story-paragraph" data-i18n="dev_ch5_p2">
+              Pada 10 Juli 2026, studio mandiri ini resmi bertransformasi menjadi <strong>Stand Alone Studio</strong>. Nama ini bukan tentang kesendirian, melainkan deklarasi keteguhan hati: bahwa ia mampu berdiri mandiri di atas kakinya sendiri. Setiap baris kode di Paperleaf, LeafPaint, dan LeafStudio ia dedikasikan untuk satu tujuan: menghadirkan "kanvas aman" bagi setiap jiwa untuk berekspresi secara bebas, indah, dan bermakna.
+            </p>
+          </article>
+
         </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2026 Q2</div>
-          <div class="timeline-title">LeafStudio</div>
-          <div class="timeline-desc">Pengembangan ruang kerja kreator (LeafStudio) untuk memperluas kemampuan kreatif pengguna dan ekosistem.</div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">Masa Depan</div>
-          <div class="timeline-title">Peta Jalan Ekosistem</div>
-          <div class="timeline-desc">Penyempurnaan berkelanjutan untuk fitur baru dan perluasan ekosistem kreatif.</div>
-        </div>
+
       </div>
     </section>
 

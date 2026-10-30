@@ -456,7 +456,266 @@
   }
 
   /* ============================================================
-     10. RUN ON DOM READY
+     10. LEAF MARKET - SUPABASE LIVE ASSETS & CATALOG
+     ============================================================ */
+  function initLeafMarket() {
+    var container = document.getElementById('marketAssetsContainer');
+    if (!container) return;
+
+    var filterBar = document.getElementById('marketFilterBar');
+    var currentFilter = 'all';
+    var allAssets = [];
+
+    var categoryLabels = {
+      'COVER': { label: 'Sampul Buku', icon: 'auto_stories' },
+      'BOOK': { label: 'Buku', icon: 'menu_book' },
+      'TEMPLATE': { label: 'Template', icon: 'description' },
+      'STICKER': { label: 'Sticker', icon: 'sentiment_satisfied' },
+      'THEME': { label: 'Tema', icon: 'palette' }
+    };
+
+    // Auto-select category dari URL query (?category=...) atau hash (#...)
+    var urlParams = new URLSearchParams(window.location.search);
+    var targetCat = urlParams.get('category');
+    if (!targetCat && window.location.hash) {
+      var h = window.location.hash.replace('#', '').toUpperCase();
+      if (h === 'SAMPUL' || h === 'COVER') targetCat = 'COVER';
+      else if (h === 'BUKU' || h === 'BOOK') targetCat = 'BOOK';
+      else if (h === 'TEMPLATE' || h === 'TEMPLAT') targetCat = 'TEMPLATE';
+      else if (h === 'STICKER' || h === 'STIKER') targetCat = 'STICKER';
+      else if (h === 'TEMA' || h === 'THEME') targetCat = 'THEME';
+    }
+    if (targetCat && ['COVER', 'BOOK', 'TEMPLATE', 'STICKER', 'THEME'].indexOf(targetCat) !== -1) {
+      currentFilter = targetCat;
+      if (filterBar) {
+        filterBar.querySelectorAll('.market-filter-btn').forEach(function (btn) {
+          btn.classList.toggle('active', btn.getAttribute('data-filter') === currentFilter);
+        });
+      }
+    }
+
+    function renderAssets(assets) {
+      if (!assets || assets.length === 0) {
+        container.innerHTML =
+          '<div class="market-empty-state">' +
+          '<span class="material-symbols-rounded">inventory_2</span>' +
+          '<h3 class="heading-sm mb-8">Belum Ada Aset di Kategori Ini</h3>' +
+          '<p class="body-sm">Aset baru akan segera hadir dari komunitas kreator di LeafStudio.</p>' +
+          '</div>';
+        return;
+      }
+
+      var html = '';
+      assets.forEach(function (asset, index) {
+        var rawCat = (asset.category || '').toUpperCase();
+        var catInfo = categoryLabels[rawCat] || { label: asset.category || 'Aset', icon: 'category' };
+        var priceText = asset.price || (asset.is_premium ? 'Premium' : 'Gratis');
+        var isFree = !asset.is_premium || priceText.toLowerCase() === 'free' || priceText.toLowerCase() === 'gratis';
+        var priceClass = isFree ? 'free' : '';
+        var previewImg = asset.preview_url || asset.thumbnail_url || asset.file_url || '';
+        var title = asset.title || asset.name || 'Aset Paperleaf';
+        var slogan = asset.slogan || asset.description || '';
+        var author = asset.author || 'Paperleaf';
+
+        var thumbHtml = previewImg
+          ? '<img src="' + previewImg + '" alt="' + title + '" class="market-card-thumb" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\';">' +
+            '<div class="market-card-thumb-placeholder" style="display:none;"><span class="material-symbols-rounded">' + catInfo.icon + '</span></div>'
+          : '<div class="market-card-thumb-placeholder"><span class="material-symbols-rounded">' + catInfo.icon + '</span></div>';
+
+        html +=
+          '<div class="market-card fade-in visible" data-index="' + index + '">' +
+            '<div class="market-card-thumb-wrap">' +
+              thumbHtml +
+              '<span class="market-card-category-badge">' + catInfo.label + '</span>' +
+              '<span class="market-card-price-badge ' + priceClass + '">' + priceText + '</span>' +
+            '</div>' +
+            '<div class="market-card-body">' +
+              '<h3 class="market-card-title">' + title + '</h3>' +
+              '<p class="market-card-slogan">' + slogan + '</p>' +
+              '<div class="market-card-footer">' +
+                '<span>Oleh ' + author + '</span>' +
+                '<span class="market-card-action-btn">Detail <span class="material-symbols-rounded">arrow_forward</span></span>' +
+              '</div>' +
+            '</div>' +
+          '</div>';
+      });
+
+      container.innerHTML = html;
+      bindCardClicks(assets);
+    }
+
+    function filterAssets() {
+      if (currentFilter === 'all') {
+        renderAssets(allAssets);
+      } else if (currentFilter === 'COVER') {
+        renderAssets(allAssets.filter(function (a) {
+          var c = (a.category || '').toUpperCase();
+          return c.indexOf('COVER') !== -1;
+        }));
+      } else if (currentFilter === 'BOOK') {
+        renderAssets(allAssets.filter(function (a) {
+          var c = (a.category || '').toUpperCase();
+          return (c === 'BOOK' || c === 'BOOKS' || c === 'BOOK_READONLY') && c.indexOf('TEMPLATE') === -1;
+        }));
+      } else if (currentFilter === 'TEMPLATE') {
+        renderAssets(allAssets.filter(function (a) {
+          var c = (a.category || '').toUpperCase();
+          var bt = (a.book_type || '').toUpperCase();
+          return c.indexOf('TEMPLATE') !== -1 || bt.indexOf('TEMPLATE') !== -1;
+        }));
+      } else if (currentFilter === 'STICKER') {
+        renderAssets(allAssets.filter(function (a) {
+          var c = (a.category || '').toUpperCase();
+          return c.indexOf('STICKER') !== -1;
+        }));
+      } else if (currentFilter === 'THEME') {
+        renderAssets(allAssets.filter(function (a) {
+          var c = (a.category || '').toUpperCase();
+          return c.indexOf('THEME') !== -1;
+        }));
+      } else {
+        renderAssets(allAssets.filter(function (a) {
+          return (a.category || '').toUpperCase().indexOf(currentFilter) !== -1;
+        }));
+      }
+    }
+
+    // Filter Buttons Listener
+    if (filterBar) {
+      filterBar.querySelectorAll('.market-filter-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          filterBar.querySelectorAll('.market-filter-btn').forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          currentFilter = btn.getAttribute('data-filter') || 'all';
+          filterAssets();
+        });
+      });
+    }
+
+    // Modal Handling
+    var modal = document.getElementById('marketDetailModal');
+    var modalOverlay = document.getElementById('marketModalOverlay');
+    var modalClose = document.getElementById('marketModalClose');
+
+    function openModal(asset) {
+      if (!modal) return;
+      var rawCat = (asset.category || '').toUpperCase();
+      var catInfo = categoryLabels[rawCat] || { label: asset.category || 'Aset', icon: 'category' };
+      var previewImg = asset.preview_url || asset.thumbnail_url || asset.file_url || '';
+      var priceText = asset.price || (asset.is_premium ? 'Premium' : 'Gratis');
+      var isFree = !asset.is_premium || priceText.toLowerCase() === 'free' || priceText.toLowerCase() === 'gratis';
+
+      var previewWrap = document.getElementById('modalPreviewWrap');
+      if (previewWrap) {
+        previewWrap.innerHTML = previewImg
+          ? '<img src="' + previewImg + '" alt="' + (asset.title || '') + '">'
+          : '<span class="material-symbols-rounded" style="font-size: 64px; color: #555;">' + catInfo.icon + '</span>';
+      }
+
+      var catBadge = document.getElementById('modalCategoryBadge');
+      if (catBadge) catBadge.textContent = catInfo.label;
+
+      var priceBadge = document.getElementById('modalPriceBadge');
+      if (priceBadge) {
+        priceBadge.textContent = priceText;
+        priceBadge.className = 'market-card-price-badge ' + (isFree ? 'free' : '');
+      }
+
+      var modalTitle = document.getElementById('modalTitle');
+      if (modalTitle) modalTitle.textContent = asset.title || 'Aset Paperleaf';
+
+      var modalSlogan = document.getElementById('modalSlogan');
+      if (modalSlogan) modalSlogan.textContent = asset.slogan || '';
+
+      var modalDesc = document.getElementById('modalDescription');
+      if (modalDesc) modalDesc.textContent = asset.description || 'Gunakan aset pilihan ini untuk mempercantik jurnal, buku, dan halaman kreasi Anda di Paperleaf.';
+
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      if (!modal) return;
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+
+    function bindCardClicks(assets) {
+      container.querySelectorAll('.market-card').forEach(function (card) {
+        card.addEventListener('click', function () {
+          var idx = parseInt(card.getAttribute('data-index'), 10);
+          if (!isNaN(idx) && assets[idx]) {
+            openModal(assets[idx]);
+          }
+        });
+      });
+    }
+
+    // Load from cache first for instantaneous rendering
+    var cacheKey = 'ss_market_assets_cache';
+    try {
+      var cached = localStorage.getItem(cacheKey);
+      if (cached) {
+        var parsedCache = JSON.parse(cached);
+        if (Array.isArray(parsedCache) && parsedCache.length > 0) {
+          allAssets = parsedCache;
+          filterAssets();
+        }
+      }
+    } catch (e) {}
+
+    // Fetch live from Supabase
+    var sb = SS.config && SS.config.supabase;
+    if (!sb || !sb.url || !sb.anonKey) return;
+
+    var endpoint = sb.url + '/rest/v1/' + (sb.table || 'market_assets') + '?status=neq.archived&order=priority_order.desc,created_at.desc&select=*';
+
+    fetch(endpoint, {
+      method: 'GET',
+      headers: {
+        'apikey': sb.anonKey,
+        'Authorization': 'Bearer ' + sb.anonKey,
+        'Accept': 'application/json'
+      }
+    })
+    .then(function (res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json();
+    })
+    .then(function (data) {
+      if (Array.isArray(data)) {
+        allAssets = data;
+        try {
+          localStorage.setItem(cacheKey, JSON.stringify(data));
+        } catch (e) {}
+        filterAssets();
+      }
+    })
+    .catch(function (err) {
+      console.warn('Gagal mengambil aset dari Supabase:', err);
+      if (allAssets.length === 0) {
+        container.innerHTML =
+          '<div class="market-empty-state">' +
+          '<span class="material-symbols-rounded">cloud_off</span>' +
+          '<h3 class="heading-sm mb-8">Tidak Dapat Menghubungkan ke Katalog Aset</h3>' +
+          '<p class="body-sm">Silakan periksa koneksi internet Anda atau coba beberapa saat lagi.</p>' +
+          '</div>';
+      }
+    });
+  }
+
+  /* ============================================================
+     11. RUN ON DOM READY
      ============================================================ */
   document.addEventListener('DOMContentLoaded', function () {
     initI18n();
@@ -464,11 +723,13 @@
     updateFavicon();
     initFadeObserver();
     initPageTransitions();
+    initLeafMarket();
   });
 
   // Re-render when language changes
   window.addEventListener('ss:languageChanged', function () {
     renderEcosystemSections();
+    initLeafMarket();
   });
 
 })();
