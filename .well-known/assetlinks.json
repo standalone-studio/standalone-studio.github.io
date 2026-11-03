@@ -1,0 +1,16 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.paperleaf.scrapbook",
+      "sha256_cert_fingerprints": [
+        "4F:A0:4C:91:33:A9:77:D8:09:9A:52:F3:81:C1:01:F6:1F:C7:CF:8B:E8:0B:B8:92:B5:7B:F5:2C:3C:ED:24:F4",
+        "4B:0C:F0:01:84:48:E2:46:C9:4C:44:1E:F2:41:12:70:B1:43:BC:E6:AE:20:3D:F8:34:39:B0:35:11:5E:FE:B6",
+        "AA:42:EE:3D:66:22:38:DE:01:FA:63:05:64:6E:83:79:7D:23:3F:03:D3:2C:3B:8E:C7:9C:CF:00:EA:EE:C4:8C"
+      ]
+    }
+  }
+]
