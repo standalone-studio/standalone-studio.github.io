@@ -4,16 +4,16 @@
   <meta name="google-site-verification" content="1hWeK7uRG7fk2pqx_jTE9qWvT1CCHcU8YiCxYLmanOg" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Syarat dan Ketentuan Layanan Paperleaf - Standalone Studio.">
+  <meta name="description" content="Syarat dan Ketentuan Layanan Ekosistem Paperleaf - Standalone Studio. Panduan hak cipta, lisensi penggunaan, dan komitmen layanan kami.">
   <meta name="author" content="Standalone Studio">
   <meta name="theme-color" content="#090909">
 
-  <title>Syarat & Ketentuan - Paperleaf</title>
+  <title>Syarat & Ketentuan Layanan - Standalone Studio</title>
 
   <!-- Google Fonts - Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Material Symbols Rounded -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0">
@@ -21,6 +21,80 @@
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="icon" href="../assets/icons/stalone_white.png" type="image/png">
+
+  <style>
+    .tos-lang-tabs {
+      display: inline-flex;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
+      padding: 4px;
+      margin-bottom: 24px;
+      gap: 4px;
+    }
+    .tos-lang-btn {
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #A3A3A3;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .tos-lang-btn:hover {
+      color: #FFFFFF;
+    }
+    .tos-lang-btn.active {
+      color: #000000;
+      background: #FFFFFF;
+    }
+    .tos-card {
+      padding: 40px;
+      text-align: left;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .tos-section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tos-list {
+      list-style: disc;
+      padding-left: 22px;
+      margin-bottom: 20px;
+      color: #B8B8B8;
+      line-height: 1.7;
+    }
+    .tos-list li {
+      margin-bottom: 8px;
+    }
+    .contact-box {
+      margin-top: 40px;
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 16px;
+      border-left: 4px solid #FFFFFF;
+    }
+    .contact-link {
+      color: #FFFFFF;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .contact-link:hover {
+      opacity: 0.8;
+    }
+  </style>
 </head>
 <body>
 
@@ -36,6 +110,10 @@
         </a>
       </div>
       <div class="navbar-right">
+        <!-- Language Switcher -->
+        <button class="lang-toggle-btn" id="langToggleBtn" type="button" aria-label="Ganti Bahasa">
+          ID
+        </button>
         <a href="../index.html" class="navbar-btn" aria-label="Beranda">
           <span class="material-symbols-rounded">home</span>
         </a>
@@ -46,37 +124,151 @@
   <main class="page-content container">
     <a href="../index.html" class="back-link">
       <span class="material-symbols-rounded">arrow_back</span>
-      Kembali ke Beranda
+      <span id="backToHomeText">Kembali ke Beranda</span>
     </a>
 
     <header class="section-header fade-in visible">
-      <span class="label">Legal & Ketentuan</span>
-      <h1 class="heading-lg">Syarat dan Ketentuan</h1>
-      <p class="body-md">Terakhir diperbarui: Oktober 2026</p>
+      <span class="label" id="headerCategory">Legal & Ketentuan</span>
+      <h1 class="heading-lg" id="headerMainTitle">Syarat dan Ketentuan Layanan</h1>
+      <p class="body-md" id="headerLastUpdated">Terakhir diperbarui: November 2026</p>
     </header>
 
     <section class="section fade-in visible" style="padding-top: 10px;">
-      <div class="app-card" style="padding: 40px; text-align: left; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 20px;">
-        <p class="body-md mb-24">Harap baca Syarat dan Ketentuan ini dengan saksama sebelum mengunduh atau menggunakan aplikasi <strong>Paperleaf</strong>.</p>
+      <!-- Language Selector Tabs -->
+      <div class="tos-lang-tabs" role="tablist" aria-label="Pilihan Bahasa">
+        <button class="tos-lang-btn active" id="btnLangId" type="button" role="tab" aria-selected="true">Bahasa Indonesia</button>
+        <button class="tos-lang-btn" id="btnLangEn" type="button" role="tab" aria-selected="false">English</button>
+      </div>
 
-        <h3 class="heading-sm mb-12">1. Penerimaan Ketentuan</h3>
-        <p class="body-md mb-24">Dengan mengunduh atau menggunakan aplikasi Paperleaf, Anda menyetujui untuk terikat oleh Syarat dan Ketentuan ini. Jika Anda tidak menyetujui ketentuan ini, Anda disarankan untuk tidak menggunakan aplikasi.</p>
+      <div class="tos-card">
+        <!-- ==========================================
+             VERSI BAHASA INDONESIA
+             ========================================== -->
+        <div id="tos-id">
+          <p class="body-md mb-24">Selamat datang di <strong>Standalone Studio</strong>. Syarat dan Ketentuan Layanan ini mengatur penggunaan Anda atas seluruh aplikasi dan layanan dalam ekosistem kreatif kami, termasuk namun tidak terbatas pada <strong>Paperleaf</strong>, <strong>LeafPaint</strong>, <strong>Leafly</strong>, <strong>LeafStudio</strong>, dan aset kreatif <strong>Leaf Market</strong>.</p>
 
-        <h3 class="heading-sm mb-12">2. Penggunaan Layanan</h3>
-        <ul class="body-md mb-24" style="list-style: disc; padding-left: 20px;">
-          <li class="mb-8"><strong>Lisensi:</strong> Standalone Studio memberikan lisensi terbatas, non-eksklusif, dan dapat dibatalkan untuk mengunduh dan menggunakan Paperleaf pada perangkat Android pribadi Anda.</li>
-          <li class="mb-8"><strong>Kerahasiaan Akun:</strong> Anda bertanggung jawab untuk menjaga keamanan perangkat dan akses akun Google yang ditautkan ke aplikasi.</li>
-        </ul>
+          <h3 class="tos-section-title">1. Penerimaan Ketentuan</h3>
+          <p class="body-md mb-16">Dengan mengunduh, menginstal, atau menggunakan aplikasi mana pun dalam ekosistem Standalone Studio, Anda secara tegas menyatakan telah membaca, memahami, dan menyetujui untuk terikat oleh Syarat dan Ketentuan ini. Jika Anda tidak menyetujui sebagian atau seluruh ketentuan ini, harap jangan menginstal atau menggunakan aplikasi kami.</p>
 
-        <h3 class="heading-sm mb-12">3. Hak Cipta & Kepemilikan Konten</h3>
-        <p class="body-md mb-24">Seluruh karya seni, sketsa, tulisan, dan jurnal yang Anda buat di dalam aplikasi Paperleaf adalah hak cipta dan kepemilikan Anda sepenuhnya. Standalone Studio tidak mengklaim kepemilikan atas konten karya pengguna.</p>
+          <h3 class="tos-section-title">2. Ruang Lingkup Layanan & Ekosistem</h3>
+          <p class="body-md mb-16">Standalone Studio menyediakan alat produktivitas dan kreativitas digital mandiri yang dirancang untuk perangkat Android. Layanan mencakup aplikasi pencatatan dan jurnal digital, studio lukis dan ilustrasi digital, studio pembuatan aset kreatif, serta pasar kurasi aset digital (sampul buku, template halaman, stiker, kuas gambar, dan tema visual).</p>
 
-        <h3 class="heading-sm mb-12">4. Pembaruan Aplikasi & Layanan</h3>
-        <p class="body-md mb-24">Kami terus meningkatkan fitur, stabilitas, dan performa aplikasi. Kami dapat merilis pembaruan berkala melalui Google Play Store untuk menambahkan kemampuan baru atau memperbaiki bug.</p>
+          <h3 class="tos-section-title">3. Kelayakan Pengguna & Keamanan Akun</h3>
+          <ul class="tos-list">
+            <li><strong>Batas Usia:</strong> Layanan kami ditujukan untuk pengguna berusia minimal 13 tahun (atau batas usia minimum legal di yurisdiksi Anda).</li>
+            <li><strong>Akun & Autentikasi:</strong> Fitur tertentu, seperti sinkronisasi cloud atau pencadangan karya, dapat menggunakan autentikasi akun Google yang aman. Anda bertanggung jawab penuh untuk menjaga keamanan perangkat dan kerahasiaan akses akun Anda.</li>
+          </ul>
 
-        <div class="mt-48 p-24" style="background: rgba(255,255,255,0.05); border-radius: 16px; border-left: 4px solid #FFFFFF;">
-          <strong style="color: #FFFFFF;">Kontak Hukum & Layanan:</strong><br>
-          <span class="body-md">Email: stalone.studio@gmail.com</span>
+          <h3 class="tos-section-title">4. Hak Cipta & Kepemilikan Konten Pengguna (100% Hak Anda)</h3>
+          <p class="body-md mb-16">Kami sangat menghormati integritas kreator. <strong>Seluruh karya seni, ilustrasi, coretan sketsa, catatan, jurnal, dan tata letak yang Anda buat menggunakan aplikasi kami adalah hak cipta dan kepemilikan mutlak Anda.</strong></p>
+          <ul class="tos-list">
+            <li>Standalone Studio <strong>tidak pernah</strong> mengklaim kepemilikan, hak jual, atau hak lisensi komersial atas karya yang Anda hasilkan.</li>
+            <li>Jika Anda menggunakan fitur pencadangan cloud, Anda hanya memberi kami izin teknis terbatas dan terenkripsi untuk menyimpan dan memproses data karya tersebut semata-mata agar Anda dapat mengakses kembali karya Anda di perangkat Anda.</li>
+          </ul>
+
+          <h3 class="tos-section-title">5. Lisensi Perangkat Lunak & Hak Kekayaan Intelektual Studio</h3>
+          <p class="body-md mb-16">Semua komponen bawaan aplikasi—termasuk kode program, mesin rendering, algoritma kuas, desain antarmuka, ikon, animasi, efek suara, dan merek dagang Standalone Studio serta Paperleaf—adalah kekayaan intelektual milik Standalone Studio.</p>
+          <ul class="tos-list">
+            <li>Kami memberikan lisensi personal, non-eksklusif, tidak dapat dipindahtangankan, dan dapat dibatalkan untuk mengunduh serta menggunakan aplikasi untuk keperluan pribadi maupun karya kreatif Anda.</li>
+            <li>Anda dilarang keras melakukan rekayasa balik (*reverse engineering*), dekompilasi, membongkar kode sumber, mendistribusikan ulang file biner aplikasi secara ilegal, atau membuat produk tiruan yang meniru arsitektur dan identitas ekosistem aplikasi kami.</li>
+          </ul>
+
+          <h3 class="tos-section-title">6. Aset Digital & Pembelian Dalam Aplikasi (Leaf Market)</h3>
+          <p class="body-md mb-16">Melalui ekosistem kami, Anda dapat memperoleh aset tambahan baik gratis maupun premium (seperti sampul buku, template jurnal, stiker artistik, dan tema warna).</p>
+          <ul class="tos-list">
+            <li><strong>Transaksi Resmi:</strong> Seluruh transaksi pembelian fitur premium atau aset digital diproses secara aman melalui sistem penagihan resmi <em>Google Play Store (Google Play In-App Billing)</em> dan tunduk pada syarat serta ketentuan Google Play.</li>
+            <li><strong>Lisensi Aset:</strong> Aset yang diperoleh dari Leaf Market dilisensikan hanya untuk digunakan di dalam aplikasi ekosistem Standalone Studio dan tidak boleh diekstrak untuk dijual kembali sebagai aset mentah di tempat lain.</li>
+          </ul>
+
+          <h3 class="tos-section-title">7. Privasi & Penyimpanan Data Lokal (Offline-First)</h3>
+          <p class="body-md mb-16">Aplikasi kami mengusung prinsip privasi tinggi dengan arsitektur penyimpanan lokal (*offline-first*). Dokumen dan kanvas kerja Anda disimpan secara aman di memori perangkat Anda. Rincian mengenai bagaimana data non-pribadi atau akun diproses diatur secara terpisah dalam <a href="privacy.html" class="contact-link">Kebijakan Privasi</a> kami.</p>
+
+          <h3 class="tos-section-title">8. Pembaruan & Ketersediaan Layanan</h3>
+          <p class="body-md mb-16">Kami berhak untuk merilis pembaruan (*updates*) secara berkala untuk meningkatkan stabilitas, memperbarui fitur, mengoptimalkan performa kanvas, atau memperbaiki bug teknis. Beberapa fitur baru mungkin memerlukan versi sistem operasi Android yang kompatibel.</p>
+
+          <h3 class="tos-section-title">9. Penafian Jaminan (*Disclaimer of Warranties*)</h3>
+          <p class="body-md mb-16">Aplikasi dan seluruh materi di dalamnya disediakan atas dasar "sebagaimana adanya" (*as is*) dan "sebagaimana tersedia" (*as available*). Standalone Studio tidak menjamin bahwa operasi aplikasi akan selalu bebas dari kesalahan teknis atau tidak terputus di seluruh model perangkat Android.</p>
+
+          <h3 class="tos-section-title">10. Batasan Tanggung Jawab (*Limitation of Liability*)</h3>
+          <p class="body-md mb-16">Sejauh diizinkan oleh peraturan perundang-undangan yang berlaku, Standalone Studio dan pengembangnya tidak bertanggung jawab atas kerugian langsung, tidak langsung, insidental, atau hilangnya data pengguna yang diakibatkan oleh kerusakan perangkat keras pengguna, penghapusan manual oleh pengguna, atau faktor di luar kendali wajar kami.</p>
+
+          <h3 class="tos-section-title">11. Hukum yang Mengatur</h3>
+          <p class="body-md mb-16">Syarat dan Ketentuan Layanan ini diatur, ditafsirkan, dan tunduk pada hukum Negara Republik Indonesia serta pedoman kebijakan pengembang platform Google Play.</p>
+
+          <div class="contact-box">
+            <strong style="color: #FFFFFF; font-size: 1.05rem;">Kontak Resmi & Dukungan Pengembang:</strong>
+            <p class="body-md mt-8 mb-8">Jika Anda memiliki pertanyaan, klarifikasi hukum, atau masukan mengenai Syarat dan Ketentuan Layanan ini, silakan hubungi tim kami melalui:</p>
+            <p class="body-md">
+              &bull; Email Dukungan Studio: <a href="mailto:stalone.studio@gmail.com" class="contact-link">stalone.studio@gmail.com</a><br>
+              &bull; Email Ekosistem Paperleaf: <a href="mailto:paperleaf.app@gmail.com" class="contact-link">paperleaf.app@gmail.com</a><br>
+              &bull; Pengembang: <strong>Standalone Studio</strong>
+            </p>
+          </div>
+        </div>
+
+        <!-- ==========================================
+             VERSI ENGLISH
+             ========================================== -->
+        <div id="tos-en" style="display: none;">
+          <p class="body-md mb-24">Welcome to <strong>Standalone Studio</strong>. These Terms of Service govern your access to and use of all applications and services within our creative ecosystem, including but not limited to <strong>Paperleaf</strong>, <strong>LeafPaint</strong>, <strong>Leafly</strong>, <strong>LeafStudio</strong>, and the <strong>Leaf Market</strong> creative assets.</p>
+
+          <h3 class="tos-section-title">1. Acceptance of Terms</h3>
+          <p class="body-md mb-16">By downloading, installing, or using any application within the Standalone Studio ecosystem, you explicitly acknowledge that you have read, understood, and agreed to be bound by these Terms of Service. If you do not agree with any part of these terms, please do not install or use our applications.</p>
+
+          <h3 class="tos-section-title">2. Scope of Services & Ecosystem</h3>
+          <p class="body-md mb-16">Standalone Studio provides thoughtful, independent digital productivity and creative tools crafted for Android devices. Services comprise digital notebook and journaling apps, digital painting and sketching studios, creative asset authoring tools, and a curated digital marketplace (book covers, page templates, stickers, custom brushes, and visual themes).</p>
+
+          <h3 class="tos-section-title">3. User Eligibility & Account Security</h3>
+          <ul class="tos-list">
+            <li><strong>Age Requirement:</strong> Our services are intended for users who are at least 13 years of age (or the legal age of majority in your jurisdiction).</li>
+            <li><strong>Accounts & Authentication:</strong> Certain optional features, such as cloud backup or sync, may utilize secure Google Account authentication. You are solely responsible for maintaining device security and the confidentiality of your account credentials.</li>
+          </ul>
+
+          <h3 class="tos-section-title">4. User Content & Full Copyright Ownership (100% Yours)</h3>
+          <p class="body-md mb-16">We deeply respect creator independence and ownership. <strong>All artwork, digital sketches, illustrations, notes, journals, and layouts that you create using our applications remain your exclusive property and copyright.</strong></p>
+          <ul class="tos-list">
+            <li>Standalone Studio <strong>never</strong> claims ownership, commercial licensing, or distribution rights over the content you create.</li>
+            <li>If you choose to enable cloud backup services, you grant us only a strictly limited, encrypted technical permission to store and transmit your files solely to enable synchronization back to your authorized devices.</li>
+          </ul>
+
+          <h3 class="tos-section-title">5. Software License & Studio Intellectual Property</h3>
+          <p class="body-md mb-16">All native application components—including source code, rendering engines, brush algorithms, user interface designs, icons, animations, audio elements, and trademarks of Standalone Studio and Paperleaf—are the exclusive intellectual property of Standalone Studio.</p>
+          <ul class="tos-list">
+            <li>We grant you a personal, non-exclusive, non-transferable, revocable license to download and run the applications for your personal or professional creative endeavors.</li>
+            <li>You may not reverse-engineer, decompile, disassemble the source code, distribute modified APK binaries, or create unauthorized derivative clones mimicking our application architecture and identity.</li>
+          </ul>
+
+          <h3 class="tos-section-title">6. Digital Assets & In-App Purchases (Leaf Market)</h3>
+          <p class="body-md mb-16">Through our ecosystem, you may browse and acquire supplementary creative assets, both free and premium (such as book covers, journal templates, artistic stickers, and themes).</p>
+          <ul class="tos-list">
+            <li><strong>Official Billing:</strong> All financial transactions for premium features and assets are processed securely through the official <em>Google Play Store (Google Play In-App Billing)</em> and remain subject to Google Play Terms of Service.</li>
+            <li><strong>Asset Licensing:</strong> Assets acquired from Leaf Market are licensed solely for creative use within the Standalone Studio application ecosystem and may not be extracted for independent resale as raw assets elsewhere.</li>
+          </ul>
+
+          <h3 class="tos-section-title">7. Privacy & Offline-First Data Storage</h3>
+          <p class="body-md mb-16">Our applications prioritize user privacy through an offline-first storage model. Your artwork, books, and working canvases are saved locally on your device storage. For comprehensive details on data handling and security practices, please review our <a href="privacy.html" class="contact-link">Privacy Policy</a>.</p>
+
+          <h3 class="tos-section-title">8. Updates & Service Evolution</h3>
+          <p class="body-md mb-16">We regularly release updates via the Google Play Store to optimize performance, introduce new creative tools, resolve technical bugs, and ensure ecosystem stability. Certain advanced features may require updated versions of Android.</p>
+
+          <h3 class="tos-section-title">9. Disclaimer of Warranties</h3>
+          <p class="body-md mb-16">The applications and services are provided on an "as is" and "as available" basis without warranties of any kind, whether express or implied. Standalone Studio does not warrant that application operation will be error-free or uninterrupted across all hardware configurations.</p>
+
+          <h3 class="tos-section-title">10. Limitation of Liability</h3>
+          <p class="body-md mb-16">To the maximum extent permitted by applicable law, Standalone Studio and its developer shall not be liable for any indirect, incidental, or consequential damages, or any loss of user data arising from hardware failure, manual user deletion, or circumstances beyond our reasonable control.</p>
+
+          <h3 class="tos-section-title">11. Governing Law</h3>
+          <p class="body-md mb-16">These Terms of Service shall be governed by, construed, and enforced in accordance with the laws of the Republic of Indonesia and applicable Google Play Developer Distribution agreements.</p>
+
+          <div class="contact-box">
+            <strong style="color: #FFFFFF; font-size: 1.05rem;">Official Developer Contact & Support:</strong>
+            <p class="body-md mt-8 mb-8">For legal inquiries, support requests, or feedback regarding these Terms of Service, please reach out through our official channels:</p>
+            <p class="body-md">
+              &bull; Studio Support Email: <a href="mailto:stalone.studio@gmail.com" class="contact-link">stalone.studio@gmail.com</a><br>
+              &bull; Paperleaf Ecosystem Email: <a href="mailto:paperleaf.app@gmail.com" class="contact-link">paperleaf.app@gmail.com</a><br>
+              &bull; Developer: <strong>Standalone Studio</strong>
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -87,16 +279,93 @@
     <div class="container">
       <div class="footer-inner">
         <div class="footer-links">
-          <a href="privacy.html" class="footer-link">Kebijakan Privasi</a>
-          <a href="delete-account.html" class="footer-link">Hapus Akun & Data</a>
-          <a href="term_of_service.html" class="footer-link">Syarat & Ketentuan</a>
-          <a href="../support.html" class="footer-link">Pusat Bantuan</a>
-          <a href="../about.html" class="footer-link">Tentang Kami</a>
+          <a href="privacy.html" class="footer-link" data-i18n="footer_privacy">Kebijakan Privasi</a>
+          <a href="delete-account.html" class="footer-link" data-i18n="footer_delete_account">Hapus Akun & Data</a>
+          <a href="term_of_service.html" class="footer-link" data-i18n="footer_tos">Syarat & Ketentuan</a>
+          <a href="../support.html" class="footer-link" data-i18n="footer_support">Pusat Bantuan</a>
+          <a href="../about.html" class="footer-link" data-i18n="footer_about">Ekosistem</a>
+          <a href="../developer.html" class="footer-link" data-i18n="footer_dev">Pengembang</a>
         </div>
-        <p class="footer-copyright">&copy; 2026 Standalone Studio. Hak cipta dilindungi undang-undang.</p>
+        <p class="footer-copyright">&copy; 2026 Standalone Studio. <span data-i18n="footer_rights">Hak cipta dilindungi undang-undang.</span></p>
       </div>
     </div>
   </footer>
 
+  <!-- Scripts -->
+  <script src="../js/config.js"></script>
+  <script src="../js/data/apps.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/app.js"></script>
+
+  <script>
+    (function() {
+      var btnId = document.getElementById('btnLangId');
+      var btnEn = document.getElementById('btnLangEn');
+      var sectionId = document.getElementById('tos-id');
+      var sectionEn = document.getElementById('tos-en');
+
+      var headerCategory = document.getElementById('headerCategory');
+      var headerMainTitle = document.getElementById('headerMainTitle');
+      var headerLastUpdated = document.getElementById('headerLastUpdated');
+      var backToHomeText = document.getElementById('backToHomeText');
+
+      function setTosLanguage(lang) {
+        if (lang === 'en') {
+          btnEn.classList.add('active');
+          btnEn.setAttribute('aria-selected', 'true');
+          btnId.classList.remove('active');
+          btnId.setAttribute('aria-selected', 'false');
+
+          sectionEn.style.display = 'block';
+          sectionId.style.display = 'none';
+
+          if (headerCategory) headerCategory.textContent = 'Legal & Terms';
+          if (headerMainTitle) headerMainTitle.textContent = 'Terms of Service';
+          if (headerLastUpdated) headerLastUpdated.textContent = 'Last updated: November 2026';
+          if (backToHomeText) backToHomeText.textContent = 'Back to Home';
+        } else {
+          btnId.classList.add('active');
+          btnId.setAttribute('aria-selected', 'true');
+          btnEn.classList.remove('active');
+          btnEn.setAttribute('aria-selected', 'false');
+
+          sectionId.style.display = 'block';
+          sectionEn.style.display = 'none';
+
+          if (headerCategory) headerCategory.textContent = 'Legal & Ketentuan';
+          if (headerMainTitle) headerMainTitle.textContent = 'Syarat dan Ketentuan Layanan';
+          if (headerLastUpdated) headerLastUpdated.textContent = 'Terakhir diperbarui: November 2026';
+          if (backToHomeText) backToHomeText.textContent = 'Kembali ke Beranda';
+        }
+      }
+
+      if (btnId && btnEn) {
+        btnId.addEventListener('click', function() {
+          setTosLanguage('id');
+          if (window.SS && window.SS.i18n && window.SS.i18n.setLang) {
+            window.SS.i18n.setLang('id');
+          }
+        });
+
+        btnEn.addEventListener('click', function() {
+          setTosLanguage('en');
+          if (window.SS && window.SS.i18n && window.SS.i18n.setLang) {
+            window.SS.i18n.setLang('en');
+          }
+        });
+      }
+
+      // Sync with global i18n switcher
+      window.addEventListener('ss:languageChanged', function(e) {
+        if (e.detail && e.detail.lang) {
+          setTosLanguage(e.detail.lang);
+        }
+      });
+
+      // Initial check from localStorage or SS.i18n
+      var savedLang = localStorage.getItem('ss_lang') || 'id';
+      setTosLanguage(savedLang);
+    })();
+  </script>
 </body>
 </html>
