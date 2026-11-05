@@ -137,15 +137,163 @@
           <h1 class="app-detail-name">LeafStudio</h1>
           <p class="app-detail-slogan">Ruang kerja kreator ekosistem. Rancang aset kreatif dan bagikan ke ribuan pengguna.</p>
           <div class="app-detail-actions">
-            <a href="https://tally.so/r/VpL6rj" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 10px 22px;">
+            <a href="#preregister" class="btn btn-primary" style="padding: 10px 22px;">
               <span class="material-symbols-rounded">how_to_reg</span>
-              <span>Pre-register</span>
+              <span data-i18n="btn_preregister">Pre-register</span>
             </a>
             <a href="../store.html" class="btn btn-secondary">
               <span class="material-symbols-rounded">storefront</span>
-              <span>Jelajahi LeafMarket</span>
+              <span data-i18n="btn_explore_market">Jelajahi LeafMarket</span>
             </a>
           </div>
+        </div>
+      </div>
+
+      <!-- Screenshot Showcase Gallery -->
+      <div class="fade-in visible" id="preview-gallery" style="margin-top: 32px; margin-bottom: 24px;">
+        <div class="gallery-showcase-header">
+          <div class="gallery-showcase-badge">
+            <span class="material-symbols-rounded" style="font-size: 15px;">screenshot_monitor</span>
+            <span data-i18n="preview_badge">PRATINJAU ANTARMUKA</span>
+          </div>
+          <h2 class="heading-md mb-8" data-i18n="preview_title">Pratinjau Antarmuka LeafStudio</h2>
+          <p class="body-md mb-20" style="color: #A1A1AA; max-width: 600px; margin-left: auto; margin-right: auto;" data-i18n="preview_desc">
+            Dirancang presisi dan adaptif untuk pengalaman terbaik di tablet maupun smartphone.
+          </p>
+
+          <!-- Segmented Device Switcher -->
+          <div class="gallery-segmented-control" role="tablist" aria-label="Mode Pratinjau Perangkat">
+            <button type="button" class="gallery-tab-btn active" data-device="tablet" role="tab" aria-selected="true">
+              <span class="material-symbols-rounded">tablet_android</span>
+              <span data-i18n="preview_mode_tablet">Tampilan Tablet</span>
+            </button>
+            <button type="button" class="gallery-tab-btn" data-device="smartphone" role="tab" aria-selected="false">
+              <span class="material-symbols-rounded">smartphone</span>
+              <span data-i18n="preview_mode_phone">Tampilan Smartphone</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Gallery Track with Arrow Navigation -->
+        <div class="gallery-track-wrapper">
+          <button type="button" class="gallery-nav-btn prev" id="galleryPrevBtn" aria-label="Geser ke kiri">
+            <span class="material-symbols-rounded">chevron_left</span>
+          </button>
+
+          <!-- Tablet Gallery (Active by default) -->
+          <div class="gallery-scroll-container mode-tablet" id="galleryTablet">
+            <div class="gallery-card" data-index="0" data-device="tablet">
+              <div class="gallery-img-box">
+                <img src="../assets/images/screenshot_leafstudio/tablet/tab-leafstudio-dahsboard.png" alt="Dashboard Kreator Tablet" loading="lazy">
+                <div class="gallery-card-overlay">
+                  <span class="material-symbols-rounded">zoom_in</span>
+                </div>
+              </div>
+              <div class="gallery-card-label" data-i18n="preview_cap_dashboard">Dashboard Kreator</div>
+            </div>
+
+            <div class="gallery-card" data-index="1" data-device="tablet">
+              <div class="gallery-img-box">
+                <img src="../assets/images/screenshot_leafstudio/tablet/tab-leafstudio-catalog.png" alt="Katalog Aset Tablet" loading="lazy">
+                <div class="gallery-card-overlay">
+                  <span class="material-symbols-rounded">zoom_in</span>
+                </div>
+              </div>
+              <div class="gallery-card-label" data-i18n="preview_cap_catalog">Katalog Aset</div>
+            </div>
+
+            <div class="gallery-card" data-index="2" data-device="tablet">
+              <div class="gallery-img-box">
+                <img src="../assets/images/screenshot_leafstudio/tablet/tab-leafstudio-add-assets.png" alt="Tambah & Terbitkan Aset Tablet" loading="lazy">
+                <div class="gallery-card-overlay">
+                  <span class="material-symbols-rounded">zoom_in</span>
+                </div>
+              </div>
+              <div class="gallery-card-label" data-i18n="preview_cap_add_assets">Tambah & Terbitkan Aset</div>
+            </div>
+
+            <div class="gallery-card" data-index="3" data-device="tablet">
+              <div class="gallery-img-box">
+                <img src="../assets/images/screenshot_leafstudio/tablet/tab-leafstudio-analytic.png" alt="Statistik & Analitik Tablet" loading="lazy">
+                <div class="gallery-card-overlay">
+                  <span class="material-symbols-rounded">zoom_in</span>
+                </div>
+              </div>
+              <div class="gallery-card-label" data-i18n="preview_cap_analytic">Statistik & Analitik</div>
+            </div>
+
+            <div class="gallery-card" data-index="4" data-device="tablet">
+              <div class="gallery-img-box">
+                <img src="../assets/images/screenshot_leafstudio/tablet/tab-leafstudio-profile.png" alt="Profil Kreator Tablet" loading="lazy">
+                <div class="gallery-card-overlay">
+                  <span class="material-symbols-rounded">zoom_in</span>
+                </div>
+              </div>
+              <div class="gallery-card-label" data-i18n="preview_cap_profile">Profil Kreator</div>
+            </div>
+          </div>
+
+          <!-- Smartphone Gallery (Initially Hidden) -->
+          <div class="gallery-scroll-container mode-smartphone" id="gallerySmartphone" style="display: none;">
+            <div class="gallery-card" data-index="0" data-device="smartphone">
+              <div class="gallery-img-box">
+                <img src="../assets/images/screenshot_leafstudio/smartphone/phone-leafstudio-dashboard.png" alt="Dashboard Kreator Smartphone" loading="lazy">
+                <div class="gallery-card-overlay">
+                  <span class="material-symbols-rounded">zoom_in</span>
+                </div>
+              </div>
+              <div class="gallery-card-label" data-i18n="preview_cap_dashboard">Dashboard Kreator</div>
+            </div>
+
+            <div class="gallery-card" data-index="1" data-device="smartphone">
+              <div class="gallery-img-box">
+                <img src="../assets/images/screenshot_leafstudio/smartphone/phone-leafstudio-catalog.png" alt="Katalog Aset Smartphone" loading="lazy">
+                <div class="gallery-card-overlay">
+                  <span class="material-symbols-rounded">zoom_in</span>
+                </div>
+              </div>
+              <div class="gallery-card-label" data-i18n="preview_cap_catalog">Katalog Aset</div>
+            </div>
+
+            <div class="gallery-card" data-index="2" data-device="smartphone">
+              <div class="gallery-img-box">
+                <img src="../assets/images/screenshot_leafstudio/smartphone/phone-leafstudio-add-assets.png" alt="Tambah & Terbitkan Aset Smartphone" loading="lazy">
+                <div class="gallery-card-overlay">
+                  <span class="material-symbols-rounded">zoom_in</span>
+                </div>
+              </div>
+              <div class="gallery-card-label" data-i18n="preview_cap_add_assets">Tambah & Terbitkan Aset</div>
+            </div>
+
+            <div class="gallery-card" data-index="3" data-device="smartphone">
+              <div class="gallery-img-box">
+                <img src="../assets/images/screenshot_leafstudio/smartphone/phone-leafstudio-analytic.png" alt="Statistik & Analitik Smartphone" loading="lazy">
+                <div class="gallery-card-overlay">
+                  <span class="material-symbols-rounded">zoom_in</span>
+                </div>
+              </div>
+              <div class="gallery-card-label" data-i18n="preview_cap_analytic">Statistik & Analitik</div>
+            </div>
+
+            <div class="gallery-card" data-index="4" data-device="smartphone">
+              <div class="gallery-img-box">
+                <img src="../assets/images/screenshot_leafstudio/smartphone/phone-leafstudio-profile.png" alt="Profil Kreator Smartphone" loading="lazy">
+                <div class="gallery-card-overlay">
+                  <span class="material-symbols-rounded">zoom_in</span>
+                </div>
+              </div>
+              <div class="gallery-card-label" data-i18n="preview_cap_profile">Profil Kreator</div>
+            </div>
+          </div>
+
+          <button type="button" class="gallery-nav-btn next" id="galleryNextBtn" aria-label="Geser ke kanan">
+            <span class="material-symbols-rounded">chevron_right</span>
+          </button>
+        </div>
+
+        <div class="gallery-hint-row">
+          <span class="material-symbols-rounded" style="font-size: 16px;">touch_app</span>
+          <span data-i18n="preview_hint">Klik gambar untuk membuka pratinjau penuh yang dapat digeser</span>
         </div>
       </div>
 
@@ -269,14 +417,62 @@
       </div>
     </section>
 
-    <!-- Call to action -->
-    <section class="section container fade-in visible" style="text-align: center; padding-top: 60px;">
-      <h2 class="heading-md mb-16">Jadilah yang Pertama Mengakses LeafStudio</h2>
-      <p class="body-lg mb-32">Daftar sekarang untuk mendapatkan akses awal ke LeafStudio dan mulai menerbitkan kreasi Anda di ekosistem kami.</p>
-      <a href="https://tally.so/r/VpL6rj" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 16px 40px; font-size: 1rem;">
-        <span class="material-symbols-rounded">how_to_reg</span>
-        Pre-register LeafStudio
-      </a>
+    <!-- Pre-register Beta Form -->
+    <section class="section container prereg-section fade-in visible" id="preregister">
+      <div class="prereg-card">
+        <div class="prereg-header">
+          <div class="prereg-badge">
+            <span class="material-symbols-rounded" style="font-size: 14px;">verified_user</span>
+            <span data-i18n="prereg_badge">AKSES KREATOR</span>
+          </div>
+          <h2 class="heading-md mb-12" data-i18n="prereg_title">Gabung Penguji Beta LeafStudio</h2>
+          <p class="body-md" style="color: #A1A1AA;" data-i18n="prereg_desc">
+            Daftarkan email Google Play Anda untuk mendapatkan akses uji coba awal sebelum peluncuran resmi.
+          </p>
+        </div>
+
+        <form id="betaRegisterForm">
+          <!-- Input Email -->
+          <div class="prereg-form-group">
+            <label for="userEmail" class="prereg-label" data-i18n="prereg_email_label">Email Akun Google Play</label>
+            <div class="prereg-input-wrapper">
+              <span class="material-symbols-rounded prereg-input-icon">mail</span>
+              <input type="email" id="userEmail" class="prereg-input" placeholder="nama@gmail.com" data-i18n-placeholder="prereg_email_placeholder" required autocomplete="email">
+            </div>
+          </div>
+
+          <!-- Pilihan Perangkat -->
+          <div class="prereg-form-group">
+            <label class="prereg-label" data-i18n="prereg_device_label">Perangkat Pengujian Utama</label>
+            <div class="device-chips">
+              <label class="device-chip active">
+                <input type="radio" name="device" value="Tablet" checked>
+                <span class="material-symbols-rounded">tablet_android</span>
+                <span data-i18n="prereg_device_tablet">Tablet</span>
+              </label>
+              <label class="device-chip">
+                <input type="radio" name="device" value="Smartphone">
+                <span class="material-symbols-rounded">smartphone</span>
+                <span data-i18n="prereg_device_phone">Smartphone</span>
+              </label>
+              <label class="device-chip">
+                <input type="radio" name="device" value="Keduanya">
+                <span class="material-symbols-rounded">devices</span>
+                <span data-i18n="prereg_device_both">Keduanya</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary prereg-submit-btn" id="submitBetaBtn">
+            <span class="material-symbols-rounded" id="btnIcon">how_to_reg</span>
+            <span id="btnText" data-i18n="prereg_submit">Daftar Penguji Beta</span>
+          </button>
+
+          <!-- Feedback Status Box -->
+          <div id="formFeedback" style="display: none;"></div>
+        </form>
+      </div>
     </section>
 
   </main>
@@ -400,9 +596,420 @@
     </div>
   </footer>
 
+  <!-- Interactive Lightbox Modal -->
+  <div class="gallery-lightbox" id="galleryLightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    
+    <div class="lightbox-dialog">
+      <!-- Lightbox Header -->
+      <div class="lightbox-header">
+        <div class="lightbox-info">
+          <span class="material-symbols-rounded" id="lightboxDeviceIcon">tablet_android</span>
+          <span id="lightboxCounter">1 / 5</span>
+        </div>
+        <button type="button" class="lightbox-close-btn" id="lightboxCloseBtn" aria-label="Tutup Pratinjau">
+          <span class="material-symbols-rounded">close</span>
+        </button>
+      </div>
+
+      <!-- Lightbox Slide Stage (Swipeable) -->
+      <div class="lightbox-stage" id="lightboxStage">
+        <button type="button" class="lightbox-arrow lightbox-arrow-prev" id="lightboxPrevBtn" aria-label="Gambar Sebelumnya">
+          <span class="material-symbols-rounded">arrow_back_ios_new</span>
+        </button>
+
+        <div class="lightbox-slide" id="lightboxSlide">
+          <img src="../assets/images/screenshot_leafstudio/tablet/tab-leafstudio-dahsboard.png" alt="Pratinjau Layar" id="lightboxImg">
+        </div>
+
+        <button type="button" class="lightbox-arrow lightbox-arrow-next" id="lightboxNextBtn" aria-label="Gambar Berikutnya">
+          <span class="material-symbols-rounded">arrow_forward_ios</span>
+        </button>
+      </div>
+
+      <!-- Lightbox Footer -->
+      <div class="lightbox-footer">
+        <div class="lightbox-caption" id="lightboxCaption">Dashboard Kreator</div>
+        <div class="lightbox-dots" id="lightboxDots"></div>
+      </div>
+    </div>
+  </div>
+
   <script src="../js/config.js"></script>
   <script src="../js/data/apps.js"></script>
   <script src="../js/i18n.js"></script>
   <script src="../js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyj0nJgDnDcd7nTjGpnfW7xk1spIGdkJx0jfIPcw2oX1vBzS1zwZVXtGCOvbLu_Jj52/exec';
+
+      const form = document.getElementById('betaRegisterForm');
+      const submitBtn = document.getElementById('submitBetaBtn');
+      const btnIcon = document.getElementById('btnIcon');
+      const btnText = document.getElementById('btnText');
+      const feedback = document.getElementById('formFeedback');
+      const chips = document.querySelectorAll('.device-chip');
+
+      // Chip selection logic
+      chips.forEach(chip => {
+        chip.addEventListener('click', function() {
+          chips.forEach(c => c.classList.remove('active'));
+          this.classList.add('active');
+          const radio = this.querySelector('input[type="radio"]');
+          if (radio) radio.checked = true;
+        });
+      });
+
+      // Smooth scroll to form from header Pre-register button
+      document.querySelectorAll('a[href="#preregister"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.getElementById('preregister');
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+            setTimeout(() => {
+              const input = document.getElementById('userEmail');
+              if (input) input.focus();
+            }, 500);
+          }
+        });
+      });
+
+      // ==========================================
+      // Screenshot Showcase & Interactive Lightbox
+      // ==========================================
+      const tabBtns = document.querySelectorAll('.gallery-tab-btn');
+      const galleryTablet = document.getElementById('galleryTablet');
+      const gallerySmartphone = document.getElementById('gallerySmartphone');
+      const galleryPrevBtn = document.getElementById('galleryPrevBtn');
+      const galleryNextBtn = document.getElementById('galleryNextBtn');
+
+      let currentDeviceMode = 'tablet';
+
+      const galleryData = {
+        tablet: [
+          {
+            src: '../assets/images/screenshot_leafstudio/tablet/tab-leafstudio-dahsboard.png',
+            titleId: 'Dashboard Kreator',
+            titleEn: 'Creator Dashboard'
+          },
+          {
+            src: '../assets/images/screenshot_leafstudio/tablet/tab-leafstudio-catalog.png',
+            titleId: 'Katalog Aset',
+            titleEn: 'Asset Catalog'
+          },
+          {
+            src: '../assets/images/screenshot_leafstudio/tablet/tab-leafstudio-add-assets.png',
+            titleId: 'Tambah & Terbitkan Aset',
+            titleEn: 'Add & Publish Assets'
+          },
+          {
+            src: '../assets/images/screenshot_leafstudio/tablet/tab-leafstudio-analytic.png',
+            titleId: 'Statistik & Analitik',
+            titleEn: 'Stats & Analytics'
+          },
+          {
+            src: '../assets/images/screenshot_leafstudio/tablet/tab-leafstudio-profile.png',
+            titleId: 'Profil Kreator',
+            titleEn: 'Creator Profile'
+          }
+        ],
+        smartphone: [
+          {
+            src: '../assets/images/screenshot_leafstudio/smartphone/phone-leafstudio-dashboard.png',
+            titleId: 'Dashboard Kreator',
+            titleEn: 'Creator Dashboard'
+          },
+          {
+            src: '../assets/images/screenshot_leafstudio/smartphone/phone-leafstudio-catalog.png',
+            titleId: 'Katalog Aset',
+            titleEn: 'Asset Catalog'
+          },
+          {
+            src: '../assets/images/screenshot_leafstudio/smartphone/phone-leafstudio-add-assets.png',
+            titleId: 'Tambah & Terbitkan Aset',
+            titleEn: 'Add & Publish Assets'
+          },
+          {
+            src: '../assets/images/screenshot_leafstudio/smartphone/phone-leafstudio-analytic.png',
+            titleId: 'Statistik & Analitik',
+            titleEn: 'Stats & Analytics'
+          },
+          {
+            src: '../assets/images/screenshot_leafstudio/smartphone/phone-leafstudio-profile.png',
+            titleId: 'Profil Kreator',
+            titleEn: 'Creator Profile'
+          }
+        ]
+      };
+
+      // Device Switcher Tab
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          tabBtns.forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+          });
+          this.classList.add('active');
+          this.setAttribute('aria-selected', 'true');
+          const device = this.getAttribute('data-device');
+          currentDeviceMode = device;
+
+          if (device === 'tablet') {
+            galleryTablet.style.display = 'flex';
+            gallerySmartphone.style.display = 'none';
+            galleryTablet.scrollLeft = 0;
+          } else {
+            galleryTablet.style.display = 'none';
+            gallerySmartphone.style.display = 'flex';
+            gallerySmartphone.scrollLeft = 0;
+          }
+        });
+      });
+
+      // Gallery Scroll Navigation Buttons
+      if (galleryPrevBtn && galleryNextBtn) {
+        galleryPrevBtn.addEventListener('click', () => {
+          const activeContainer = currentDeviceMode === 'tablet' ? galleryTablet : gallerySmartphone;
+          const scrollAmount = currentDeviceMode === 'tablet' ? 380 : 230;
+          activeContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+
+        galleryNextBtn.addEventListener('click', () => {
+          const activeContainer = currentDeviceMode === 'tablet' ? galleryTablet : gallerySmartphone;
+          const scrollAmount = currentDeviceMode === 'tablet' ? 380 : 230;
+          activeContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+      }
+
+      // Lightbox Logic
+      const lightbox = document.getElementById('galleryLightbox');
+      const lightboxBackdrop = document.getElementById('lightboxBackdrop');
+      const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const lightboxCounter = document.getElementById('lightboxCounter');
+      const lightboxCaption = document.getElementById('lightboxCaption');
+      const lightboxDots = document.getElementById('lightboxDots');
+      const lightboxDeviceIcon = document.getElementById('lightboxDeviceIcon');
+      const lightboxPrevBtn = document.getElementById('lightboxPrevBtn');
+      const lightboxNextBtn = document.getElementById('lightboxNextBtn');
+      const lightboxSlide = document.getElementById('lightboxSlide');
+
+      let currentSlideIndex = 0;
+
+      function renderDots(total, activeIdx) {
+        if (!lightboxDots) return;
+        lightboxDots.innerHTML = '';
+        for (let i = 0; i < total; i++) {
+          const dot = document.createElement('div');
+          dot.className = 'lightbox-dot' + (i === activeIdx ? ' active' : '');
+          dot.addEventListener('click', () => {
+            currentSlideIndex = i;
+            updateLightboxView();
+          });
+          lightboxDots.appendChild(dot);
+        }
+      }
+
+      function updateLightboxView() {
+        const items = galleryData[currentDeviceMode];
+        if (!items || !items[currentSlideIndex]) return;
+
+        const currentItem = items[currentSlideIndex];
+        const isEn = window.SS && window.SS.i18n && window.SS.i18n.getLang() === 'en';
+        const title = isEn ? currentItem.titleEn : currentItem.titleId;
+
+        lightboxImg.style.opacity = '0';
+        setTimeout(() => {
+          lightboxImg.src = currentItem.src;
+          lightboxImg.alt = title;
+          lightboxCaption.textContent = title;
+          lightboxCounter.textContent = `${currentSlideIndex + 1} / ${items.length}`;
+          lightboxDeviceIcon.textContent = currentDeviceMode === 'tablet' ? 'tablet_android' : 'smartphone';
+          renderDots(items.length, currentSlideIndex);
+          lightboxImg.style.opacity = '1';
+        }, 120);
+      }
+
+      function openLightbox(device, index) {
+        currentDeviceMode = device;
+        currentSlideIndex = parseInt(index, 10) || 0;
+        updateLightboxView();
+        lightbox.classList.add('active');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      function nextSlide() {
+        const items = galleryData[currentDeviceMode];
+        currentSlideIndex = (currentSlideIndex + 1) % items.length;
+        updateLightboxView();
+      }
+
+      function prevSlide() {
+        const items = galleryData[currentDeviceMode];
+        currentSlideIndex = (currentSlideIndex - 1 + items.length) % items.length;
+        updateLightboxView();
+      }
+
+      // Click card to open lightbox
+      document.querySelectorAll('.gallery-card').forEach(card => {
+        card.addEventListener('click', function() {
+          const device = this.getAttribute('data-device') || currentDeviceMode;
+          const index = this.getAttribute('data-index') || 0;
+          openLightbox(device, index);
+        });
+      });
+
+      // Close events
+      if (lightboxCloseBtn) lightboxCloseBtn.addEventListener('click', closeLightbox);
+      if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
+      if (lightboxNextBtn) lightboxNextBtn.addEventListener('click', nextSlide);
+      if (lightboxPrevBtn) lightboxPrevBtn.addEventListener('click', prevSlide);
+
+      // Keyboard navigation
+      document.addEventListener('keydown', function(e) {
+        if (!lightbox || !lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') nextSlide();
+        if (e.key === 'ArrowLeft') prevSlide();
+      });
+
+      // Swipe Gestures for Lightbox (Touch & Mouse Drag)
+      let touchStartX = 0;
+      let touchEndX = 0;
+      let touchStartY = 0;
+      let isDragging = false;
+
+      if (lightboxSlide) {
+        // Touch events for mobile/tablet
+        lightboxSlide.addEventListener('touchstart', function(e) {
+          touchStartX = e.changedTouches[0].screenX;
+          touchStartY = e.changedTouches[0].screenY;
+        }, { passive: true });
+
+        lightboxSlide.addEventListener('touchend', function(e) {
+          touchEndX = e.changedTouches[0].screenX;
+          const touchEndY = e.changedTouches[0].screenY;
+          handleSwipeGesture(touchStartX, touchEndX, touchStartY, touchEndY);
+        }, { passive: true });
+
+        // Mouse drag events for desktop
+        lightboxSlide.addEventListener('mousedown', function(e) {
+          touchStartX = e.clientX;
+          touchStartY = e.clientY;
+          isDragging = true;
+        });
+
+        window.addEventListener('mouseup', function(e) {
+          if (!isDragging) return;
+          isDragging = false;
+          touchEndX = e.clientX;
+          handleSwipeGesture(touchStartX, touchEndX, touchStartY, e.clientY);
+        });
+      }
+
+      function handleSwipeGesture(startX, endX, startY, endY) {
+        const deltaX = endX - startX;
+        const deltaY = endY - startY;
+        // Check if movement is primarily horizontal and swipe threshold is met
+        if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 40) {
+          if (deltaX < 0) {
+            nextSlide(); // Swiped left -> next
+          } else {
+            prevSlide(); // Swiped right -> prev
+          }
+        }
+      }
+
+      if (form) {
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          const emailInput = document.getElementById('userEmail');
+          const email = emailInput ? emailInput.value.trim() : '';
+          const deviceRadio = document.querySelector('input[name="device"]:checked');
+          const device = deviceRadio ? deviceRadio.value : 'Tablet';
+
+          if (!email) return;
+
+          // Loading state
+          submitBtn.disabled = true;
+          btnIcon.style.display = 'none';
+          const prevText = btnText.textContent;
+          const loadingText = (window.SS && window.SS.i18n && window.SS.i18n.getLang() === 'en')
+            ? 'Registering...'
+            : 'Mendaftarkan...';
+          btnText.innerHTML = '<span class="prereg-spinner"></span> ' + loadingText;
+          feedback.style.display = 'none';
+
+          try {
+            await fetch(SCRIPT_URL, {
+              method: 'POST',
+              mode: 'no-cors',
+              headers: {
+                'Content-Type': 'text/plain;charset=utf-8'
+              },
+              body: JSON.stringify({ email: email, device: device })
+            });
+
+            // Success display
+            const isEn = window.SS && window.SS.i18n && window.SS.i18n.getLang() === 'en';
+            const title = isEn ? 'Registration Successful!' : 'Pendaftaran Berhasil!';
+            const desc = isEn 
+              ? 'Your Google Play email has been recorded for beta testing. A confirmation email has been sent to your inbox.' 
+              : 'Email Google Play Anda telah dicatat untuk akses penguji beta. Konfirmasi otomatis telah dikirimkan ke email Anda.';
+
+            feedback.className = 'prereg-alert prereg-alert-success';
+            feedback.innerHTML = `
+              <span class="material-symbols-rounded" style="font-size: 28px;">check_circle</span>
+              <div>
+                <div class="prereg-alert-title">${title}</div>
+                <div class="prereg-alert-desc">${desc}</div>
+              </div>
+            `;
+            feedback.style.display = 'flex';
+            form.reset();
+
+            // Reset chip selection to first (Tablet)
+            chips.forEach((c, idx) => {
+              if (idx === 0) {
+                c.classList.add('active');
+                c.querySelector('input').checked = true;
+              } else {
+                c.classList.remove('active');
+              }
+            });
+
+          } catch (err) {
+            console.error('Error submitting form:', err);
+            const isEn = window.SS && window.SS.i18n && window.SS.i18n.getLang() === 'en';
+            const errMsg = isEn 
+              ? 'Unable to submit. Please check your connection and try again.' 
+              : 'Terjadi kesalahan saat mengirim. Silakan periksa koneksi dan coba lagi.';
+
+            feedback.className = 'prereg-alert prereg-alert-error';
+            feedback.innerHTML = `
+              <span class="material-symbols-rounded" style="font-size: 28px;">error</span>
+              <div>
+                <div class="prereg-alert-title">Oops!</div>
+                <div class="prereg-alert-desc">${errMsg}</div>
+              </div>
+            `;
+            feedback.style.display = 'flex';
+          } finally {
+            submitBtn.disabled = false;
+            btnIcon.style.display = 'inline-block';
+            btnText.textContent = prevText;
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>

@@ -72,6 +72,35 @@
       search_placeholder: "Search applications, features, or assets...",
       no_results: "No results found.",
 
+      // LeafStudio Pre-register Form
+      prereg_badge: "CREATOR ACCESS",
+      prereg_title: "Join LeafStudio Beta Testing",
+      prereg_desc: "Register your Google Play email to get early testing access before the official release.",
+      prereg_email_label: "Google Play Account Email",
+      prereg_email_placeholder: "yourname@gmail.com",
+      prereg_device_label: "Primary Testing Device",
+      prereg_device_tablet: "Tablet",
+      prereg_device_phone: "Smartphone",
+      prereg_device_both: "Both Devices",
+      prereg_submit: "Register as Beta Tester",
+      prereg_submitting: "Registering...",
+      prereg_success_title: "Registration Successful!",
+      prereg_success_desc: "Your email has been added to Google Play tester access. A confirmation email has been sent to your inbox.",
+      prereg_error: "Unable to submit. Please check your connection and try again.",
+
+      // LeafStudio Screenshot Gallery Preview
+      preview_badge: "INTERFACE SHOWCASE",
+      preview_title: "LeafStudio Interface Preview",
+      preview_desc: "Carefully calibrated for both large-screen tablets and compact smartphones.",
+      preview_mode_tablet: "Tablet View",
+      preview_mode_phone: "Smartphone View",
+      preview_cap_dashboard: "Creator Dashboard",
+      preview_cap_catalog: "Asset Catalog",
+      preview_cap_add_assets: "Add & Publish Assets",
+      preview_cap_analytic: "Stats & Analytics",
+      preview_cap_profile: "Creator Profile",
+      preview_hint: "Click any screen to open interactive swipeable preview",
+
       // Ecosystem Page Invites
       dev_invite_badge: "BEHIND THE CRAFT",
       dev_invite_title: "Meet the Developer",
@@ -203,6 +232,35 @@
       // Search & General
       search_placeholder: "Cari aplikasi, fitur, atau aset...",
       no_results: "Tidak ada hasil ditemukan.",
+
+      // LeafStudio Pre-register Form
+      prereg_badge: "AKSES KREATOR",
+      prereg_title: "Gabung Penguji Beta LeafStudio",
+      prereg_desc: "Daftarkan email Google Play Anda untuk mendapatkan akses uji coba awal sebelum peluncuran resmi.",
+      prereg_email_label: "Email Akun Google Play",
+      prereg_email_placeholder: "nama@gmail.com",
+      prereg_device_label: "Perangkat Pengujian Utama",
+      prereg_device_tablet: "Tablet",
+      prereg_device_phone: "Smartphone",
+      prereg_device_both: "Keduanya",
+      prereg_submit: "Daftar Penguji Beta",
+      prereg_submitting: "Mendaftarkan...",
+      prereg_success_title: "Pendaftaran Berhasil!",
+      prereg_success_desc: "Email Anda telah dicatat untuk akses Google Play penguji. Konfirmasi telah kami kirimkan ke email Anda.",
+      prereg_error: "Terjadi kesalahan saat mengirim. Silakan periksa koneksi dan coba lagi.",
+
+      // LeafStudio Screenshot Gallery Preview
+      preview_badge: "PRATINJAU ANTARMUKA",
+      preview_title: "Pratinjau Antarmuka LeafStudio",
+      preview_desc: "Dirancang presisi dan adaptif untuk pengalaman terbaik di tablet maupun smartphone.",
+      preview_mode_tablet: "Tampilan Tablet",
+      preview_mode_phone: "Tampilan Smartphone",
+      preview_cap_dashboard: "Dashboard Kreator",
+      preview_cap_catalog: "Katalog Aset",
+      preview_cap_add_assets: "Tambah & Terbitkan Aset",
+      preview_cap_analytic: "Statistik & Analitik",
+      preview_cap_profile: "Profil Kreator",
+      preview_hint: "Klik gambar untuk membuka pratinjau penuh yang dapat digeser",
 
       // Ecosystem Page Invites
       dev_invite_badge: "DI BALIK KARYA",
